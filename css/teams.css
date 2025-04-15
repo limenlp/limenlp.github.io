@@ -1,0 +1,126 @@
+*{
+    font-family:Nunito, sans-serif;
+  }
+  .responsive-cell-block{
+    min-height:75px;
+  }
+.text-blk{
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    margin-left:0px;
+    line-height:25px;
+  }
+  .responsive-container-block{
+    min-height:75px;
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    margin-top:0px;
+    margin-right:auto;
+    margin-bottom:0px;
+    margin-left:auto;
+    justify-content:space-evenly;
+  }
+  .team-head-text{
+    font-size:48px;
+    font-weight:900;
+    text-align:center;
+  }
+  .team-head-text{
+    line-height:50px;
+    width:100%;
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:50px;
+    margin-left:0px;
+  }
+   
+.our-team{
+    padding: 10px 10px 10px 10px; /* top right bottom left*/
+    background: #fff;
+    border-radius: 15px;
+    text-align: center;
+}
+.our-team .pic{
+    display: inline-block;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    /* border-radius: 50%; */
+    border-radius: 20%;
+    background: #fff;
+    padding: 0px;
+    margin-bottom: 5px;
+    transition: all 0.5s ease 0s;
+}
+.our-team .pic img{
+    width: auto;
+    height: 100%;
+    /* margin-left: -100px; */
+}
+
+/* .our-team .pic:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ffee10;
+  } */
+  
+.our-team .pic:hover {
+    color: #6f5a8d;
+    box-shadow: 0 0 15px #4a4ada;
+    text-shadow: 0 0 15px #ffee10;
+}
+
+.our-team .title{
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2e282a;
+    text-transform: uppercase;
+    margin: 0 0 7px 0;
+}
+.our-team .post{
+    display: block;
+    font-size: 15px;
+    color: #52BE80;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+.our-team .social{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.our-team .social li{
+    display: inline-block;
+    margin-right: 5px;
+}
+.our-team .social li a{
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    font-size: 15px;
+    color: #17bebb;
+    border: 1px solid #17bebb;
+    transition: all 0.5s ease 0s;
+}
+/* .our-team:hover .social li a{
+    background: #17bebb;
+    color: #fff;
+} */
+.our-team .name{
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  color: #2e282a;
+  text-transform: uppercase;
+  margin: 0px 0px 7px 5px; /*top right bottom left*/
+}
+
+@media only screen and (max-width: 990px){
+    .our-team{ margin-bottom: 30px; }
+}
