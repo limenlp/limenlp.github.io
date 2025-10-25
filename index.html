@@ -18,38 +18,52 @@
     <link rel="stylesheet" href="css/all.css" />
     <link rel="stylesheet" href="css/academicons.css" />
     <style type="text/css">
+      /* Reset and base styles */
       .content {
         margin-top: 0;
-        margin-bottom: 0
+        margin-bottom: 0;
       }
       
-      .section-header {
-        margin-bottom: 1.5rem;
+      /* Header section improvements */
+      .hero-section {
+        padding: 3rem 0 1rem;
+        margin-bottom: 0.75rem;
       }
       
-      .member_image {
-        width: 100%;
-        object-fit: cover;
-        border-radius: 8px;
+      .lab-logo {
+        max-width: 200px;
+        height: auto;
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
       }
       
-      .member-info {
-        margin-top: 1rem;
+      .lab-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 1rem;
       }
       
-      .member-info h4 {
-        margin-bottom: 0.5rem;
+      .lab-subtitle {
+        font-size: 1.2rem;
+        color: #6c757d;
+        line-height: 1.6;
+        margin-bottom: 1rem;
       }
       
-      .social-links {
-        margin-top: 0.5rem;
-      }
-      
+      /* Social links styling */
       .social-links a {
-        margin-right: 0.5rem;
-        color: inherit;
+        margin-right: 1rem;
+        color: #495057;
+        transition: color 0.3s ease;
+        font-size: 1.5rem;
       }
       
+      .social-links a:hover {
+        color: #007bff;
+        transform: translateY(-2px);
+      }
+      
+      /* Recruitment notice */
       .recruitment-notice {
         border: 2px dashed #e92525ec;
         padding: 1rem;
@@ -59,6 +73,255 @@
       
       .recruitment-notice p {
         margin-bottom: 0;
+      }
+      
+      /* Compact the decorative horizontal rules */
+      hr.hr-twill-colorful {
+        margin: 0.5rem 0;
+      }
+      
+      /* Section headers */
+      .section-header {
+        margin-bottom: 0.5rem;
+        text-align: left;
+      }
+      
+      .section-header h3 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+        position: relative;
+      }
+      
+      .section-header h3::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 2px;
+        background: #007bff;
+        margin: 1rem 0;
+        border-radius: 1px;
+      }
+      
+      /* Team member cards */
+      .team-member-card {
+        background: white;
+        border: 1px solid #e9ecef;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        transition: all 0.3s ease;
+        text-align: center;
+        height: 100%;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .team-member-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #7888d1, #0acc37);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+      
+      .team-member-card:hover {
+        border-color: #007bff;
+        box-shadow: 0 4px 12px rgba(0,123,255,0.15);
+        transform: translateY(-2px);
+      }
+      
+      .team-member-card:hover::before {
+        transform: scaleX(1);
+      }
+      
+      .member-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 1rem;
+        display: block;
+        border: 2px solid #e9ecef;
+        transition: border-color 0.3s ease;
+      }
+      
+      .team-member-card:hover .member-image {
+        border-color: #18c12c;
+      }
+      
+      .member-name {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #007bff;
+        margin-bottom: 0.5rem;
+      }
+      
+      .member-name a {
+        color: inherit;
+        text-decoration: none;
+      }
+      
+      .member-name a:hover {
+        color: #0fa721;
+      }
+      
+      .member-period {
+        color: #6c757d;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .member-research {
+        background: #f8f9fa;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 0.9rem;
+        color: #495057;
+        display: inline-block;
+        margin-top: 0.5rem;
+      }
+      
+      /* PI section special styling */
+      .pi-section {
+        padding: 0rem 2rem 0rem 2rem;
+        margin: 0rem 0;
+        text-align: center;
+      }
+      
+      .pi-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 1.5rem;
+        display: block;
+        border: 3px solid #e9ecef;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        cursor: pointer;
+      }
+      .pi-image-link:hover .pi-image {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,123,255,0.15);
+        border-color: #d33950;
+      }
+      
+      .pi-name {
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        color: #2c3e50;
+      }
+      
+      .pi-name a {
+        color: #007bff;
+        text-decoration: none;
+      }
+      .pi-name a:hover {
+        color: #0fa721;
+      }
+      .pi-social-links a {
+        color: #495057;
+        margin: 0 0.5rem;
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+      }
+      
+      .pi-social-links a:hover {
+        color: #007bff;
+      }
+      
+      /* Alumni section */
+      .alumni-section {
+        margin: 2rem 0;
+      }
+      
+      .alumni-category {
+        background: #007bff;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+      
+      .alumni-list {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .alumni-list li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #dee2e6;
+      }
+      
+      .alumni-list li:last-child {
+        border-bottom: none;
+      }
+      
+      .alumni-list a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      
+      .alumni-list a:hover {
+        color: #007bff;
+      }
+      
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .lab-title {
+          font-size: 2rem;
+        }
+        
+        .section-header h3 {
+          font-size: 2rem;
+        }
+        
+        .team-member-card {
+          margin-bottom: 1.5rem;
+        }
+        
+        .member-image {
+          width: 120px;
+          height: 120px;
+        }
+      }
+      
+      /* LIME Moments feature */
+      .lime-moments {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        margin: 2rem 0;
+      }
+      
+      .lime-tag {
+        background: #007bff;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+      
+      .lime-image {
+        max-width: 300px;
+        border-radius: 0.5rem;
+        border: 1px solid #e9ecef;
       }
     </style>
     <meta http-equiv="Content-Type" content="text/html; charset=gbk">
@@ -73,36 +336,38 @@
   <div id="navbar-placeholder"></div>
 
   <div class="container">
-
-    <!-- Heading Row -->
-    <div class="row mt-5 mb-4"> <!-- can be written as <class="row my-5">-->
-      <div class="col-lg-4 pt-0">
-        <img class="img-fluid rounded img-responsive" style="width:50%; margin-top: 30px; margin-left: 50px;"
-          src="img/g1.png" alt="LIMENLP">
-          <p style="margin-left:80px; margin-right:0%; ">  
-            <a href="https://github.com/orgs/limenlp/repositories"><i
-            class="fab fa-github-square fa-2x"></i></a> 
-            <a href="https://twitter.com/jieyuzhao11"><i
-              class="fab fa-twitter-square fa-2x"></i></a>  
-              <a href="https://scholar.google.com/citations?user=9VaGBCQAAAAJ&hl=en"><i
-                class="ai ai-google-scholar-square ai-2x"></i></a>
-                <a href="https://huggingface.co/lime-nlp"><img src="img/huggingface.png" style="width: 28px; height: 28px; vertical-align: top; margin-top: 3px; background-color: #EC7063; padding: 2px; border-radius: 4px;"></a>
-
-          </p> 
-        
-      </div>
-
-      <div class="col-lg-7 mt-2">
-        <!-- <h1>Jieyu Zhao <font size="-1">赵洁玉</font> </h1> -->
-       <h2>LIME@USC</h2>
-
-        <br>
-        Language, intelligence, and model evaluation (LIME <img src="img/lime-slice-hi.png" style="width:4%">) lab is part
-        of the <a href="https://nlp.usc.edu/">USC NLP Group</a>. <br>
-        <br>
-        Hello! Welcome to LIME lab! Our team's primary focus is on <b>creating trustworthy  models</b>. We  investigate how trustworthy or reliable large models could be, striving to ensure that language technologies are
-        constructed and employed in ways that align with  human values. Please check out our <a href="https://limenlp.github.io/papers.html">papers</a> if you want to know more about our research.
-        Please read our  <a href="https://github.com/limenlp/GroupWiki">Group Wiki</a> if you are interested working with us.
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <div class="row align-items-center">
+        <div class="col-lg-4 text-center">
+          <img class="lab-logo" src="img/g1.png" alt="LIME Lab Logo">
+          <div class="social-links mt-3">
+            <a href="https://github.com/orgs/limenlp/repositories" title="GitHub">
+              <i class="fab fa-github-square" style="vertical-align: top;"></i>
+            </a>
+            <a href="https://twitter.com/jieyuzhao11" title="Twitter">
+              <i class="fab fa-twitter-square" style="vertical-align: top;"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=9VaGBCQAAAAJ&hl=en" title="Google Scholar">
+              <i class="ai ai-google-scholar-square" style="vertical-align: top;"></i>
+            </a>
+            <a href="https://huggingface.co/lime-nlp" title="Hugging Face">
+              <img src="img/huggingface.png" style="width: 22px; height: 22px; vertical-align: top; background-color: #756867; padding: 2px; border-radius: 4px;">
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <h1 class="lab-title">LIME@USC</h1>
+          <p class="lab-subtitle">
+            Language, intelligence, and model evaluation (LIME <img src="img/lime-slice-hi.png" style="width:24px; height:24px; vertical-align: middle;">) lab is part of the <a href="https://nlp.usc.edu/">USC NLP Group</a>.
+          </p>
+          <p class="lab-subtitle">
+            Hello! Welcome to LIME lab! Our team's primary focus is on <strong>creating trustworthy models</strong>. We investigate how trustworthy or reliable large models could be, striving to ensure that language technologies are constructed and employed in ways that align with human values.
+          </p>
+          <p class="lab-subtitle">
+            Please check out our <a href="papers.html" style="color: #007bff;">papers</a> if you want to know more about our research, or read our <a href="https://github.com/limenlp/GroupWiki">Group Wiki</a> if you are interested in working with us.
+          </p>
+        </div>
       </div>
     </div>
 
@@ -114,7 +379,7 @@
       <hr class="hr-twill-colorful">
     </div>
 
-    <div class="section-header">
+    <!-- <div class="section-header">
       <h3>News</h3>
     </div>
     <div class="container col-lg-12">
@@ -122,305 +387,239 @@
         <li>[06/02/2025]: Check our new papers <a href=papers.html>here</a>.</li>
         <li>[05/19/2025]: For 2025 Summer, I will not take more interns.</li>
       </ul>
-    </div>
+    </div> -->
     
 
-    <div class="section-header" style="margin-top: 2em;">
-      <h3>Principal Investigator</h3>
+    <!-- Principal Investigator Section with LIME Moments -->
+    <div class="section-header">
+      <h3>About LIME</h3>
     </div>
-    <div class="row mt-5 mb-4 align-items-center">
-      <!-- PI Photo and Info -->
-      <div class="col-lg-3 text-center">
-        <div class="our-team">
-          <div class="pic">
-            <a href="https://jyzhao.net">
-              <img class="img-fluid rounded" 
-                   src="img/me.jpg" 
-                   alt="Jieyu Zhao" 
-                   style="max-width: 80%; object-fit: cover;">
+    <div class="pi-section">
+      <div class="row align-items-center">
+        <div class="col-lg-4 text-center">
+          <a href="https://jyzhao.net" class="pi-image-link" title="https://jyzhao.net">
+            <img class="pi-image" src="img/me.jpg" alt="Jieyu Zhao">
+          </a>
+          <h2 class="pi-name">
+            <a href="https://jyzhao.net">Jieyu Zhao</a>
+          </h2>
+          <p class="lead">Principal Investigator</p>
+          <div class="pi-social-links">
+            <a href="https://scholar.google.com/citations?hl=en&user=9VaGBCQAAAAJ&view_op=list_works&sortby=pubdate" title="Google Scholar">
+              <i class="ai ai-google-scholar-square"></i>
+            </a>
+            <a href="https://twitter.com/jieyuzhao11" title="Twitter">
+              <i class="fab fa-twitter-square"></i>
+            </a>
+            <a href="https://github.com/JieyuZhao" title="GitHub">
+              <i class="fab fa-github-square"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/jieyuzhao/" title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://orcid.org/0009-0003-9956-5481" title="ORCID">
+              <i class="ai ai-orcid-square"></i>
+            </a>
+            <a href="mailto:jieyuz@usc.edu" title="Email">
+              <i class="fas fa-envelope-square"></i>
             </a>
           </div>
-          <div class="mt-3">
-            <h5><a href="https://jyzhao.net">Jieyu Zhao</a></h5>
-            <p>
-              <a href="https://scholar.google.com/citations?hl=en&user=9VaGBCQAAAAJ&view_op=list_works&sortby=pubdate">
-                <i class="ai ai-google-scholar-square ai-2x"></i>
-              </a>
-              <a href="https://twitter.com/jieyuzhao11">
-                <i class="fab fa-twitter-square fa-2x"></i>
-              </a>
-              <a href="https://github.com/JieyuZhao">
-                <i class="fab fa-github-square fa-2x"></i>
-              </a>
-          <a href="https://www.linkedin.com/in/jieyuzhao/"><i class="fab fa-linkedin fa-2x"></i></a> 
-          <a href="https://orcid.org/0009-0003-9956-5481"><i class="ai ai-orcid-square ai-2x"></i></a> 
-              <a href="mailto:jieyuz@usc.edu">
-                <i class="fas fa-envelope-square fa-2x"></i>
-              </a>
-            </p>
-          </div>
+        </div>
+        <div class="col-lg-4">
+        </div>
+        <div class="col-lg-4 text-center">
+          <img class="lime-image" src="img/IMG_8533.jpg" alt="LIME moments" loading="lazy">
         </div>
       </div>
-    
-      <!-- Twitter Timeline -->
-      <!-- <div class="col-lg-7 text-center" style="margin-top: -6em; margin-left: 8em;">
-       <blockquote class="twitter-tweet" data-dnt="true" align="center"><p lang="en" dir="ltr">Very cool work carried by <a href="https://twitter.com/linxins2?ref_src=twsrc%5Etfw">@linxins2</a> this summer! CoAct is very *efficient*, so is Linxin! <br>Huge thanks to the team!  It’s *Hybrid*! <a href="https://t.co/PFExgRefYe">https://t.co/PFExgRefYe</a></p>&mdash; Jieyu Zhao (@jieyuzhao11) <a href="https://twitter.com/jieyuzhao11/status/1953453910385115490?ref_src=twsrc%5Etfw">August 7, 2025</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div> -->
     </div>
 
 
 
-    <div style="margin-left:0em; margin-top: 2em;">
-      <h3>PhDs</h3>
+    <!-- PhD Students Section -->
+    <div class="section-header">
+      <h3>PhD Students</h3>
     </div>
-    <div class="row mt-1 mb-3"> <!-- can be written as <class="row my-5">-->
-      
-      <div class="col-lg-2" style="margin-left: 0px;">
-        <div class="our-team">
-          <div class="pic">
-            <a href="https://liuziyi219.github.io"><img class="member_image" src="https://liuziyi219.github.io/selfie1.JPG"
-                style="margin-left:0px; width: 150px;  height: 150px; object-fit: cover; object-position: bottom;" alt="Ziyi Liu"></a>
-          </div>
-          <div class="span9" style="margin-left: 0px;">
-            <h5 style="margin-top:15px"><a href="https://liuziyi219.github.io">Ziyi Liu</a></h5> 
-            <p>2023.8 - Now</p>
-          </div>
-
-          <div class="post">
-            <span>LLM reasoning; Social Intellgience</span>
-          </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="team-member-card">
+          <a href="https://liuziyi219.github.io">
+            <img class="member-image" src="https://liuziyi219.github.io/selfie1.JPG" alt="Ziyi Liu">
+          </a>
+          <h5 class="member-name">
+            <a href="https://liuziyi219.github.io">Ziyi Liu</a>
+          </h5>
+          <p class="member-period">2023.8 - Now</p>
+          <div class="member-research">LLM reasoning; Social Intelligence</div>
         </div>
       </div>
       
-
-      <div class="col-lg-2" style="margin-left: 0px;">
-        <div class="our-team">
-          <div class="pic">
-            <a href="https://maksimstw.github.io"><img class="member_image" src="https://maksimstw.github.io/images/portrait.jpg"
-                style="margin-left:0px;  width: 150px;  height: 150px; object-fit: cover; object-position: bottom;" alt="Taiwei Shi"></a>
-          </div>
-          <div class="span9" style="margin-left:0px">
-            <h5 style="margin-top:15px"><a href="https://maksimstw.github.io">Taiwei Shi</a></h5>
-            <p>2023.8 - Now</p>
-          </div>
-          <div class="post">
-            <span>LLM Alignment</span>
-          </div>
-
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="team-member-card">
+          <a href="https://maksimstw.github.io">
+            <img class="member-image" src="https://maksimstw.github.io/images/portrait.jpg" alt="Taiwei Shi">
+          </a>
+          <h5 class="member-name">
+            <a href="https://maksimstw.github.io">Taiwei Shi</a>
+          </h5>
+          <p class="member-period">2023.8 - Now</p>
+          <div class="member-research">LLM Alignment</div>
         </div>
       </div>
-
-
-
-
-      <div  class="col-lg-2" style="margin-left: 0px;">
-        <div class="our-team">
-          <div class="pic">
-            <a href="https://linxins.net/"><img class="member_image" src="img/members/linxin.jpg"
-                style="margin-left:0px; width: 150px;  height: 150px; object-fit: cover; object-position: bottom;" alt="Linxin Song"></a>
-          </div>
-          <div class="span9" style="margin-left: 0px;">
-            <h5 style="margin-top:15px"><a href="https://linxins.net/">Linxin Song</a></h5>
-            <p>2024.8 - Now</p>
-          </div>
-          <div class="post">
-            <span>LLM Agent; Synthetic Data</span>
-          </div>
-        </div>
-      </div>
-     
-
-
-
       
-      <div class="col-lg-2" style="margin-left: 0px;">
-      <div class="our-team">
-        <div class="pic">
-          <a href="https://www.linkedin.com/in/priyankadey19/"><img class="member_image" src="img/members/priyanka.jpeg"
-              style="margin-left:0px; width: 150px;  height: 150px; object-fit: cover; object-position: bottom;" alt="Priyanka"></a>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="team-member-card">
+          <a href="https://linxins.net/">
+            <img class="member-image" src="img/members/linxin.jpg" alt="Linxin Song">
+          </a>
+          <h5 class="member-name">
+            <a href="https://linxins.net/">Linxin Song</a>
+          </h5>
+          <p class="member-period">2024.8 - Now</p>
+          <div class="member-research">LLM Agent; Synthetic Data</div>
         </div>
-        <div class="span9" style="margin-left: 0px;">
-          <h5 style="margin-top:15px"><a href="https://www.linkedin.com/in/priyankadey19/">Priyanka Dey</a></h5>
-          <p>2023.8 - Now (<span>co-advising w/ <a href="https://viterbi.usc.edu/directory/faculty/Ferrara/Emilio">Emilio Ferrara</a></span>) </p>
+      </div>
+      
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="team-member-card">
+          <a href="https://www.linkedin.com/in/priyankadey19/">
+            <img class="member-image" src="img/members/priyanka.jpeg" alt="Priyanka Dey">
+          </a>
+          <h5 class="member-name">
+            <a href="https://www.linkedin.com/in/priyankadey19/">Priyanka Dey</a>
+          </h5>
+          <p class="member-period">2023.8 - Now</p>
+          <div class="member-research">LLMs; Personalization</div><br>
+          <small class="text-muted">Co-advising with <a href="https://viterbi.usc.edu/directory/faculty/Ferrara/Emilio">Emilio Ferrara</a></small>
         </div>
-        
-        <div class="post">
-          <span>LLMs; Personalization</span><br>
-        </div>
-        
       </div>
     </div>
-  </div>
 
   
 
 
-    <div style="margin-left:0em; margin-top: 2em;">
-      <h3>Masters</h3>
+    <!-- Masters Students Section -->
+    <div class="section-header">
+      <h3>Masters Students</h3>
     </div>
-    <div class="row mt-1 mb-3"> <!-- can be written as <class="row my-5">-->
-
-      <!-- <div class="col-lg-2" style="margin-left: 0px;">
-        <div class="our-team">
-          <div class="pic">
-            <a href=""><img class="member_image" src="img/members/zhaotian.jpeg" style="margin-left:0px;width: 150px;  height: 150px; object-fit: cover; object-position: bottom;"></a>
-          </div>
-          <div class="span9" style="margin-left: 0px;">
-            <h5 style="margin-top:15px"><a href="">Zhaotian Weng</a></h5> 
-            <p>2023.9 - Now</p>
-          </div>
-
-          <div class="post">
-            <span>Multimodal; Bias; Fairness</span>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- <div class="col-lg-2" style="margin-left: 0px;">
-        <div class="our-team">
-          <div class="pic">
-            <a href="https://hauxlee.github.io/index.html"><img class="member_image" src="img/members/Haoxuan.JPG" style="margin-left:0px; width: 150px;  height: 150px; object-fit: cover; object-position: bottom;"></a>
-          </div>
-          <div class="span9" style="margin-left: 0px;">
-            <h5 style="margin-top:15px"><a href="https://hauxlee.github.io/index.html">Haoxuan Li</a></h5> 
-            <p>2024.7 - Now</p>
-          </div>
-
-          <div class="post">
-            <span>LLM Agent; Bias</span>
-          </div>
-        </div>
-      </div> -->
-
-
-      <div class="col-lg-2" style="margin-left: 0px;">
-        <div class="our-team">
-          <div class="pic">
-            <a href="https://www.linkedin.com/in/chandresh-mallick/"><img class="member_image" src="img/members/chandresh.png" style="margin-left:0px; width: 150px;  height: 150px; object-fit: cover; object-position: bottom;"></a>
-          </div>
-          <div class="span9" style="margin-left: 0px;">
-            <h5 style="margin-top:15px"><a href="">Chandresh Mallick</a></h5> 
-            <p>2025.6 - Now</p>
-          </div>
-
-          <div class="post">
-            <span>Model Merging</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-2" style="margin-left: 0px;">
-        <div class="our-team">
-          <div class="pic">
-            <a href="https://www.linkedin.com/in/tsung-jui-wu-2a154a20b/"><img class="member_image" src="img/members/wu.jpg" style="margin-left:0px; width: 150px;  height: 150px; object-fit: cover; object-position: bottom;"></a>
-          </div>
-          <div class="span9" style="margin-left: 0px;">
-            <h5 style="margin-top:15px"><a href="">Tsung-Jui Wu</a></h5> 
-            <p>2025.6 - Now</p>
-          </div>
-
-          <div class="post">
-            <span></span>
-          </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="team-member-card">
+          <a href="https://www.linkedin.com/in/chandresh-mallick/">
+            <img class="member-image" src="img/members/chandresh.png" alt="Chandresh Mallick">
+          </a>
+          <h5 class="member-name">
+            <a href="https://www.linkedin.com/in/chandresh-mallick/">Chandresh Mallick</a>
+          </h5>
+          <p class="member-period">2025.6 - Now</p>
+          <div class="member-research">Model Merging</div>
         </div>
       </div>
       
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="team-member-card">
+          <a href="https://www.linkedin.com/in/tsung-jui-wu-2a154a20b/">
+            <img class="member-image" src="img/members/wu.jpg" alt="Tsung-Jui Wu">
+          </a>
+          <h5 class="member-name">
+            <a href="https://www.linkedin.com/in/tsung-jui-wu-2a154a20b/">Tsung-Jui Wu</a>
+          </h5>
+          <p class="member-period">2025.6 - Now</p>
+          <div class="member-research">Research in Progress</div>
+        </div>
+      </div>
     </div>
 
-    <h3>Undergrad Students</h3>
-    <ul class="alumni_members">
-    </ul>
-
-    <h3>Alumni</h3>
-    <h5 style="background-color: #d6f0d7; padding: 4px 10px; border-radius: 4px; display: inline-block;">PhD Alumni</h5>
-    <ul class="alumni_members">
-      <li><a href="https://penguinnnnn.github.io/">Jen-Tse Huang</a> (Visiting student) ➞ Postdoc @ JHU</li>
-      <li><a href="https://jiazhi412.github.io/">Jiazhi Li</a> ➞ Amazon</li>
-    </ul>
-
-    <!-- <div class="row mt-1 mb-3">
-      <div class="col-lg-2" style="margin-left: 0px;">
-        <div class="our-team">
-          <div class="pic">
-            <a href="https://penguinnnnn.github.io/"><img class="member_image" src="https://penguinnnnn.github.io//images/jentsehuang.jpg"
-                style="margin-left:0px; width: 150px; height: 150px; object-fit: cover; object-position: top;" alt="Jen-Tse Huang"></a>
-          </div>
-          <div class="span9" style="margin-left: 0px;">
-            <p ><a href="https://penguinnnnn.github.io/">Jen-Tse Huang (Postdoc @ JHU)</a></p>
-            <p>2024.7 - 2024.12</p> 
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-2" style="margin-left: 0px;">
-        <div class="our-team">
-          <div class="pic">
-            <a href="https://jiazhi412.github.io/"><img class="member_image" src="https://jiazhi412.github.io/images/formal.jpg"
-                style="margin-left:0px; width: 150px; height: 150px; object-fit: cover; object-position: bottom;" alt="Jiazhi Li"></a>
-          </div>
-          <div class="span9" style="margin-left: 0px;">
-            <p><a href="https://jiazhi412.github.io/">Jiazhi Li (Industry Job)</a></p>
-            <p>2023.8 - 2025.5</p> 
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-    <h5 style="background-color: #d6f0d7; padding: 4px 10px; border-radius: 4px; display: inline-block;">Master/Undergrad Alumni</h5>
-    <ul class="alumni_members">
-      <li><a href="">Rahul Anil Nair</a>, USC master</li>
-      <li><a href="">Abhishek Anand</a>, USC master ➞ @Tiktok</li>
-      <li><a href="">Shudi Hou</a>, USC master </li>
-      <li><a href="">Yongkang Du</a>, USC master ➞ PhD@PSU</li>
-      <li><a href="https://ruyuan-zuo.github.io/">Ruyuan Zuo</a>, USC master ➞ @Google ➞ PhD@GT </li>
-      <li><a href="https://hauxlee.github.io/index.html">Haoxuan Li</a>, USC master </li>
-      <li><a href="https://hauxlee.github.io/index.html">Zhaotian Weng</a>, USC master ➞ PhD@UCSB </li>
-      <li><a href="">Zhenyu Zhao</a>, USC CURVE Fellowship  </li>
-      <li><a href="">Wendy Wu</a>, USC CURVE Fellowship ➞ Master@CMU </li>
-    </ul>
-
-    <h3>Affiliated Members</h3>
+    <!-- Undergrad Students Section -->
+    <div class="section-header">
+      <h3>Undergraduate Students</h3>
+    </div>
     <div class="row">
-      <div class="col-md-3 col-sm-6">
-        <div class="our-team">
-          <div class="pic">
-            <img src="img/pp3.JPG" style="margin-left:0px;width: 150px;  height: 150px; object-fit: cover; object-position: bottom;">
-          </div>
-          <h5 class="title">Luke·胖胖</h5>
-          <!-- <span class="post">Group member 1</span> -->
-          <p class="text-blk feature-text">Being cute. Always chill.</p>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="our-team">
-          <div class="pic">
-            <img src="img/mm2.JPG" style="margin-left:0px;width: 150px;  height: 150px; object-fit: cover; object-position: bottom;">
-          </div>
-          <h5 class="title">Annabel·妹妹</h5>
-          <!-- <span class="post">Group member 2</span> -->
-          <p class="text-blk feature-text">Energetic. Never stop running.</p>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="team-member-card">
+          <img class="member-image" src="img/Limions/2.png" alt="Sunny Yu">
+          <h5 class="member-name">Sunny Yu</h5>
+          <p class="member-period">CURVE Fellow</p>
+          <div class="member-research">Research in Progress</div>
         </div>
       </div>
     </div>
 
-     <!-- Research Support Section -->
-    <div style="margin-top:2em; margin-bottom:2em;">
-      <h3>Research Sponsors</h3>
+    <!-- Alumni Section -->
+    <div class="alumni-section">
+      <div class="section-header">
+        <h3>Alumni</h3>
+      </div>
+      
       <div class="row">
-        <div class="col-md-3 col-sm-6">
-          <div class="our-team">
-            <div class="pic">
-              <img src="img/amazon.png" style="width: 100%; height: auto; object-fit: contain;">
-            </div>
-          </div>
+        <div class="col-lg-6 mb-4">
+          <div class="alumni-category">PhD Alumni</div>
+          <ul class="alumni-list">
+            <li><a href="https://penguinnnnn.github.io/">Jen-Tse Huang</a> (Visiting student) ➞ Postdoc @ JHU</li>
+            <li><a href="https://jiazhi412.github.io/">Jiazhi Li</a> ➞ Amazon</li>
+          </ul>
         </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="our-team">
-            <div class="pic">
-              <img src="img/c1.png" style="width: 100%; height: auto; object-fit: contain;">
-            </div>
-          </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="alumni-category">Master/Undergrad Alumni</div>
+          <ul class="alumni-list">
+            <li><a href="">Rahul Anil Nair</a>, USC master</li>
+            <li><a href="">Abhishek Anand</a>, USC master ➞ @Tiktok</li>
+            <li><a href="">Shudi Hou</a>, USC master</li>
+            <li><a href="">Yongkang Du</a>, USC master ➞ PhD@PSU</li>
+            <li><a href="https://ruyuan-zuo.github.io/">Ruyuan Zuo</a>, USC master ➞ @Google ➞ PhD@GT</li>
+            <li><a href="https://hauxlee.github.io/index.html">Haoxuan Li</a>, USC master</li>
+            <li><a href="https://hauxlee.github.io/index.html">Zhaotian Weng</a>, USC master ➞ PhD@UCSB</li>
+            <li><a href="">Zhenyu Zhao</a>, USC CURVE Fellowship</li>
+            <li><a href="">Wendy Wu</a>, USC CURVE Fellowship ➞ Master@CMU</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Affiliated Members Section -->
+    <div class="section-header">
+      <h3>Affiliated Members</h3>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="team-member-card">
+          <img class="member-image" src="img/pp3.JPG" alt="Luke">
+          <h5 class="member-name">Luke·胖胖</h5>
+          <div class="member-research">Being cute. Always chill.</div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="team-member-card">
+          <img class="member-image" src="img/mm2.JPG" alt="Annabel">
+          <h5 class="member-name">Annabel·妹妹</h5>
+          <div class="member-research">Energetic. Never stop running.</div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="team-member-card">
+          <img class="member-image" src="img/Limions/5.png" alt="Limion5">
+          <h5 class="member-name">Lime Minion</h5>
+          <div class="member-research">Keep Smiling.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Research Sponsors Section -->
+    <div class="section-header">
+      <h3>Research Sponsors</h3>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="team-member-card">
+          <img src="img/amazon.png" alt="Amazon" style="width: 100%; height: auto; object-fit: contain; max-height: 100px;">
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="team-member-card">
+          <img src="img/c1.png" alt="Sponsor" style="width: 100%; height: auto; object-fit: contain; max-height: 100px;">
         </div>
       </div>
     </div>
