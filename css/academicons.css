@@ -375,11 +375,10 @@
 /* 现代浏览器only */
 .hr-twill-colorful {
   border: 0;
-  padding: 3px;
-  background: linear-gradient(135deg, red, orange,green, blue, purple);
-  --mask-image: repeating-linear-gradient(135deg, #000 0px, #000 1px, transparent 1px, transparent 6px);
-  -webkit-mask-image: var(--mask-image);
-  mask-image: var(--mask-image);
+  height: 1px;
+  background: #2d6a4f;
+  opacity: 0.25;
+  margin: 1.5rem 0;
 }
 .paper-title {
   font-weight: bold;
