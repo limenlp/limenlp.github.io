@@ -18,12 +18,6 @@
     <link rel="stylesheet" href="css/all.css" />
     <link rel="stylesheet" href="css/academicons.css" />
     <style type="text/css">
-      /* Reset and base styles */
-      .content {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-      
       /* Header section improvements */
       .hero-section {
         padding: 3rem 0 1rem;
@@ -39,15 +33,24 @@
       .lab-title {
         font-size: 3rem;
         font-weight: 700;
-        color: #2c3e50;
+        color: forestgreen;
         margin-bottom: 1rem;
       }
       
       .lab-subtitle {
-        font-size: 1.2rem;
-        color: #6c757d;
-        line-height: 1.6;
+        font-size: 1.1rem;
+        line-height: 1.55;
+        color: #000;
         margin-bottom: 1rem;
+      }
+
+      /* Site-wide link color override — unify to RoyalBlue matching jyzhao.net */
+      a, a:visited {
+        color: #007bff;
+      }
+
+      a:hover, a:focus {
+        color: #0056b3;
       }
       
       /* Social links styling */
@@ -62,7 +65,20 @@
         color: #007bff;
         transform: translateY(-2px);
       }
-      
+
+      .social-links i,
+      .social-links img {
+        vertical-align: top;
+      }
+
+      /* Research sponsor logos */
+      .sponsor-logo {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        max-height: 100px;
+      }
+
       /* Recruitment notice */
       .recruitment-notice {
         border: 2px dashed #e92525ec;
@@ -89,7 +105,7 @@
       .section-header h3 {
         font-size: 2.5rem;
         font-weight: 600;
-        color: #2c3e50;
+        color: #4169E1;
         margin-bottom: 0.5rem;
         position: relative;
       }
@@ -99,7 +115,7 @@
         display: block;
         width: 60px;
         height: 2px;
-        background: #007bff;
+        background: #4169E1;
         margin: 1rem 0;
         border-radius: 1px;
       }
@@ -126,7 +142,7 @@
         left: 0;
         right: 0;
         height: 3px;
-        background: linear-gradient(90deg, #7888d1, #0acc37);
+        background: #007bff;
         transform: scaleX(0);
         transition: transform 0.3s ease;
       }
@@ -153,7 +169,7 @@
       }
       
       .team-member-card:hover .member-image {
-        border-color: #18c12c;
+        border-color: #007bff;
       }
       
       .member-name {
@@ -169,7 +185,7 @@
       }
       
       .member-name a:hover {
-        color: #0fa721;
+        color: #007bff;
       }
       
       .member-period {
@@ -209,14 +225,14 @@
       .pi-image-link:hover .pi-image {
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(0,123,255,0.15);
-        border-color: #d33950;
+        border-color: #007bff;
       }
       
       .pi-name {
         font-size: 2rem;
         font-weight: 500;
         margin-bottom: 1rem;
-        color: #2c3e50;
+        color: #4169E1;
       }
       
       .pi-name a {
@@ -224,7 +240,7 @@
         text-decoration: none;
       }
       .pi-name a:hover {
-        color: #0fa721;
+        color: #007bff;
       }
       .pi-social-links a {
         color: #495057;
@@ -297,27 +313,6 @@
         }
       }
       
-      /* LIME Moments feature */
-      .lime-moments {
-        background: #f8f9fa;
-        border: 1px solid #e9ecef;
-        padding: 2rem;
-        border-radius: 0.5rem;
-        text-align: center;
-        margin: 2rem 0;
-      }
-      
-      .lime-tag {
-        background: #007bff;
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        font-size: 0.9rem;
-        font-weight: 600;
-        display: inline-block;
-        margin-bottom: 1rem;
-      }
-      
       .lime-image {
         max-width: 300px;
         border-radius: 0.5rem;
@@ -336,6 +331,7 @@
   <div id="navbar-placeholder"></div>
 
   <div class="container">
+    <div class="col-lg-12">
     <!-- Hero Section -->
     <div class="hero-section">
       <div class="row align-items-center">
@@ -343,20 +339,20 @@
           <img class="lab-logo" src="img/g1.png" alt="LIME Lab Logo">
           <div class="social-links mt-3">
             <a href="https://github.com/orgs/limenlp/repositories" title="GitHub">
-              <i class="fab fa-github-square" style="vertical-align: top;"></i>
+              <i class="fab fa-github-square"></i>
             </a>
             <a href="https://twitter.com/jieyuzhao11" title="Twitter">
-              <i class="fab fa-twitter-square" style="vertical-align: top;"></i>
+              <i class="fab fa-twitter-square"></i>
             </a>
             <a href="https://scholar.google.com/citations?user=9VaGBCQAAAAJ&hl=en" title="Google Scholar">
-              <i class="ai ai-google-scholar-square" style="vertical-align: top;"></i>
+              <i class="ai ai-google-scholar-square"></i>
             </a>
             <a href="https://huggingface.co/lime-nlp" title="Hugging Face">
-              <img src="img/huggingface.png" style="width: 22px; height: 22px; vertical-align: top; background-color: #756867; padding: 2px; border-radius: 4px;">
+              <img src="img/huggingface.png" style="width: 22px; height: 22px; background-color: #756867; padding: 2px; border-radius: 4px;">
             </a>
           </div>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-7">
           <h1 class="lab-title">LIME@USC</h1>
           <p class="lab-subtitle">
             Language, intelligence, and model evaluation (LIME <img src="img/lime-slice-hi.png" style="width:24px; height:24px; vertical-align: middle;">) lab is part of the <a href="https://nlp.usc.edu/">USC NLP Group</a>.
@@ -365,34 +361,21 @@
             Hello! Welcome to LIME lab! Our team's primary focus is on <strong>creating trustworthy models</strong>. We investigate how trustworthy or reliable large models could be, striving to ensure that language technologies are constructed and employed in ways that align with human values.
           </p>
           <p class="lab-subtitle">
-            Please check out our <a href="papers.html" style="color: #007bff;">papers</a> if you want to know more about our research, or read our <a href="https://github.com/limenlp/GroupWiki">Group Wiki</a> if you are interested in working with us.
+            Please check out our <a href="papers.html">papers</a> if you want to know more about our research, or read our <a href="https://limenlp.github.io/GroupWiki/">Group Wiki</a> if you are interested in working with us.
           </p>
         </div>
       </div>
     </div>
 
-    <div class="col-lg-12">
-      <hr class="hr-twill-colorful">
-      <div class="recruitment-notice">
-        <p>I'm actively looking for strong and motivated students. We welcome applicants from diverse backgrounds. If you are interested in my research, <b>please fill in this <a href="https://forms.gle/9JUCn2C5zLhmLCZ18">form</a></b>.  </p>
-      </div>
-      <hr class="hr-twill-colorful">
+    <hr class="hr-twill-colorful">
+    <div class="recruitment-notice">
+      <p>We're actively looking for strong and motivated students. We welcome applicants from diverse backgrounds. If you are interested in our research, <b>please fill in this <a href="https://forms.gle/9JUCn2C5zLhmLCZ18">form</a></b>.  </p>
     </div>
-
-    <!-- <div class="section-header">
-      <h3>News</h3>
-    </div>
-    <div class="container col-lg-12">
-      <ul class="news-list">
-        <li>[Apr 2026] 🎓 Congrats to Taiwei for passing his thesis proposal!</li>
-        <li>[Apr 2026] 🎉 Two papers were accepted to ACL 2026: <a href="https://arxiv.org/abs/2408.15549">WildFeedback</a> at the main conference and <a href="https://arxiv.org/abs/2510.25224">ProMediate</a> at ACL Findings!</li>
-      </ul>
-    </div>
-    
+    <hr class="hr-twill-colorful">
 
     <!-- Principal Investigator Section with LIME Moments -->
     <div class="section-header">
-      <h3>About LIME</h3>
+      <h3>Principal Investigator</h3>
     </div>
     <div class="pi-section">
       <div class="row align-items-center">
@@ -425,16 +408,12 @@
             </a>
           </div>
         </div>
-        <div class="col-lg-4">
-        </div>
-        <div class="col-lg-4 text-center">
+        <div class="col-lg-4 offset-lg-4 text-center">
           <img class="lime-image" src="img/IMG_8533.jpg" alt="LIME moments" loading="lazy">
           <small class="text-muted d-block mt-1">credit to Seed Dream 4.0. Prompted by Taiwei Shi.</small>
         </div>
       </div>
     </div>
-
-
 
     <!-- PhD Students Section -->
     <div class="section-header">
@@ -563,17 +542,17 @@
         <div class="col-lg-6 mb-4">
           <div class="alumni-category">Master/Undergrad Alumni</div>
           <ul class="alumni-list">
-            <li><a href="">Rahul Anil Nair</a>, USC master</li>
-            <li><a href="">Abhishek Anand</a>, USC master ➞ @Tiktok</li>
-            <li><a href="">Shudi Hou</a>, USC master</li>
-            <li><a href="">Yongkang Du</a>, USC master ➞ PhD@PSU</li>
+            <li>Rahul Anil Nair, USC master</li>
+            <li>Abhishek Anand, USC master ➞ @Tiktok</li>
+            <li>Shudi Hou, USC master</li>
+            <li>Yongkang Du, USC master ➞ PhD@PSU</li>
             <li><a href="https://ruyuan-zuo.github.io/">Ruyuan Zuo</a>, USC master ➞ @Google ➞ PhD@GT</li>
             <li><a href="https://hauxlee.github.io/index.html">Haoxuan Li</a>, USC master</li>
-            <li><a href="https://hauxlee.github.io/index.html">Zhaotian Weng</a>, USC master ➞ PhD@UCSB</li>
-            <li><a href="">Zhenyu Zhao</a>, USC CURVE Fellowship</li>
-            <li><a href="">Wendy Wu</a>, USC CURVE Fellowship ➞ Master@CMU</li>
-            <li><a href="">Fanzhi Zeng</a>, USC-Tsinghua Summer Program ➞ PhD@UT Austin</li>
-            <li><a href="">Ziyuan Zhao</a>, USC-Tsinghua Summer Program ➞ PhD@MBZUAI</li>
+            <li>Zhaotian Weng, USC master ➞ PhD@UCSB</li>
+            <li>Zhenyu Zhao, USC CURVE Fellowship</li>
+            <li>Wendy Wu, USC CURVE Fellowship ➞ Master@CMU</li>
+            <li>Fanzhi Zeng, USC-Tsinghua Summer Program ➞ PhD@UT Austin</li>
+            <li>Ziyuan Zhao, USC-Tsinghua Summer Program ➞ PhD@MBZUAI</li>
           </ul>
         </div>
       </div>
@@ -619,24 +598,23 @@
     <div class="row">
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="team-member-card">
-          <img src="img/amazon.png" alt="Amazon" style="width: 100%; height: auto; object-fit: contain; max-height: 100px;">
+          <img src="img/amazon.png" alt="Amazon" class="sponsor-logo">
         </div>
       </div>
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="team-member-card">
-          <img src="img/c1.png" alt="Sponsor" style="width: 100%; height: auto; object-fit: contain; max-height: 100px;">
+          <img src="img/c1.png" alt="Sponsor" class="sponsor-logo">
         </div>
       </div>
        <div class="col-lg-4 col-md-6 mb-4">
         <div class="team-member-card">
-          <img src="img/NAIRR.png" alt="Sponsor" style="width: 100%; height: auto; object-fit: contain; max-height: 100px;">
+          <img src="img/NAIRR.png" alt="Sponsor" class="sponsor-logo">
         </div>
       </div>
     </div>
 
-
+    </div>
   </div>
-  <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
 </body>
 
 </html>

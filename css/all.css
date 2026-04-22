@@ -4396,7 +4396,7 @@ readers do not read off random characters that represent icons */
   font-weight: 900; }
 
   a {
-    color:#e63946;
+    color: blue;
   }
 
   /* visited link */
