@@ -1,0 +1,64 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  paper: CollectionEntry<'papers'>;
+  variant?: 'default' | 'compact';
+}
+
+const { paper, variant = 'default' } = Astro.props;
+const d = paper.data;
+
+const links: { label: string; href: string; icon: string }[] = [];
+if (d.paperUrl) links.push({ label: 'Paper', href: d.paperUrl, icon: '📄' });
+if (d.code) links.push({ label: 'Code', href: d.code, icon: '💻' });
+if (d.website) links.push({ label: 'Website', href: d.website, icon: '🌐' });
+if (d.huggingface) links.push({ label: 'HF', href: d.huggingface, icon: '🤗' });
+if (d.video) links.push({ label: 'Video', href: d.video, icon: '🎥' });
+if (d.slides) links.push({ label: 'Slides', href: d.slides, icon: '📑' });
+if (d.poster) links.push({ label: 'Poster', href: d.poster, icon: '🖼️' });
+if (d.podcast) links.push({ label: 'Podcast', href: d.podcast, icon: '🎧' });
+
+const isCompact = variant === 'compact';
+---
+<article class:list={['card group flex h-full flex-col overflow-hidden', isCompact ? 'p-5' : '']}>
+  {d.image && !isCompact && (
+    <a href={d.paperUrl || d.website || '#'} class="block aspect-[16/9] overflow-hidden bg-ink-50">
+      <img
+        src={d.image}
+        alt={d.title}
+        loading="lazy"
+        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+      />
+    </a>
+  )}
+  <div class:list={['flex flex-1 flex-col gap-3', isCompact ? '' : 'p-6']}>
+    <div class="flex flex-wrap items-center gap-2">
+      {d.status === 'preprint' ? (
+        <span class="pill">Preprint</span>
+      ) : (
+        <span class="pill-accent">{d.venue}</span>
+      )}
+      {d.award && <span class="pill bg-yellow-50 text-yellow-800 ring-1 ring-inset ring-yellow-200">🏆 {d.award.replace('🏆', '').trim()}</span>}
+    </div>
+    <h3 class="text-lg font-semibold leading-snug text-ink-950">
+      <a href={d.paperUrl || d.website || '#'} class="hover:text-lime-700">{d.title}</a>
+    </h3>
+    <p class="text-sm leading-relaxed text-ink-700">{d.tldr}</p>
+    <p class="text-xs text-ink-500">{d.authors}</p>
+    {(links.length > 0 || d.press.length > 0) && (
+      <div class="mt-auto flex flex-wrap items-center gap-1.5 pt-2 text-xs">
+        {links.map((l) => (
+          <a href={l.href} target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded-md border border-ink-200 bg-white px-2 py-1 font-medium text-ink-700 transition-colors hover:border-lime-400 hover:bg-lime-50 hover:text-lime-800">
+            <span aria-hidden="true">{l.icon}</span><span>{l.label}</span>
+          </a>
+        ))}
+        {d.press.map((p) => (
+          <a href={p.url} target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded-md border border-purple-200 bg-purple-50/60 px-2 py-1 font-medium text-purple-800 transition-colors hover:bg-purple-100">
+            <span aria-hidden="true">📰</span><span>{p.name}</span>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</article>

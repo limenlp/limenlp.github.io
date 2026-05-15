@@ -1,0 +1,112 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PaperCard from '../components/PaperCard.astro';
+
+const allPapers = await getCollection('papers');
+const allThemes = await getCollection('themes');
+
+const sortedPapers = [...allPapers].sort((a, b) => {
+  if (a.data.status === 'preprint' && b.data.status !== 'preprint') return -1;
+  if (a.data.status !== 'preprint' && b.data.status === 'preprint') return 1;
+  return b.data.year - a.data.year;
+});
+
+const themesSorted = allThemes.sort((a, b) => a.data.order - b.data.order);
+
+const byYear: Record<number, typeof sortedPapers> = {};
+for (const p of sortedPapers.filter((p) => p.data.status === 'published')) {
+  byYear[p.data.year] = byYear[p.data.year] ?? [];
+  byYear[p.data.year].push(p);
+}
+const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
+const preprints = sortedPapers.filter((p) => p.data.status === 'preprint');
+---
+<Base title="Publications · LIME Lab" description="Publications from LIME Lab at USC.">
+  <section class="container-prose pt-8 sm:pt-12">
+    <div class="flex flex-col gap-4">
+      <h1 class="heading-1">Papers</h1>
+      <p class="max-w-2xl text-lg text-ink-700">
+        Trustworthy AI models and agents — evaluation, alignment, modeling, and fairness.
+      </p>
+      <div class="flex flex-wrap items-center gap-2 pt-2">
+        <a href="https://scholar.google.com/citations?user=9VaGBCQAAAAJ&hl=en" target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded-full border border-ink-200 bg-white px-4 py-2 text-sm font-medium text-ink-800 transition-colors hover:border-lime-300 hover:text-lime-800">
+          View all on Google Scholar ↗
+        </a>
+        <a href="https://github.com/orgs/limenlp/repositories" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-white px-4 py-2 text-sm font-medium text-ink-800 transition-colors hover:border-lime-300 hover:text-lime-800">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          Code on GitHub ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Theme filter chips -->
+  <section class="container-prose mt-12">
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="text-xs font-medium text-ink-500">Filter:</span>
+      <button data-theme="all" class="theme-chip rounded-full border border-lime-300 bg-lime-50 px-3 py-1 text-xs font-medium text-lime-800 transition-colors data-[active=true]:bg-lime-200" data-active="true">
+        All
+      </button>
+      {themesSorted.map((t) => (
+        <button data-theme={t.id} class="theme-chip rounded-full border border-ink-200 bg-white px-3 py-1 text-xs font-medium text-ink-700 transition-colors hover:border-lime-300 hover:text-lime-800 data-[active=true]:bg-lime-200 data-[active=true]:border-lime-300 data-[active=true]:text-lime-900">
+          {t.data.name}
+        </button>
+      ))}
+    </div>
+  </section>
+
+  {preprints.length > 0 && (
+    <section class="container-prose mt-12">
+      <div class="mb-6 flex items-center gap-3">
+        <h2 class="heading-3">✨ Preprints</h2>
+        <div class="lime-divider flex-1"></div>
+      </div>
+      <div class="paper-grid grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {preprints.map((p) => (
+          <div class="paper-item" data-themes={p.data.themes.join(',')}>
+            <PaperCard paper={p} />
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {years.map((year) => (
+    <section class="container-prose mt-16">
+      <div class="mb-6 flex items-center gap-3">
+        <h2 class="heading-3 font-mono">{year}</h2>
+        <div class="lime-divider flex-1"></div>
+      </div>
+      <div class="paper-grid grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {byYear[year].map((p) => (
+          <div class="paper-item" data-themes={p.data.themes.join(',')}>
+            <PaperCard paper={p} />
+          </div>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <script>
+    const chips = document.querySelectorAll<HTMLButtonElement>('.theme-chip');
+    const items = document.querySelectorAll<HTMLElement>('.paper-item');
+
+    function applyFilter(theme: string) {
+      items.forEach((el) => {
+        const themes = (el.dataset.themes ?? '').split(',').filter(Boolean);
+        const show = theme === 'all' || themes.includes(theme);
+        el.style.display = show ? '' : 'none';
+      });
+      chips.forEach((c) => (c.dataset.active = c.dataset.theme === theme ? 'true' : 'false'));
+    }
+
+    chips.forEach((c) => {
+      c.addEventListener('click', () => applyFilter(c.dataset.theme || 'all'));
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    const initial = params.get('theme');
+    if (initial) applyFilter(initial);
+  </script>
+</Base>

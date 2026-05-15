@@ -1,0 +1,22 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="mt-32 border-t border-ink-100 bg-ink-50/40">
+  <div class="container-prose py-12">
+    <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+      <div class="flex items-center gap-3">
+        <img src="/images/lab/lime-slice.png" alt="" class="h-6 w-6" />
+        <p class="text-sm text-ink-700">
+          LIME Lab · <span class="text-ink-500">USC NLP Group</span>
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink-600">
+        <a href="https://github.com/orgs/limenlp/repositories" target="_blank" rel="noopener" class="hover:text-lime-700">GitHub</a>
+        <a href="https://huggingface.co/lime-nlp" target="_blank" rel="noopener" class="hover:text-lime-700">Hugging Face</a>
+        <a href="https://scholar.google.com/citations?user=9VaGBCQAAAAJ&hl=en" target="_blank" rel="noopener" class="hover:text-lime-700">Google Scholar</a>
+        <a href="https://twitter.com/jieyuzhao11" target="_blank" rel="noopener" class="hover:text-lime-700">Twitter</a>
+      </div>
+    </div>
+    <p class="mt-6 text-xs text-ink-500">© {year} LIME Lab · Built with Astro.</p>
+  </div>
+</footer>

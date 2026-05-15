@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  paper: CollectionEntry<'papers'>;
+}
+const { paper } = Astro.props;
+const d = paper.data;
+---
+<article class="flex flex-col gap-6 overflow-hidden rounded-3xl border border-ink-100 bg-gradient-to-br from-lime-50/40 via-white to-white p-6 md:p-8">
+  <div class="flex items-center justify-center">
+    {d.image ? (
+      <a href={d.paperUrl || d.website || '#'} class="block w-full">
+        <img
+          src={d.image}
+          alt={d.title}
+          class="mx-auto w-full max-h-[32rem] rounded-2xl object-contain shadow-sm"
+        />
+      </a>
+    ) : (
+      <div class="flex aspect-[16/9] w-full items-center justify-center rounded-2xl bg-gradient-to-br from-lime-100 via-lime-50 to-white">
+        <img src="/images/lab/lime-slice.png" alt="" class="h-24 w-24 opacity-30" />
+      </div>
+    )}
+  </div>
+  <div class="flex flex-col gap-4">
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="pill-accent">{d.venue}</span>
+    </div>
+    <h2 class="text-2xl font-bold leading-tight text-ink-950 md:text-3xl">
+      <a href={d.paperUrl || d.website || '#'} class="hover:text-lime-700">{d.title}</a>
+    </h2>
+    <p class="text-base leading-relaxed text-ink-700">{d.tldr}</p>
+    <p class="text-sm text-ink-500">{d.authors}</p>
+    <div class="mt-2 flex flex-wrap gap-3 text-sm">
+      {d.paperUrl && <a href={d.paperUrl} target="_blank" rel="noopener" class="link-accent">📄 Paper</a>}
+      {d.code && <a href={d.code} target="_blank" rel="noopener" class="link-accent">💻 Code</a>}
+      {d.website && <a href={d.website} target="_blank" rel="noopener" class="link-accent">🌐 Website</a>}
+      {d.press.map((p) => <a href={p.url} target="_blank" rel="noopener" class="link-accent">📰 {p.name}</a>)}
+    </div>
+  </div>
+</article>

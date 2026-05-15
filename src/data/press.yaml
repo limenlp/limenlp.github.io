@@ -1,0 +1,17 @@
+- id: marktechpost-sum
+  outlet: MarkTechPost
+  href: "https://www.marktechpost.com/2025/06/05/usc-researchers-introduced-sum-synthetic-unanswerable-math-a-synthetic-dataset-to-reduce-hallucination-in-llms-via-reinforcement-fine-tuning/"
+  headline: USC researchers introduce SUM to reduce hallucination in LLMs
+  year: 2025
+
+- id: venturebeat-coact
+  outlet: VentureBeat
+  href: "https://venturebeat.com/ai/salesforces-new-coact-1-agents-dont-just-point-and-click-they-write-code-to-accomplish-tasks-faster-and-with-greater-success-rates/"
+  headline: "Salesforce's CoAct-1 agents write code to finish tasks"
+  year: 2025
+
+- id: wired-shopping
+  outlet: Wired
+  href: "https://www.wired.com/story/machines-taught-by-photos-learn-a-sexist-view-of-women/"
+  headline: Machines Taught By Photos Learn a Sexist View of Women
+  year: 2017

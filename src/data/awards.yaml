@@ -1,0 +1,53 @@
+- id: 2017-best-long-paper-emnlp
+  title: EMNLP 2017 Best Long Paper Award
+  year: 2017
+  paper: "Men Also Like Shopping: Reducing Gender Bias Amplification using Corpus-level Constraints"
+  href: "https://arxiv.org/abs/1707.09457"
+
+- id: 2018-socalnlp-best-poster
+  title: SoCal NLP Symposium Best Poster Award
+  year: 2018
+  paper: "Gender Bias in Coreference Resolution: Evaluation and Debiasing Methods"
+  href: "https://arxiv.org/abs/1804.06876"
+
+- id: 2023-amazon-responsible-ai
+  title: Amazon Responsible AI Funding
+  year: 2023
+
+- id: 2023-gabilan-fellowship
+  title: Gabilan Assistant Professor Fellowship
+  year: 2023
+
+- id: 2024-emnlp-outstanding-ac
+  title: EMNLP Outstanding AC Award
+  year: 2024
+
+- id: 2024-usc-capital-one
+  title: USC–Capital One Research Award
+  year: 2024
+
+- id: 2024-wise-emnlp-travel
+  title: WiSE and EMNLP Travel Grants
+  year: 2024
+  recipient: Ziyi Liu
+
+- id: 2025-100-brilliant-women
+  title: 100 Brilliant Women in AI Ethics
+  year: 2025
+
+- id: 2025-emnlp-sac-highlight
+  title: EMNLP SAC Highlight Award
+  year: 2025
+  paper: "Analyzing Uncertainty of LLM-as-a-Judge: Interval Evaluations with Conformal Prediction"
+  recipient: Huanxin Sheng
+  href: "https://arxiv.org/abs/2508.18763"
+
+- id: 2025-capital-one-ziyi
+  title: Capital One Student Fellowship
+  year: 2025
+  recipient: Ziyi Liu
+
+- id: 2025-capital-one-priyanka
+  title: Capital One Student Fellowship
+  year: 2025
+  recipient: Priyanka Dey

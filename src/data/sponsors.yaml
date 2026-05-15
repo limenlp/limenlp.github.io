@@ -1,0 +1,14 @@
+- id: amazon
+  name: Amazon
+  logo: /images/sponsors/amazon.png
+  order: 1
+
+- id: capital-one
+  name: Capital One
+  logo: /images/sponsors/c1.png
+  order: 2
+
+- id: nairr
+  name: NAIRR
+  logo: /images/sponsors/NAIRR.png
+  order: 3

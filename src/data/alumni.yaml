@@ -1,0 +1,89 @@
+- id: master-abhishek-anand
+  name: Abhishek Anand
+  track: master
+  detail: USC master
+  destination: TikTok
+  order: 11
+
+- id: master-haoxuan-li
+  name: Haoxuan Li
+  track: master
+  url: "https://hauxlee.github.io/index.html"
+  detail: USC master
+  order: 15
+
+- id: master-rahul-anil-nair
+  name: Rahul Anil Nair
+  track: master
+  detail: USC master
+  order: 10
+
+- id: master-ruyuan-zuo
+  name: Ruyuan Zuo
+  track: master
+  url: "https://ruyuan-zuo.github.io/"
+  detail: USC master
+  destination: "Google → PhD @ GT"
+  order: 14
+
+- id: master-shudi-hou
+  name: Shudi Hou
+  track: master
+  detail: USC master
+  order: 12
+
+- id: master-yongkang-du
+  name: Yongkang Du
+  track: master
+  detail: USC master
+  destination: "PhD @ PSU"
+  order: 13
+
+- id: master-zhaotian-weng
+  name: Zhaotian Weng
+  track: master
+  detail: USC master
+  destination: "PhD @ UCSB"
+  order: 16
+
+- id: phd-jen-tse-huang
+  name: Jen-Tse Huang
+  track: visiting
+  url: "https://penguinnnnn.github.io/"
+  detail: Visiting student
+  destination: "Postdoc @ JHU"
+  order: 1
+
+- id: phd-jiazhi-li
+  name: Jiazhi Li
+  track: phd
+  url: "https://jiazhi412.github.io/"
+  destination: Amazon
+  order: 2
+
+- id: undergrad-wendy-wu
+  name: Wendy Wu
+  track: undergrad
+  detail: USC CURVE Fellowship
+  destination: "Master @ CMU"
+  order: 21
+
+- id: undergrad-zhenyu-zhao
+  name: Zhenyu Zhao
+  track: undergrad
+  detail: USC CURVE Fellowship
+  order: 20
+
+- id: visiting-fanzhi-zeng
+  name: Fanzhi Zeng
+  track: visiting
+  detail: USC–Tsinghua Summer Program
+  destination: "PhD @ UT Austin"
+  order: 30
+
+- id: visiting-ziyuan-zhao
+  name: Ziyuan Zhao
+  track: visiting
+  detail: USC–Tsinghua Summer Program
+  destination: "PhD @ MBZUAI"
+  order: 31

@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+
+const all = await getCollection('wiki');
+const sorted = all.sort((a, b) => a.data.order - b.data.order);
+
+const categories: { key: 'handbook' | 'advising' | 'resources'; label: string }[] = [
+  { key: 'handbook', label: 'Group Handbook' },
+  { key: 'advising', label: 'Advising' },
+  { key: 'resources', label: 'Resources' },
+];
+
+const sections = categories
+  .map((cat) => ({ ...cat, items: sorted.filter((w) => w.data.category === cat.key) }))
+  .filter((s) => s.items.length > 0);
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') + '/';
+const onLanding = pathname === '/wiki/';
+function isActive(slug: string) {
+  return pathname === `/wiki/${slug}/`;
+}
+---
+<aside class="md:sticky md:top-20 md:self-start md:max-h-[calc(100vh-6rem)] md:overflow-y-auto md:pr-2">
+  <nav aria-label="Wiki navigation" class="text-sm">
+    <a
+      href="/wiki/"
+      class:list={[
+        'block rounded-md px-3 py-2 font-semibold transition-colors',
+        onLanding ? 'bg-lime-50 text-lime-800' : 'text-ink-800 hover:bg-ink-50 hover:text-ink-950',
+      ]}
+    >
+      Overview
+    </a>
+    {sections.map((cat) => (
+      <div class="mt-6">
+        <h3 class="px-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-500">
+          {cat.label}
+        </h3>
+        <ul class="mt-2 space-y-0.5">
+          {cat.items.map((w) => (
+            <li>
+              <a
+                href={`/wiki/${w.slug}/`}
+                class:list={[
+                  'block rounded-md px-3 py-1.5 transition-colors',
+                  isActive(w.slug)
+                    ? 'bg-lime-50 font-semibold text-lime-800'
+                    : 'text-ink-700 hover:bg-ink-50 hover:text-ink-950',
+                ]}
+              >
+                {w.data.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </nav>
+</aside>

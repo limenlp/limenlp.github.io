@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import WikiSidebar from '../../components/WikiSidebar.astro';
+
+const all = await getCollection('wiki');
+const sorted = all.sort((a, b) => a.data.order - b.data.order);
+
+const categories: { key: 'handbook' | 'advising' | 'resources'; label: string; blurb: string }[] = [
+  { key: 'handbook', label: 'Group Handbook', blurb: 'Policies, expectations, and how we work together.' },
+  { key: 'advising', label: 'Advising', blurb: 'Curated guidance for navigating a research career.' },
+  { key: 'resources', label: 'Resources', blurb: 'Tools, tutorials, and reading lists the group maintains.' },
+];
+
+const sections = categories
+  .map((cat) => ({ ...cat, items: sorted.filter((w) => w.data.category === cat.key) }))
+  .filter((s) => s.items.length > 0);
+---
+<Base title="Group Wiki · LIME Lab" description="Group handbook, advising notes, and shared resources for the LIME group.">
+  <div class="container-prose pt-8 sm:pt-12">
+    <div class="grid gap-12 md:grid-cols-[220px_1fr] lg:gap-16">
+      <WikiSidebar />
+
+      <main class="min-w-0">
+        <h1 class="heading-1">Group Wiki</h1>
+        <p class="mt-6 max-w-2xl text-lg text-ink-700">
+          How we work together, how we write papers, how we navigate the PhD. The handbook is a living document — if something is missing or out of date, contact <a href="mailto:lime.imlab@gmail.com" class="link-accent">lime.imlab@gmail.com</a>.
+        </p>
+
+        <div class="mt-12 space-y-10">
+          {sections.map((cat) => (
+            <section>
+              <div class="mb-4 flex items-baseline gap-4">
+                <h2 class="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500">{cat.label}</h2>
+                <div class="h-px flex-1 bg-ink-100"></div>
+              </div>
+              <p class="mb-4 text-sm text-ink-600">{cat.blurb}</p>
+              <ul class="divide-y divide-ink-100 overflow-hidden rounded-2xl border border-ink-100 bg-white">
+                {cat.items.map((w) => (
+                  <li>
+                    <a
+                      href={`/wiki/${w.slug}/`}
+                      class="group flex items-start gap-5 p-5 transition-colors hover:bg-lime-50/40"
+                    >
+                      <div class="flex-1 min-w-0">
+                        <h3 class="text-base font-semibold text-ink-950 transition-colors group-hover:text-lime-800">
+                          {w.data.title}
+                        </h3>
+                        {w.data.description && (
+                          <p class="mt-1 text-sm leading-relaxed text-ink-600">{w.data.description}</p>
+                        )}
+                      </div>
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="mt-1 shrink-0 text-ink-300 transition-all group-hover:translate-x-1 group-hover:text-lime-700"
+                      >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
+      </main>
+    </div>
+  </div>
+</Base>

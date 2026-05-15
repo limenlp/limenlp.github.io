@@ -1,0 +1,66 @@
+---
+const pathname = Astro.url.pathname;
+const links = [
+  { href: '/', label: 'Lab' },
+  { href: '/papers/', label: 'Papers' },
+  { href: '/team/', label: 'Team' },
+  { href: '/news/', label: 'News' },
+  { href: '/wiki/', label: 'Wiki' },
+  { href: 'https://jyzhao.net/index.html', label: 'PI', external: true },
+];
+
+function isActive(href: string) {
+  if (href.startsWith('http')) return false;
+  if (href === '/') return pathname === '/' || pathname === '';
+  return pathname.startsWith(href);
+}
+---
+<header class="sticky top-0 z-40 border-b border-ink-100 bg-white/85 backdrop-blur-md">
+  <nav class="container-prose flex h-16 items-center justify-between">
+    <a href="/" class="flex items-center gap-2 font-semibold tracking-tight text-ink-950">
+      <img src="/images/lab/lime-slice.png" alt="" class="h-6 w-6" />
+      <span>LIME<span class="text-lime-600">@</span>USC</span>
+    </a>
+    <ul class="hidden items-center gap-1 md:flex">
+      {links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class:list={[
+              'rounded-full px-3 py-1.5 text-sm font-medium transition-colors',
+              isActive(link.href)
+                ? 'bg-lime-50 text-lime-800'
+                : 'text-ink-700 hover:bg-ink-50 hover:text-ink-950',
+            ]}
+            {...(link.external ? { target: '_blank', rel: 'noopener' } : {})}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <details class="md:hidden">
+      <summary class="cursor-pointer rounded-md p-2 text-ink-700">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </summary>
+      <ul class="absolute right-4 top-14 w-44 rounded-xl border border-ink-100 bg-white p-2 shadow-lg">
+        {links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                'block rounded-md px-3 py-2 text-sm font-medium',
+                isActive(link.href)
+                  ? 'bg-lime-50 text-lime-800'
+                  : 'text-ink-700 hover:bg-ink-50',
+              ]}
+              {...(link.external ? { target: '_blank', rel: 'noopener' } : {})}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  </nav>
+</header>

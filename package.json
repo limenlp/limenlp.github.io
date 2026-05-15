@@ -1,36 +1,33 @@
 {
-    "title": "Small Business",
-    "name": "startbootstrap-small-business",
-    "version": "4.1.1",
-    "description": "A small business HTML template built with Bootstrap",
-    "keywords": [
-        "css",
-        "sass",
-        "html",
-        "responsive",
-        "theme",
-        "template"
-    ],
-    "homepage": "https://startbootstrap.com/template-overviews/small-business",
-    "bugs": {
-        "url": "https://github.com/BlackrockDigital/startbootstrap-small-business/issues",
-        "email": "feedback@startbootstrap.com"
-    },
-    "license": "MIT",
-    "author": "Start Bootstrap",
-    "contributors": [
-        "David Miller (http://davidmiller.io/)"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/BlackrockDigital/startbootstrap-small-business.git"
-    },
-    "dependencies": {
-        "bootstrap": "4.1.1",
-        "jquery": "3.3.1"
-    },
-    "devDependencies": {
-        "browser-sync": "2.24.3",
-        "gulp": "^3.9.1"
-    }
+  "name": "limenlp-redesign",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "papers:check": "node scripts/check-new-papers.mjs",
+    "papers:sync": "node scripts/check-new-papers.mjs --write",
+    "papers:import": "node scripts/import-bib.mjs",
+    "papers:import:write": "node scripts/import-bib.mjs scripts/jieyu-scholar.bib --write"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/tailwind": "^5.1.5",
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/recursive": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.1.2",
+    "@resvg/resvg-js": "^2.6.2",
+    "@tailwindcss/typography": "^0.5.19",
+    "astro": "^5.1.10",
+    "satori": "^0.26.0",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.8.0"
+  }
 }

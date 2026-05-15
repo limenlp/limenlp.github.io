@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import NewsItem from '../components/NewsItem.astro';
+
+const all = await getCollection('news');
+const sorted = all.sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
+
+// Group by year, then by year-month.
+const byYear: Record<string, typeof sorted> = {};
+for (const item of sorted) {
+  const year = item.data.date.slice(0, 4);
+  byYear[year] = byYear[year] ?? [];
+  byYear[year].push(item);
+}
+const years = Object.keys(byYear).sort((a, b) => b.localeCompare(a));
+---
+<Base title="News · LIME Lab" description="News and announcements from LIME Lab @ USC.">
+  <section class="container-prose pt-8 sm:pt-12">
+    <h1 class="heading-1">News</h1>
+    <p class="mt-6 max-w-2xl text-lg text-ink-700">
+      Paper acceptances, awards, talks, and lab milestones. The most recent items also surface on the <a href="/" class="link-accent">home page</a>.
+    </p>
+  </section>
+
+  <div class="container-prose mt-12 space-y-16">
+    {years.map((year) => (
+      <section>
+        <div class="mb-6 flex items-baseline gap-4">
+          <h2 class="font-mono text-2xl font-semibold text-ink-950">{year}</h2>
+          <div class="h-px flex-1 bg-ink-100"></div>
+          <span class="text-xs text-ink-500">{byYear[year].length} {byYear[year].length === 1 ? 'item' : 'items'}</span>
+        </div>
+        <ul class="divide-y divide-ink-100">
+          {byYear[year].map((item) => <NewsItem item={item} />)}
+        </ul>
+      </section>
+    ))}
+  </div>
+</Base>

@@ -1,0 +1,34 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  item: CollectionEntry<'news'>;
+}
+const { item } = Astro.props;
+const d = item.data;
+
+const tagStyles: Record<string, string> = {
+  paper: 'bg-lime-50 text-lime-800 ring-lime-200',
+  award: 'bg-yellow-50 text-yellow-800 ring-yellow-200',
+  talk: 'bg-blue-50 text-blue-800 ring-blue-200',
+  media: 'bg-purple-50 text-purple-800 ring-purple-200',
+  team: 'bg-pink-50 text-pink-800 ring-pink-200',
+  release: 'bg-indigo-50 text-indigo-800 ring-indigo-200',
+};
+const tagClass = tagStyles[d.tag] ?? tagStyles.paper;
+---
+<li class="group relative grid grid-cols-[auto_1fr] gap-4 py-4 first:pt-0 last:pb-0">
+  <div class="flex flex-col items-start gap-1.5">
+    <time class="font-mono text-xs text-ink-500">{d.date}</time>
+    <span class={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide ring-1 ring-inset ${tagClass}`}>
+      {d.tag}
+    </span>
+  </div>
+  <p class="text-[15px] leading-relaxed text-ink-800">
+    {d.href ? (
+      <a href={d.href} target="_blank" rel="noopener" class="hover:text-lime-700">{d.title}</a>
+    ) : (
+      d.title
+    )}
+  </p>
+</li>

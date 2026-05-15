@@ -1,0 +1,102 @@
+- id: affiliated-annabel
+  name: Annabel · 妹妹
+  role: affiliated
+  photo: /images/pets/annabel.JPG
+  url: "https://www.instagram.com/luke.pangpang/"
+  research: Energetic. Never stop running.
+  order: 51
+
+- id: affiliated-lime-minion
+  name: Lime Minion
+  role: affiliated
+  photo: /images/team/limion-5.png
+  research: Keep Smiling.
+  order: 52
+
+- id: affiliated-luke
+  name: Luke · 胖胖
+  role: affiliated
+  photo: /images/pets/luke.JPG
+  url: "https://www.instagram.com/luke.pangpang/"
+  research: Being cute. Always chill.
+  order: 50
+
+- id: master-chandresh-mallick
+  name: Chandresh Mallick
+  role: master
+  period: 2025.6 – Now
+  photo: /images/members/chandresh.png
+  url: "https://www.linkedin.com/in/chandresh-mallick/"
+  research: Model Merging
+  order: 20
+
+- id: master-tsung-jui-wu
+  name: Tsung-Jui Wu
+  role: master
+  period: 2025.6 – Now
+  photo: /images/members/wu.jpg
+  url: "https://www.linkedin.com/in/tsung-jui-wu-2a154a20b/"
+  research: Research in Progress
+  order: 21
+
+- id: phd-linxin-song
+  name: Linxin Song
+  role: phd
+  period: 2024.8 – Now
+  photo: /images/members/linxin.jpg
+  url: "https://linxins.net/"
+  research: Computer-Use Agents · Multimodal Language Models · Synthetic Data
+  order: 12
+
+- id: phd-priyanka-dey
+  name: Priyanka Dey
+  role: phd
+  period: 2023.8 – Now
+  photo: /images/members/priyanka.jpeg
+  url: "https://www.linkedin.com/in/priyankadey19/"
+  research: LLMs · Personalization
+  coAdvisor:
+    name: Emilio Ferrara
+    url: "https://viterbi.usc.edu/directory/faculty/Ferrara/Emilio"
+  order: 13
+
+- id: phd-taiwei-shi
+  name: Taiwei Shi
+  role: phd
+  period: 2023.8 – Now
+  photo: "https://maksimstw.github.io/images/portrait.jpg"
+  url: "https://maksimstw.github.io"
+  research: Reinforcement Learning with Verifiable Rewards
+  order: 11
+
+- id: phd-ziyi-liu
+  name: Ziyi Liu
+  role: phd
+  period: 2023.8 – Now
+  photo: "https://liuziyi219.github.io/selfie1.JPG"
+  url: "https://liuziyi219.github.io"
+  research: LLM Reasoning · Social Intelligence
+  order: 10
+
+- id: pi-jieyu-zhao
+  name: Jieyu Zhao
+  role: pi
+  photo: /images/pi/me.jpg
+  url: "https://jyzhao.net"
+  order: 1
+  research: "Trustworthiness, fairness, and alignment of AI models and agents."
+  social:
+    scholar: "https://scholar.google.com/citations?hl=en&user=9VaGBCQAAAAJ"
+    twitter: "https://twitter.com/jieyuzhao11"
+    github: "https://github.com/JieyuZhao"
+    linkedin: "https://www.linkedin.com/in/jieyuzhao/"
+    orcid: "https://orcid.org/0009-0003-9956-5481"
+    email: "jieyuz@usc.edu"
+
+- id: undergrad-sunny-yu
+  name: Sunny Yu
+  role: undergrad
+  period: CURVE Fellow
+  photo: /images/team/limion-2.png
+  research: Research in Progress
+  order: 30

@@ -1,0 +1,69 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import WikiSidebar from '../../components/WikiSidebar.astro';
+
+export async function getStaticPaths() {
+  const all = await getCollection('wiki');
+  return all.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const all = await getCollection('wiki');
+const siblings = all
+  .filter((w) => w.data.category === entry.data.category)
+  .sort((a, b) => a.data.order - b.data.order);
+const idx = siblings.findIndex((w) => w.slug === entry.slug);
+const prev = idx > 0 ? siblings[idx - 1] : null;
+const next = idx >= 0 && idx < siblings.length - 1 ? siblings[idx + 1] : null;
+
+const categoryLabel: Record<string, string> = {
+  handbook: 'Group Handbook',
+  advising: 'Advising',
+  resources: 'Resources',
+};
+---
+<Base title={`${entry.data.title} · LIME Wiki`} description={entry.data.description}>
+  <div class="container-prose pt-8 sm:pt-12">
+    <div class="grid gap-12 md:grid-cols-[220px_1fr] lg:gap-16">
+      <WikiSidebar />
+
+      <article class="min-w-0">
+        <nav class="mb-6 flex items-center gap-2 text-xs text-ink-500">
+          <a href="/wiki/" class="hover:text-lime-700">Wiki</a>
+          <span aria-hidden="true">/</span>
+          <span>{categoryLabel[entry.data.category]}</span>
+        </nav>
+        <h1 class="heading-1">{entry.data.title}</h1>
+        {entry.data.description && (
+          <p class="mt-4 max-w-2xl text-lg text-ink-700">{entry.data.description}</p>
+        )}
+
+        <div class="prose prose-ink mt-10">
+          <Content />
+        </div>
+
+        {(prev || next) && (
+          <nav class="mt-16 grid gap-3 border-t border-ink-100 pt-8 sm:grid-cols-2">
+            {prev ? (
+              <a href={`/wiki/${prev.slug}/`} class="card group flex flex-col p-4">
+                <span class="text-xs uppercase tracking-wider text-ink-500">← Previous</span>
+                <span class="mt-1 font-semibold text-ink-950 group-hover:text-lime-700">{prev.data.title}</span>
+              </a>
+            ) : <div></div>}
+            {next ? (
+              <a href={`/wiki/${next.slug}/`} class="card group flex flex-col p-4 text-right">
+                <span class="text-xs uppercase tracking-wider text-ink-500">Next →</span>
+                <span class="mt-1 font-semibold text-ink-950 group-hover:text-lime-700">{next.data.title}</span>
+              </a>
+            ) : <div></div>}
+          </nav>
+        )}
+      </article>
+    </div>
+  </div>
+</Base>

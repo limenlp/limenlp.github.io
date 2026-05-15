@@ -1,0 +1,628 @@
+- id: 2017-men-also-like-shopping
+  title: "Men Also Like Shopping: Reducing Gender Bias Amplification Using Corpus-level Constraints"
+  authors: "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, Kai-Wei Chang"
+  venue: EMNLP 2017
+  year: 2017
+  status: published
+  tldr: "Vision-language models don't just learn that men cook less than women — they amplify the gap. We add corpus-level constraints at inference time to keep model statistics aligned with training statistics."
+  paperUrl: "https://arxiv.org/abs/1707.09457"
+  code: "https://github.com/uclanlp/reducingbias"
+  award: 🏆 Best Long Paper Award
+  press:
+    - name: "Wired: Machines Taught By Photos Learn a Sexist View of Women"
+      url: "https://www.wired.com/story/machines-taught-by-photos-learn-a-sexist-view-of-women/"
+  themes: [trustworthiness]
+  featured: true
+
+- id: 2018-coref-bias
+  title: "Gender Bias in Coreference Resolution: Evaluation and Debiasing Methods"
+  authors: "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, Kai-Wei Chang"
+  venue: NAACL 2018
+  year: 2018
+  status: published
+  tldr: "WinoBias: a coref benchmark where the gendered pronoun and the stereotypical answer disagree. State-of-the-art systems flip their answers, and we show how to push back."
+  paperUrl: "https://arxiv.org/abs/1804.06876"
+  code: "https://uclanlp.github.io/corefBias/overview"
+  podcast: "https://soundcloud.com/nlp-highlights/66-gender-bias-in-coreference-resolution-evaluation-and-debiasing-methods-with-jieyu-zhao"
+  themes: [trustworthiness, evaluation]
+
+- id: 2018-gn-glove
+  title: Learning Gender-Neutral Word Embeddings
+  authors: "Jieyu Zhao, Yichao Zhou, Zeyu Li, Wei Wang, Kai-Wei Chang"
+  venue: EMNLP 2018
+  year: 2018
+  status: published
+  tldr: "GN-GloVe: train word embeddings whose gender dimension is isolated by construction, so downstream models can use the semantics without inheriting the gender association."
+  paperUrl: "https://arxiv.org/abs/1809.01496"
+  code: "https://github.com/uclanlp/gn_glove"
+  themes: [trustworthiness]
+
+- id: 2019-balanced-datasets
+  title: "Balanced Datasets Are Not Enough: Estimating and Mitigating Gender Bias in Deep Image Representations"
+  authors: "Tianlu Wang, Jieyu Zhao, Mark Yatskar, Kai-Wei Chang, Vicente Ordonez"
+  venue: ICCV 2019
+  year: 2019
+  status: published
+  tldr: "Even with a 50/50 dataset, image models still latch onto gendered cues — because the visual features themselves are correlated with gender. Balancing labels isn't enough."
+  paperUrl: "https://arxiv.org/abs/1811.08489"
+  themes: [trustworthiness]
+
+- id: 2019-contextualized-embeddings
+  title: Gender Bias in Contextualized Word Embeddings
+  authors: "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Ryan Cotterell, Vicente Ordonez, Kai-Wei Chang"
+  venue: NAACL 2019
+  year: 2019
+  status: published
+  tldr: "ELMo and friends were supposed to fix the bias problems of static embeddings. They didn't — contextualized vectors carry their own, sometimes worse, gendered geometry."
+  paperUrl: "https://arxiv.org/abs/1904.03310"
+  video: "https://www.youtube.com/watch?v=n9KGNbpnu5c"
+  slides: files/naacl19.pdf
+  themes: [trustworthiness]
+
+- id: 2019-gender-bias-nlp-survey
+  title: "Mitigating Gender Bias in Natural Language Processing: Literature Review"
+  authors: "Tony Sun, Andrew Gaut, Shirlyn Tang, Yuxin Huang, Mai ElSherief, Jieyu Zhao, Diba Mirza, Elizabeth Belding, Kai-Wei Chang, William Yang Wang"
+  venue: ACL 2019
+  year: 2019
+  status: published
+  tldr: "A field-defining survey of how gender bias enters NLP systems, how it's measured, and what mitigation actually works versus what just looks like it does."
+  paperUrl: "https://arxiv.org/abs/1906.08976"
+  themes: [trustworthiness]
+
+- id: 2019-grammatical-gender
+  title: Examining Gender Bias in Languages with Grammatical Gender
+  authors: "Pei Zhou, Weijia Shi, Jieyu Zhao, Kuan-Hao Huang, Muhao Chen, Ryan Cotterell, Kai-Wei Chang"
+  venue: EMNLP 2019
+  year: 2019
+  status: published
+  tldr: "English-trained bias methods don't transfer cleanly to languages with grammatical gender. We adapt the measurement and find the bias is still there — just shaped differently."
+  paperUrl: "https://arxiv.org/abs/1909.02224"
+  themes: [trustworthiness]
+
+- id: 2020-fairness-explainable-rec
+  title: Fairness-Aware Explainable Recommendation Over Knowledge Graphs
+  authors: "Zuohui Fu*, Yikun Xian*, Ruoyuan Gao, Jieyu Zhao, Qiaoying Huang, Yingqiang Ge, Shuyuan Xu, Shijie Geng, Chirag Shah, Yongfeng Zhang, Gerard de Melo"
+  venue: SIGIR 2020
+  year: 2020
+  status: published
+  tldr: "Explainable recommendation can quietly bake in unfair preferences. We modify the KG-walking objective so the explanation is fair, not just plausible."
+  paperUrl: "https://arxiv.org/abs/2006.02046"
+  themes: [trustworthiness]
+
+- id: 2020-logan
+  title: "LOGAN: Local Group Bias Detection by Clustering"
+  authors: "Jieyu Zhao, Kai-Wei Chang"
+  venue: EMNLP 2020
+  year: 2020
+  status: published
+  tldr: "Average-case fairness numbers hide local pockets of severe bias. LOGAN clusters the data to find where a model fails worst, instead of just reporting the mean."
+  paperUrl: "https://arxiv.org/pdf/2010.02867.pdf"
+  themes: [trustworthiness, evaluation]
+
+- id: 2020-multilingual-gender-bias
+  title: Gender Bias in Multilingual Embeddings and Cross-Lingual Transfer
+  authors: "Jieyu Zhao, Subhabrata Mukherjee, Saghar Hosseini, Kai-Wei Chang, Ahmed Hassan Awadallah"
+  venue: ACL 2020
+  year: 2020
+  status: published
+  tldr: "Cross-lingual transfer doesn't just move task signal — it moves bias. We trace how gender bias travels across languages in multilingual embeddings."
+  paperUrl: "https://arxiv.org/abs/2005.00699"
+  themes: [trustworthiness]
+
+- id: 2020-posterior-regularization
+  title: Mitigating Gender Bias Amplification in Distribution by Posterior Regularization
+  authors: "Shengyu Jia*, Tao Meng*, Jieyu Zhao, Kai-Wei Chang"
+  venue: ACL 2020
+  year: 2020
+  status: published
+  tldr: "Models don't just inherit bias from data — they amplify it. Posterior regularization constrains the predicted distribution to stay close to the empirical one, blunting amplification."
+  themes: [trustworthiness]
+
+- id: 2020-pun-recognition
+  title: "\"The Boating Store Had Its Best Sail Ever\": Pronunciation-Attentive Contextualized Pun Recognition"
+  authors: "Yichao Zhou, Jyun-Yu Jiang, Jieyu Zhao, Kai-Wei Chang, Wei Wang"
+  venue: ACL 2020
+  year: 2020
+  status: published
+  tldr: "Puns hinge on sound, not just meaning. A pronunciation-attentive model recognizes them by attending to phonetic neighbors alongside contextualized text."
+  paperUrl: "https://arxiv.org/abs/2004.14457"
+  themes: [evaluation]
+
+- id: 2020-relation-extraction-gender
+  title: Towards Understanding Gender Bias in Relation Extraction
+  authors: "Andrew Gaut, Tony Sun, Shirlyn Tang, Yuxin Huang, Jing Qian, Mai ElSherief, Jieyu Zhao, Diba Mirza, Elizabeth Belding, Kai-Wei Chang, William Yang Wang"
+  venue: ACL 2020
+  year: 2020
+  status: published
+  tldr: Relation extractors learn that some relations belong to some genders — a problem when the same model is then used to build knowledge graphs.
+  themes: [trustworthiness]
+
+- id: 2021-double-perturbation
+  title: "Double Perturbation: On the Robustness of Robustness and Counterfactual Bias Evaluation"
+  authors: "Chong Zhang, Jieyu Zhao, Huan Zhang, Kai-Wei Chang, Cho-Jui Hsieh"
+  venue: NAACL 2021
+  year: 2021
+  status: published
+  tldr: "Counterfactual bias evaluations themselves aren't robust — a small perturbation to the test set can flip the conclusion. We diagnose when and offer a fix."
+  paperUrl: "https://arxiv.org/abs/2104.05232"
+  themes: [trustworthiness, evaluation]
+
+- id: 2021-ethical-advice
+  title: "Ethical-Advice Taker: Do Language Models Understand Natural Language Interventions?"
+  authors: "Jieyu Zhao, Daniel Khashabi, Tushar Khot, Ashish Sabharwal, Kai-Wei Chang"
+  venue: ACL Findings 2021
+  year: 2021
+  status: published
+  tldr: "If you literally tell a language model to be fair, does it listen? We test natural-language ethical interventions and find that 'taking advice' is harder than it looks."
+  paperUrl: "https://arxiv.org/abs/2106.01465"
+  themes: [trustworthiness, alignment]
+
+- id: 2022-bias-harms-measures
+  title: On Measures of Biases and Harms in NLP
+  authors: "Sunipa Dev, Emily Sheng, Jieyu Zhao, Aubrie Amstutz, Jiao Sun, Yu Hou, Mattie Sanseverino, Jiin Kim, Akihiro Nishi, Nanyun Peng, Kai-Wei Chang"
+  venue: AACL 2022
+  year: 2022
+  status: published
+  tldr: "An audit of how the NLP community measures bias and harm — what each metric actually captures, what it misses, and where the field has been talking past itself."
+  paperUrl: "https://arxiv.org/abs/2108.03362"
+  themes: [trustworthiness, evaluation]
+
+- id: 2022-disinfomeme
+  title: "Disinfomeme: A Multimodal Dataset for Detecting Meme Intentionally Spreading Out Disinformation"
+  authors: "Jingnong Qu, Liunian Harold Li, Jieyu Zhao, Sunipa Dev, Kai-Wei Chang"
+  venue: Preprint
+  year: 2022
+  status: preprint
+  tldr: "Multimodal dataset for detecting memes designed to spread disinformation — image + text, intentionality-labeled, harder than ordinary fake-news detection."
+  paperUrl: "https://arxiv.org/abs/2205.12617"
+  themes: [trustworthiness]
+
+- id: 2022-ensemble-robustness
+  title: Investigating Ensemble Methods for Model Robustness Improvement of Text Classifiers
+  authors: "Jieyu Zhao, Xuezhi Wang, Yao Qin, Jilin Chen, Kai-Wei Chang"
+  venue: EMNLP Findings 2022
+  year: 2022
+  status: published
+  tldr: "Ensembling can buy robustness — but the gains depend on which kinds of models you mix, not just how many."
+  paperUrl: "https://arxiv.org/abs/2210.16298"
+  themes: [trustworthiness]
+
+- id: 2022-irt-bert-bea
+  title: Using Item Response Theory to Measure Gender and Racial Bias of a BERT-based Automated English Speech Assessment System
+  authors: "Alexander Kwako, Yixin Wan, Jieyu Zhao, Kai-Wei Chang, Li Cai, Mark Hansen"
+  venue: "BEA 2022 @ ACL"
+  year: 2022
+  status: published
+  tldr: "Use item response theory — borrowed from psychometrics — to measure gender and racial bias of BERT-based English speech assessment, beyond simple accuracy gaps."
+  themes: [trustworthiness, evaluation]
+
+- id: 2023-bert-bea
+  title: Does BERT Exacerbate Gender or L1 Biases in Automated English Speaking Assessment?
+  authors: "Alexander Kwako, Yixin Wan, Jieyu Zhao, Mark Hansen, Kai-Wei Chang, Li Cai"
+  venue: "BEA 2023 @ ACL"
+  year: 2023
+  status: published
+  tldr: "When BERT is used to score spoken English, does pretraining-era bias make existing gender / L1 disparities in scoring worse?"
+  themes: [trustworthiness]
+
+- id: 2023-multilingual-stereotype-leak
+  title: Multilingual Large Language Models Leak Human Stereotypes Across Language Boundaries
+  authors: "Yang Trista Cao, Anna Sotnikova, Jieyu Zhao, Linda X. Zou, Rachel Rudinger, Hal Daumé III"
+  venue: Preprint
+  year: 2023
+  status: preprint
+  tldr: "Stereotypes encoded in one language's training data don't stay there — multilingual LLMs leak them across language boundaries, sometimes amplifying biases in languages they barely saw."
+  paperUrl: "https://arxiv.org/abs/2312.07141"
+  themes: [trustworthiness]
+
+- id: 2023-name-mistranslation-bias
+  title: "A Rose by Any Other Name Would Not Smell as Sweet: Social Bias in Name Mistranslations"
+  authors: "Sandra Sandoval, Jieyu Zhao, Marine Carpuat, Hal Daumé III"
+  venue: EMNLP 2023
+  year: 2023
+  status: published
+  tldr: "Machine translation systems mishandle names in systematic ways tied to gender and origin — and the cost lands disproportionately on people whose names don't fit Anglocentric defaults."
+  themes: [trustworthiness]
+
+- id: 2023-persona-bias-dialogue
+  title: Are Personalized Stochastic Parrots More Dangerous? Evaluating Persona Biases in Dialogue Systems
+  authors: "Yixin Wan, Jieyu Zhao, Aman Chadha, Nanyun Peng, Kai-Wei Chang"
+  venue: EMNLP Findings 2023
+  year: 2023
+  status: published
+  tldr: "Giving a chatbot a persona can amplify the biases it carries. We measure how much, and which personas make things worse."
+  paperUrl: "https://arxiv.org/abs/2310.05280"
+  themes: [trustworthiness]
+
+- id: 2023-prompt-bias-reliability
+  title: "Mind What You Measure For: A Study on Reliability of Prompt-Based Bias Measurement"
+  authors: "Ruyuan Zuo, Jieyu Zhao"
+  venue: WiNLP 2023
+  year: 2023
+  status: published
+  tldr: "Reword the prompt and the bias number changes. We show how unstable prompt-based bias measurements are, and what to do instead."
+  themes: [trustworthiness, evaluation]
+
+- id: 2023-severity-logan
+  title: Auditing Algorithmic Fairness in Machine Learning for Health with Severity-based LOGAN
+  authors: "Anaelia Ovalle, Sunipa Dev, Jieyu Zhao, Majid Sarrafzadeh, Kai-Wei Chang"
+  venue: W3PHIAI 2023
+  year: 2023
+  status: published
+  tldr: "Apply LOGAN-style local-group bias detection to healthcare ML, weighting clusters by the severity of harm — so the audit prioritizes the failures that matter most clinically."
+  themes: [trustworthiness, evaluation]
+
+- id: 2023-sodapop
+  title: "SODAPOP: Open-Ended Discovery of Social Biases in Social Commonsense Reasoning Models"
+  authors: "Haozhe An, Zongxia Li, Jieyu Zhao, Rachel Rudinger"
+  venue: EACL 2023
+  year: 2023
+  status: published
+  tldr: "Most bias benchmarks pre-specify which axes to test. SODAPOP lets the social-commonsense model itself surface where it falls apart, instead of grading against a hand-built checklist."
+  paperUrl: "https://aclanthology.org/2023.eacl-main.116/"
+  code: "https://github.com/haozhe-an/SODAPOP"
+  poster: "https://drive.google.com/file/d/1rcdoDCqgkd_7lP25qw5yXI3k6fuGCPUa/view"
+  video: "https://drive.google.com/file/d/1xVkJEOCWdr5hQIYe6Sv0ogYhQGKAzAmi/view"
+  themes: [trustworthiness]
+
+- id: 2023-taco
+  title: "TACO: Temporal Latent Action-Driven Contrastive Loss for Visual Reinforcement Learning"
+  authors: "Ruijie Zheng, Xiyao Wang, Yanchao Sun, Shuang Ma, Jieyu Zhao, Huazhe Xu, Hal Daumé, Furong Huang"
+  venue: NeurIPS 2023
+  year: 2023
+  status: published
+  tldr: Visual RL agents struggle to learn action-relevant representations from pixels. TACO contrasts state-action pairs across time to pull out what actually moves the world.
+  paperUrl: "https://arxiv.org/abs/2306.13229"
+  website: "https://ruijiezheng.com/project/TACO/index.html"
+  code: "https://github.com/FrankZheng2022/TACO"
+  themes: [alignment]
+
+- id: 2024-climb
+  title: "CLIMB: A Benchmark of Clinical Bias in Large Language Models"
+  authors: "Yubo Zhang, Shudi Hou, Mingyu Derek Ma, Wei Wang, Muhao Chen, Jieyu Zhao"
+  venue: Preprint
+  year: 2024
+  status: preprint
+  tldr: Benchmark probing whether LLM medical advice changes with patient demographics — the bias most likely to cause real-world harm if deployed in clinical workflows.
+  paperUrl: "https://arxiv.org/abs/2407.05250"
+  themes: [trustworthiness, evaluation]
+
+- id: 2024-doctor-name-bias
+  title: "\"You Gotta be a Doctor, Lin\": An Investigation of Name-Based Bias of Large Language Models in Employment Recommendations"
+  authors: "Huy Nghiem, John Prindle, Jieyu Zhao, Hal Daumé III"
+  venue: EMNLP 2024
+  year: 2024
+  status: published
+  tldr: "LLMs reading a candidate's name recommend systematically different jobs based on inferred ethnicity — even when qualifications are identical."
+  paperUrl: "https://arxiv.org/abs/2406.12232"
+  themes: [trustworthiness]
+
+- id: 2024-dp-bias-pretrained
+  title: Does Differential Privacy Impact Bias in Pretrained Language Models?
+  authors: "Md Khairul Islam, Andrew Wang, Tianhao Wang, Yangfeng Ji, Judy Fox, Jieyu Zhao"
+  venue: IEEE Data Engineering Bulletin 2024
+  year: 2024
+  status: published
+  tldr: Differential privacy and bias mitigation sometimes conflict. We measure exactly when DP training makes downstream bias worse — and which protected groups bear the cost.
+  themes: [trustworthiness]
+
+- id: 2024-fair-summarization
+  title: Fair Abstractive Summarization of Diverse Perspectives
+  authors: "Yusen Zhang, Nan Zhang, Yixin Liu, Alexander Fabbri, Junru Liu, Ryo Kamoi, Xiaoxin Lu, Caiming Xiong, Jieyu Zhao, Dragomir Radev, Kathleen McKeown, Rui Zhang"
+  venue: NAACL 2024
+  year: 2024
+  status: published
+  tldr: Summarizers compress text — and often compress out minority viewpoints. We measure that loss and propose summaries that preserve the spread of perspectives in the source.
+  paperUrl: "https://arxiv.org/abs/2311.07884"
+  themes: [trustworthiness]
+
+- id: 2024-images-speak-louder
+  title: "Images Speak Louder Than Words: Understanding and Mitigating Bias in Vision-Language Models from a Causal Mediation Perspective"
+  authors: "Zhaotian Weng, Zijun Gao, Jerone Andrews, Jieyu Zhao"
+  venue: EMNLP 2024
+  year: 2024
+  status: published
+  tldr: "Localize and mitigate bias *inside* a vision-language model using causal mediation analysis — instead of treating the model as a black box at the output."
+  themes: [trustworthiness]
+
+- id: 2024-interintent
+  title: "InterIntent: Investigating Social Intelligence of LLMs via Intention Understanding in an Interactive Game Context"
+  authors: "Ziyi Liu, Abhishek Anand, Pei Zhou, Jen-tse Huang, Jieyu Zhao"
+  venue: EMNLP 2024
+  year: 2024
+  status: published
+  tldr: "Evaluate LLM social intelligence by putting them inside an interactive game where success depends on inferring other agents' intentions, not on answering static QA."
+  themes: [agents, evaluation]
+
+- id: 2024-long-term-fairness
+  title: "Adapting Static Fairness to Sequential Decision-Making: Bias Mitigation Strategies towards Equal Long-term Benefit Rate"
+  authors: "Yuancheng Xu, Chenghao Deng, Yanchao Sun, Ruijie Zheng, Xiyao Wang, Jieyu Zhao, Furong Huang"
+  venue: ICML 2024
+  year: 2024
+  status: published
+  tldr: Single-step fairness constraints break down when decisions compound over time. We propose Equal Long-term Benefit Rate — fairness evaluated over the trajectory — and bias-mitigation strategies that target it.
+  paperUrl: "https://arxiv.org/abs/2309.03426"
+  themes: [trustworthiness]
+
+- id: 2024-political-llm
+  title: "Political-LLM: Large Language Models in Political Science"
+  authors: "Lincan Li, Jiaqi Li, Catherine Chen, Fred Gui, Hongjia Yang, Chenxiao Yu, Zhengguang Wang, Jianing Cai, Junlong Aaron Zhou, Bolin Shen, et al."
+  venue: Preprint
+  year: 2024
+  status: preprint
+  tldr: "Survey of how LLMs are being applied in political science — what they can credibly contribute, and the methodological pitfalls researchers keep stepping into."
+  paperUrl: "https://arxiv.org/abs/2412.06864"
+  themes: [evaluation, trustworthiness]
+
+- id: 2024-safer-instruct
+  title: "Safer-Instruct: Aligning Language Models with Automated Preference Data"
+  authors: "Taiwei Shi, Kai Chen, Jieyu Zhao"
+  venue: NAACL 2024 · SeT-LLM 2024
+  year: 2024
+  status: published
+  tldr: "Generate the preference data needed for alignment automatically, with guardrails, instead of paying for tens of thousands of human labels."
+  paperUrl: "https://arxiv.org/abs/2311.08685"
+  themes: [alignment]
+
+- id: 2024-score-self-contradictory
+  title: "SCORE: A Framework for Self-Contradictory Reasoning Evaluation"
+  authors: "Ziyi Liu, Isabelle Lee, Yongkang Du, Soumya Sanyal, Jieyu Zhao"
+  venue: EMNLP Findings 2024
+  year: 2024
+  status: published
+  tldr: "Framework for measuring when an LLM's chain-of-thought contradicts itself — and detecting those contradictions automatically across reasoning benchmarks."
+  paperUrl: "https://arxiv.org/abs/2311.09603"
+  themes: [evaluation]
+
+- id: 2024-trustllm
+  title: "TrustLLM: Trustworthiness in Large Language Models"
+  authors: "Lichao Sun, Yue Huang, Haoran Wang, Siyuan Wu, ..., Jieyu Zhao, ..., Yan Liu, Yanfang Ye, Yinzhi Cao, Yong Chen, Yue Zhao"
+  venue: ICML 2024
+  year: 2024
+  status: published
+  tldr: "A consortium-scale benchmark for trustworthiness in LLMs — truthfulness, safety, fairness, robustness, privacy, and ethics — with consistent protocols across 16 mainstream models."
+  paperUrl: "https://arxiv.org/abs/2401.05561"
+  themes: [trustworthiness, evaluation]
+
+- id: 2025-adaptive-curriculum-rl
+  title: Efficient Reinforcement Finetuning via Adaptive Curriculum Learning
+  authors: "Taiwei Shi, Yiyang Wu, Linxin Song, Tianyi Zhou, Jieyu Zhao"
+  venue: Preprint
+  year: 2025
+  status: preprint
+  tldr: RL finetuning wastes compute on prompts the model already aces. We schedule training data adaptively — pushing the model toward problems just past its current capability.
+  paperUrl: "https://arxiv.org/abs/2504.05520"
+  code: "https://github.com/limenlp/verl"
+  themes: [alignment]
+
+- id: 2025-biasinspector
+  title: "BIASINSPECTOR: Detecting Bias in Structured Data through LLM Agents"
+  authors: "Haoxuan Li, Mingyu Derek Ma, Jen-tse Huang, Zhaotian Weng, Wei Wang, Jieyu Zhao"
+  venue: Preprint
+  year: 2025
+  status: preprint
+  tldr: "An end-to-end multi-agent framework that plans, tools-up, and detects bias in structured datasets automatically — instead of relying on hand-coded, case-by-case bias checks."
+  paperUrl: "https://arxiv.org/abs/2504.04855"
+  themes: [trustworthiness, agents]
+
+- id: 2025-cq-bench
+  title: "Can LLMs Grasp Implicit Cultural Values? Benchmarking LLMs' Metacognitive Cultural Intelligence with CQ-Bench"
+  authors: "Ziyi Liu, Priyanka Dey, Zhenyu Zhao, Jen-tse Huang, Rahul Gupta, Yang Liu, Jieyu Zhao"
+  venue: Preprint
+  year: 2025
+  status: preprint
+  tldr: "Cultural-intelligence benchmark that tests whether LLMs can infer the *implicit* values baked into natural conversation — not just the cultural norms stated outright."
+  paperUrl: "https://arxiv.org/abs/2504.01127"
+  themes: [evaluation, trustworthiness]
+
+- id: 2025-cross-lingual-pitfalls
+  title: "Cross-lingual Pitfalls: Automatic Probing of Cross-lingual Weakness of Multilingual Large Language Models"
+  authors: "Zixiang Xu, Yanbo Wang, Yue Huang, Xiuying Chen, Jieyu Zhao, Meng Jiang, Xiangliang Zhang"
+  venue: ACL 2025
+  year: 2025
+  status: published
+  tldr: Automatic probing surfaces concrete spots where multilingual LLMs are weaker in some languages than others — beyond what a single aggregate score reveals.
+  paperUrl: "https://arxiv.org/abs/2505.18673"
+  themes: [evaluation, trustworthiness]
+
+- id: 2025-cultural-personas
+  title: Can LLMs Express Personality Across Cultures? Introducing CulturalPersonas for Evaluating Trait Alignment
+  authors: "Priyanka Dey, Aayush Bothra, Yugal Khanter, Emilio Ferrara, Jieyu Zhao"
+  venue: EMNLP 2025 Findings
+  year: 2025
+  status: published
+  tldr: Personality questionnaires translate poorly across cultures. CulturalPersonas tests whether LLMs can express Big-Five traits in culturally appropriate ways instead of defaulting to a WEIRD baseline.
+  paperUrl: "https://arxiv.org/pdf/2506.05670v1"
+  code: "https://github.com/limenlp/CulturalPersonas"
+  themes: [evaluation, trustworthiness]
+
+- id: 2025-experiential-rl
+  title: Experiential Reinforcement Learning
+  authors: "Taiwei Shi, Sihao Chen, Bowen Jiang, Linxin Song, Longqi Yang, Jieyu Zhao"
+  venue: "Lifelong Agent Workshop @ ICLR 2026"
+  year: 2026
+  status: published
+  tldr: Treat past episodes as a retrievable experience bank rather than gradient updates only — letting the policy reason about what worked last time before deciding what to try next.
+  paperUrl: "https://arxiv.org/abs/2602.13949"
+  code: "https://github.com/microsoft/experiential_rl"
+  image: /images/papers/erl.png
+  themes: [alignment]
+  featured: true
+  spotlight: true
+
+- id: 2025-faircode
+  title: "FairCode: Evaluating Social Bias of LLMs in Code Generation"
+  authors: "Yongkang Du, Jen-tse Huang, Jieyu Zhao, Lu Lin"
+  venue: Preprint
+  year: 2025
+  status: preprint
+  tldr: "Code-generation LLMs leak social bias into the code they write. FairCode measures how, where, and which prompts make it worse."
+  paperUrl: "https://arxiv.org/abs/2501.05396"
+  themes: [trustworthiness, evaluation]
+
+- id: 2025-fairlocator
+  title: AI Sees Your Location — But With a Bias Toward the Wealthy World
+  authors: "Jingyuan Huang, Jen-tse Huang, Ziyi Liu, Xiaoyuan Liu, Wenxuan Wang, Jieyu Zhao"
+  venue: EMNLP 2025
+  year: 2025
+  status: published
+  tldr: "Vision-language models guess where photos were taken — and they're substantially more accurate for wealthy regions than for the global south. We quantify the disparity and ask why."
+  paperUrl: "https://arxiv.org/abs/2502.11163"
+  code: "https://github.com/limenlp/FairLocator"
+  themes: [trustworthiness]
+
+- id: 2025-hallucination-tax
+  title: The Hallucination Tax of Reinforcement Finetuning
+  authors: "Linxin Song*, Taiwei Shi*, Jieyu Zhao"
+  venue: EMNLP 2025 Findings
+  year: 2025
+  status: published
+  tldr: "RL finetuning makes models more decisive — including when they shouldn't be. We measure the hallucination tax and show synthetic unanswerable math problems can pay it back."
+  paperUrl: "https://arxiv.org/abs/2505.13988"
+  huggingface: "https://huggingface.co/datasets/lime-nlp/Synthetic_Unanswerable_Math"
+  press:
+    - name: MarkTechPost
+      url: "https://www.marktechpost.com/2025/06/05/usc-researchers-introduced-sum-synthetic-unanswerable-math-a-synthetic-dataset-to-reduce-hallucination-in-llms-via-reinforcement-fine-tuning/"
+  themes: [alignment, trustworthiness]
+  featured: true
+
+- id: 2025-llm-judge-uncertainty
+  title: "Analyzing Uncertainty of LLM-as-a-Judge: Interval Evaluations with Conformal Prediction"
+  authors: "Huanxin Sheng, Xinyi Liu, Hangfeng He, Jieyu Zhao, Jian Kang"
+  venue: EMNLP 2025
+  year: 2025
+  status: published
+  tldr: "LLM judges return point scores that look authoritative. We wrap them in conformal-prediction intervals so you can tell when the judge is actually confident — and when it's bluffing."
+  themes: [evaluation]
+
+- id: 2025-muse-unlearning
+  title: "MUSE: Machine Unlearning Six-Way Evaluation for Language Models"
+  authors: "Weijia Shi, Jaechan Lee, Yangsibo Huang, Sadhika Malladi, Jieyu Zhao, Ari Holtzman, Daogao Liu, Luke Zettlemoyer, Noah Smith, Chiyuan Zhang"
+  venue: ICLR 2025
+  year: 2025
+  status: published
+  tldr: Six-axis evaluation for machine unlearning in language models — testing whether claimed unlearning actually erases the knowledge or just hides it from a few probes.
+  paperUrl: "https://arxiv.org/abs/2407.06460"
+  themes: [alignment, evaluation]
+
+- id: 2025-sea-knowledge-deficiencies
+  title: Discovering Knowledge Deficiencies of Language Models on Massive Knowledge Base
+  authors: "Linxin Song, Xuwei Ding, Jieyu Zhang, Taiwei Shi, Ryotaro Shimizu, Rahul Gupta, Yang Liu, Jian Kang, Jieyu Zhao"
+  venue: COLM 2025
+  year: 2025
+  status: published
+  tldr: "Where exactly do LLMs not know things? SEA searches a massive KB to surface concrete topical blind spots, instead of reporting a single aggregate accuracy number."
+  paperUrl: "https://arxiv.org/abs/2503.23361"
+  code: "https://github.com/limenlp/SEA"
+  themes: [evaluation]
+
+- id: 2025-socialmaze
+  title: "SocialMaze: A Benchmark for Evaluating Social Reasoning in Large Language Models"
+  authors: "Zixiang Xu, Yanbo Wang, Yue Huang, Jiayi Ye, Haomin Zhuang, Zirui Song, Lang Gao, Chenxi Wang, Zhaorun Chen, Yujun Zhou, et al."
+  venue: Preprint
+  year: 2025
+  status: preprint
+  tldr: "Benchmark for LLM social reasoning built from structured multi-party scenarios — instead of static QA, agents have to navigate inferences about other agents."
+  paperUrl: "https://arxiv.org/abs/2505.23713"
+  themes: [evaluation, agents]
+
+- id: 2025-video-reward-modeling
+  title: Video-Based Reward Modeling for Computer-Use Agents
+  authors: "Linxin Song, Jieyu Zhang, Huanxin Sheng, Taiwei Shi, Gupta Rahul, Yang Liu, Ranjay Krishna, Kang Jian, Jieyu Zhao"
+  venue: Preprint
+  year: 2025
+  status: preprint
+  tldr: Computer-use agents leave a video trail of their work. We turn that trail into reward signal — rating trajectories at the pixel level instead of grading only the final outcome.
+  paperUrl: "https://arxiv.org/abs/2603.10178"
+  code: "https://github.com/limenlp/ExeVRM"
+  themes: [agents]
+
+- id: 2025-visbias
+  title: "VISBIAS: Measuring Explicit and Implicit Social Biases in Vision Language Models"
+  authors: "Jen-tse Huang, Jiantong Qin, Jianping Zhang, Youliang Yuan, Wenxuan Wang, Jieyu Zhao"
+  venue: EMNLP 2025
+  year: 2025
+  status: published
+  tldr: Vision-language models can pass explicit-bias probes while still leaking the same stereotypes implicitly. VISBIAS tests both axes side by side.
+  paperUrl: "https://arxiv.org/pdf/2503.07575v1"
+  code: "https://github.com/limenlp/VisBias"
+  themes: [trustworthiness]
+
+- id: 2026-causal-order-vlms
+  title: "What's Missing in Vision-Language Models? Probing Their Struggles with Causal Order Reasoning"
+  authors: "Zhaotian Weng, Haoxuan Li, Xin Eric Wang, Kuan-Hao Huang, Jieyu Zhao"
+  venue: EACL 2026
+  year: 2026
+  status: published
+  tldr: "VLMs can recognize what happens in a sequence of frames but fail when the task requires reasoning about *why* in causal order — we probe where the gap is."
+  paperUrl: "https://arxiv.org/abs/2506.00869"
+  themes: [evaluation, trustworthiness]
+
+- id: 2026-coact-1
+  title: "CoAct-1: Computer-using Agents with Coding as Actions"
+  authors: "Linxin Song, Yutong Dai, Viraj Prabhu, Jieyu Zhang, Taiwei Shi, Li Li, Junnan Li, Silvio Savarese, Zeyuan Chen, Jieyu Zhao, Ran Xu, Caiming Xiong"
+  venue: ICLR 2026
+  year: 2026
+  status: published
+  tldr: "A computer-using agent that doesn't just point and click — it writes code as a first-class action, finishing tasks faster and with higher success than GUI-only agents."
+  paperUrl: "https://arxiv.org/abs/2508.03923"
+  code: "https://github.com/SalesforceAIResearch/CoAct-1"
+  website: "https://linxins.net/coact/"
+  press:
+    - name: VentureBeat
+      url: "https://venturebeat.com/ai/salesforces-new-coact-1-agents-dont-just-point-and-click-they-write-code-to-accomplish-tasks-faster-and-with-greater-success-rates/"
+  themes: [agents]
+  featured: true
+
+- id: 2026-detecting-unsafe-training-data
+  title: Detecting and Filtering Unsafe Training Data via Data Attribution with Denoised Representation
+  authors: "Yijun Pan, Taiwei Shi, Jieyu Zhao, Jiaqi W. Ma"
+  venue: ICML 2026
+  year: 2026
+  status: published
+  tldr: "Find which training examples are pushing a model toward unsafe behavior, by attributing model outputs back through denoised representations — and filter them before they do damage."
+  paperUrl: "https://arxiv.org/abs/2502.11411"
+  themes: [trustworthiness, alignment]
+  featured: true
+
+- id: 2026-promediate
+  title: "ProMediate: A Socio-cognitive Framework for Evaluating Proactive Agents in Multi-party Negotiation"
+  authors: "Ziyi Liu, Bahar Sarrafzadeh, Pei Zhou, Longqi Yang, Jieyu Zhao, Ashish Sharma"
+  venue: ACL 2026 Findings
+  year: 2026
+  status: published
+  tldr: "Most agent benchmarks are single-turn task completion. ProMediate puts agents in the middle of multi-party negotiations and asks whether they can read the room, mediate, and act proactively."
+  paperUrl: "https://arxiv.org/abs/2510.25224"
+  image: /images/papers/promediate.png
+  themes: [agents]
+
+- id: 2026-text-to-image-diversity
+  title: Enhancing Diversity in Text-to-Image Generation Without Compromising Fidelity
+  authors: "Jiazhi Li, Mi Zhou, Mahyar Khayatkhoei, Jingyu Shi, Xiang Gao, Jiageng Zhu, Hanchen Xie, Xiyun Song, Zongfang Lin, Heather Yu, Liang Peng, Jieyu Zhao"
+  venue: TMLR
+  year: 2026
+  status: published
+  tldr: Text-to-image models trade diversity for fidelity by default. We show you can recover demographic and conceptual diversity without sacrificing how good the images look.
+  themes: [trustworthiness]
+
+- id: 2026-trustworthiness-survey
+  title: "On the Trustworthiness of Generative Foundation Models: Guideline, Assessment, and Perspective"
+  authors: "Yue Huang, Chujie Gao, ..., Taiwei Shi, ..., Jieyu Zhao, ..., Xiangliang Zhang"
+  venue: ICLR 2026
+  year: 2026
+  status: published
+  tldr: "A community guideline plus working assessment toolkit for evaluating trustworthiness in generative foundation models across modalities — what to measure, how, and why each axis matters."
+  paperUrl: "https://arxiv.org/abs/2502.14296"
+  code: "https://github.com/TrustGen/TrustEval-toolkit"
+  themes: [trustworthiness, evaluation]
+
+- id: 2026-wildfeedback
+  title: "WildFeedback: Aligning LLMs With In-situ User Interactions And Feedback"
+  authors: "Taiwei Shi, Zhuoer Wang, Longqi Yang, Ying-Chun Lin, Zexue He, Mengting Wan, Pei Zhou, Sujay Jauhar, Sihao Chen, Shan Xia, Hongfei Zhang, Jieyu Zhao, Xiaofeng Xu, Xia Song, Jennifer Neville"
+  venue: ACL 2026
+  year: 2026
+  status: published
+  tldr: "Align LLMs with the messy, in-the-moment feedback users actually leave during real interactions — not the curated preference pairs that look clean on paper."
+  paperUrl: "https://arxiv.org/abs/2408.15549"
+  themes: [alignment]
+  featured: true

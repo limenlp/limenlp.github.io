@@ -1,0 +1,75 @@
+- id: 2026-05-acl-promediate
+  date: 2026-05
+  title: ProMediate accepted to ACL 2026 Findings.
+  tag: paper
+  href: "https://arxiv.org/abs/2510.25224"
+
+- id: 2026-04-icml-data-attribution
+  date: 2026-04
+  title: Data attribution paper for filtering unsafe training data accepted to ICML 2026.
+  tag: paper
+  href: "https://arxiv.org/abs/2502.11411"
+
+- id: 2026-03-office-hours
+  date: 2026-03
+  title: Reopened the open office hour. 🍋‍🟩
+  tag: team
+  person: Jieyu
+
+- id: 2026-03-eacl-causal-gravity
+  date: 2026-03
+  title: "Two papers at EACL: \"What's Missing in Vision-Language Models?\" (Causal Order Reasoning) and GRAVITY."
+  tag: paper
+  person: Jieyu
+  href: "https://arxiv.org/abs/2506.00869"
+
+- id: 2026-03-welcome-jiaqi
+  date: 2026-03
+  title: Welcomed Jiaqi Deng to the group.
+  tag: team
+  person: Jieyu
+
+- id: 2026-03-video-reward-modeling
+  date: 2026-03
+  title: "New paper out: Video-Based Reward Modeling for Computer-Use Agents."
+  tag: paper
+  person: Jieyu
+  href: "https://arxiv.org/abs/2603.10178"
+
+- id: 2026-03-erl-code
+  date: 2026-03
+  title: ERL code is now available — play with it.
+  tag: release
+  person: Jieyu
+  href: "https://github.com/microsoft/experiential_rl"
+
+- id: 2026-03-iclr-coact
+  date: 2026-03
+  title: "ICLR 2026 accepted: CoAct-1, Doxing via the Lens, and TrustGen."
+  tag: paper
+  href: "https://arxiv.org/abs/2508.03923"
+
+- id: 2026-02-acl-wildfeedback
+  date: 2026-02
+  title: WildFeedback accepted to ACL 2026 main.
+  tag: paper
+  href: "https://arxiv.org/abs/2408.15549"
+
+- id: 2026-02-oori-award
+  date: 2026-02
+  title: Received the OORI Research Catalyst Program Award.
+  tag: award
+  person: Jieyu
+
+- id: 2026-02-ziyi-quals
+  date: 2026-02
+  title: Ziyi passed her PhD qualifying exam.
+  tag: team
+  person: Jieyu
+
+- id: 2026-02-erl-paper
+  date: 2026-02
+  title: "New paper out: Experiential Reinforcement Learning."
+  tag: paper
+  person: Jieyu
+  href: "https://arxiv.org/abs/2602.13949"

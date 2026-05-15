@@ -1,0 +1,132 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PICard from '../components/PICard.astro';
+import MemberCard from '../components/MemberCard.astro';
+
+const allMembers = await getCollection('members');
+const allAlumni = await getCollection('alumni');
+
+const sorted = [...allMembers].sort((a, b) => a.data.order - b.data.order);
+const pi = sorted.find((m) => m.data.role === 'pi');
+const phds = sorted.filter((m) => m.data.role === 'phd');
+const masters = sorted.filter((m) => m.data.role === 'master');
+const undergrads = sorted.filter((m) => m.data.role === 'undergrad');
+const affiliated = sorted.filter((m) => m.data.role === 'affiliated');
+
+const alumniSorted = [...allAlumni].sort((a, b) => a.data.order - b.data.order);
+const alumniByTrack = {
+  phd: alumniSorted.filter((a) => a.data.track === 'phd' || a.data.track === 'visiting'),
+  master: alumniSorted.filter((a) => a.data.track === 'master'),
+  undergrad: alumniSorted.filter((a) => a.data.track === 'undergrad' || (a.data.track === 'visiting' && a.data.detail?.includes('Summer'))),
+};
+const phdAlumni = alumniSorted.filter((a) => a.data.track === 'phd' || a.data.track === 'visiting');
+const studentAlumni = alumniSorted.filter((a) => a.data.track === 'master' || a.data.track === 'undergrad');
+const summerAlumni = alumniSorted.filter((a) => a.data.track === 'visiting' && a.data.detail?.toLowerCase().includes('summer'));
+const visitingAlumni = phdAlumni.filter((a) => !summerAlumni.includes(a));
+---
+<Base title="Team · LIME Lab" description="Team members of LIME Lab @ USC.">
+  <section class="container-prose pt-8 sm:pt-12">
+    <h1 class="heading-1">The Team</h1>
+  </section>
+
+  {pi && (
+    <section class="container-prose mt-12">
+      <PICard pi={pi} />
+    </section>
+  )}
+
+
+  {phds.length > 0 && (
+    <section class="container-prose mt-20">
+      <div class="mb-6 flex items-center gap-3">
+        <h2 class="heading-3">PhD Students</h2>
+        <div class="lime-divider flex-1"></div>
+        <span class="text-xs text-ink-500">{phds.length}</span>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {phds.map((m) => <MemberCard member={m} />)}
+      </div>
+    </section>
+  )}
+
+  {masters.length > 0 && (
+    <section class="container-prose mt-20">
+      <div class="mb-6 flex items-center gap-3">
+        <h2 class="heading-3">Master Students</h2>
+        <div class="lime-divider flex-1"></div>
+        <span class="text-xs text-ink-500">{masters.length}</span>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {masters.map((m) => <MemberCard member={m} />)}
+      </div>
+    </section>
+  )}
+
+  {undergrads.length > 0 && (
+    <section class="container-prose mt-20">
+      <div class="mb-6 flex items-center gap-3">
+        <h2 class="heading-3">Undergraduate Students</h2>
+        <div class="lime-divider flex-1"></div>
+        <span class="text-xs text-ink-500">{undergrads.length}</span>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {undergrads.map((m) => <MemberCard member={m} />)}
+      </div>
+    </section>
+  )}
+
+  <section class="container-prose mt-20">
+    <div class="mb-6 flex items-center gap-3">
+      <h2 class="heading-3">Alumni</h2>
+      <div class="lime-divider flex-1"></div>
+    </div>
+    <div class="grid gap-10 lg:grid-cols-2">
+      <div>
+        <h3 class="mb-3 text-sm font-semibold text-ink-700">PhD & Visiting</h3>
+        <ul class="space-y-2.5">
+          {visitingAlumni.map((a) => (
+            <li class="flex flex-wrap items-baseline gap-x-2 text-sm">
+              {a.data.url ? (
+                <a href={a.data.url} target="_blank" rel="noopener" class="font-medium link-accent">{a.data.name}</a>
+              ) : (
+                <span class="font-medium text-ink-950">{a.data.name}</span>
+              )}
+              {a.data.detail && <span class="text-ink-500">({a.data.detail})</span>}
+              {a.data.destination && <span class="text-ink-700">→ {a.data.destination}</span>}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h3 class="mb-3 text-sm font-semibold text-ink-700">Master, Undergrad & Summer Program</h3>
+        <ul class="space-y-2.5">
+          {[...studentAlumni, ...summerAlumni].map((a) => (
+            <li class="flex flex-wrap items-baseline gap-x-2 text-sm">
+              {a.data.url ? (
+                <a href={a.data.url} target="_blank" rel="noopener" class="font-medium link-accent">{a.data.name}</a>
+              ) : (
+                <span class="font-medium text-ink-950">{a.data.name}</span>
+              )}
+              {a.data.detail && <span class="text-ink-500">({a.data.detail})</span>}
+              {a.data.destination && <span class="text-ink-700">→ {a.data.destination}</span>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {affiliated.length > 0 && (
+    <section class="container-prose mt-20">
+      <div class="mb-6 flex items-center gap-3">
+        <h2 class="heading-3">Affiliated Members</h2>
+        <div class="lime-divider flex-1"></div>
+        <span class="text-xs text-ink-500">unofficial but essential</span>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {affiliated.map((m) => <MemberCard member={m} />)}
+      </div>
+    </section>
+  )}
+</Base>

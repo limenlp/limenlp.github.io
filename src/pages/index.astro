@@ -1,0 +1,237 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import NewsItem from '../components/NewsItem.astro';
+import SpotlightCard from '../components/SpotlightCard.astro';
+import PaperCard from '../components/PaperCard.astro';
+import ThemeCard from '../components/ThemeCard.astro';
+import g1Logo from '../assets/g1.png';
+import limeMoments from '../assets/lime-moments.jpg';
+
+const allPapers = await getCollection('papers');
+const allThemes = await getCollection('themes');
+const allNews = await getCollection('news');
+const allAwards = await getCollection('awards');
+const allPress = await getCollection('press');
+const allSponsors = await getCollection('sponsors');
+
+const spotlight = allPapers.find((p) => p.data.spotlight)
+  ?? allPapers.filter((p) => p.data.featured).sort((a, b) => b.data.year - a.data.year)[0]
+  ?? allPapers.sort((a, b) => b.data.year - a.data.year)[0];
+
+const featured = allPapers
+  .filter((p) => p.data.featured && p.id !== spotlight?.id)
+  .sort((a, b) => b.data.year - a.data.year)
+  .slice(0, 3);
+
+const news = allNews
+  .sort((a, b) => (a.data.date < b.data.date ? 1 : -1))
+  .slice(0, 8);
+
+const themesSorted = allThemes.sort((a, b) => a.data.order - b.data.order);
+const themeCounts: Record<string, number> = {};
+for (const p of allPapers) {
+  for (const t of p.data.themes) {
+    themeCounts[t] = (themeCounts[t] ?? 0) + 1;
+  }
+}
+
+const awards = allAwards.sort((a, b) => b.data.year - a.data.year);
+const sponsors = allSponsors.sort((a, b) => a.data.order - b.data.order);
+const pressItems = allPress;
+---
+<Base title="LIME Lab @ USC" description="LIME Lab @ USC works on modeling and evaluating AI models and agents. Led by Prof. Jieyu Zhao.">
+  <!-- HERO -->
+  <section class="container-prose pt-8 sm:pt-12">
+    <div class="grid items-center gap-10 md:grid-cols-[1fr_auto]">
+      <div class="flex flex-col gap-6">
+        <div class="flex items-center gap-3">
+          <Image
+            src={g1Logo}
+            alt="LIME Lab logo"
+            widths={[112, 224]}
+            sizes="(min-width: 768px) 112px, (min-width: 640px) 96px, 80px"
+            class="h-20 w-20 shrink-0 object-contain drop-shadow-sm sm:h-24 sm:w-24 md:h-28 md:w-28"
+          />
+          <span class="eyebrow !text-base sm:!text-lg">Language · Intelligence · Modeling · Evaluation</span>
+        </div>
+        <h1 class="heading-1">
+          Building trustworthy AI
+          <span class="block">— by people who <span class="relative inline-block">
+            <span class="relative z-10 text-lime-700">actually check.</span>
+            <span class="absolute inset-x-0 bottom-1 -z-0 h-3 bg-amber-200/80"></span>
+          </span></span>
+        </h1>
+        <p class="max-w-2xl text-lg leading-relaxed text-ink-700">
+          LIME Lab is part of the <a href="https://nlp.usc.edu/" target="_blank" rel="noopener" class="link-accent">USC NLP Group</a>, led by <a href="https://jyzhao.net" target="_blank" rel="noopener" class="link-accent">Prof. Jieyu Zhao</a>. We work on two sides of AI models and agents — <strong class="font-semibold text-ink-900">modeling</strong> them to be more capable, aligned, and reliable in the real world, and designing <strong class="font-semibold text-ink-900">evaluations</strong> that surface where they fall short.
+        </p>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="/papers/" class="inline-flex items-center gap-2 rounded-full bg-ink-950 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-lime-700">
+            Read our papers
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="/wiki/" class="inline-flex items-center gap-2 rounded-full border border-ink-300 bg-ink-50 px-5 py-2.5 text-sm font-medium text-ink-800 transition-colors hover:border-lime-400 hover:bg-lime-50 hover:text-lime-800">
+            Group Wiki
+          </a>
+        </div>
+      </div>
+      <div class="hidden md:flex md:flex-col md:items-center">
+        <figure class="relative">
+          <div class="absolute -inset-6 -z-10 rounded-3xl bg-gradient-to-br from-lime-100/60 to-transparent blur-2xl"></div>
+          <div class="rotate-1 rounded-md bg-white p-3 pb-2 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.25)] ring-1 ring-ink-200/60 transition-transform duration-300 hover:rotate-0">
+            <Image
+              src={limeMoments}
+              alt="LIME moments — AI-generated lab portrait"
+              widths={[288, 576]}
+              sizes="288px"
+              format="webp"
+              quality={82}
+              class="w-72 rounded-sm"
+              loading="lazy"
+            />
+            <figcaption class="mt-3 text-center text-xs italic text-ink-600">
+              Seed Dream 4.0 · prompted by Taiwei Shi
+            </figcaption>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECRUITMENT -->
+  <section class="container-prose mt-12">
+    <div class="flex flex-col gap-3 rounded-2xl border border-lime-400 bg-lime-50/60 p-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+      <div class="flex items-center gap-3 text-ink-800">
+        <span class="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-lime-100 text-lime-700" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l1.9 4.8L18.7 9l-4.8 1.2L12 15l-1.9-4.8L5.3 9l4.8-1.2L12 3z"/>
+            <path d="M19 14l.95 2.4L22.4 17.5l-2.45.6L19 20l-.95-1.9L15.6 17.5l2.45-1.1L19 14z"/>
+          </svg>
+        </span>
+        <p class="text-base leading-relaxed">
+          <strong class="text-lg font-bold text-ink-950">We're recruiting.</strong> Looking for motivated students from diverse backgrounds interested in trustworthy AI.
+        </p>
+      </div>
+      <a href="https://forms.gle/9JUCn2C5zLhmLCZ18" target="_blank" rel="noopener" class="inline-flex shrink-0 items-center gap-1.5 self-start rounded-full bg-lime-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-lime-700 sm:self-auto">
+        Apply →
+      </a>
+    </div>
+  </section>
+
+  <!-- NEWS + SPOTLIGHT -->
+  <section class="container-prose mt-24 grid gap-10 lg:grid-cols-[2fr_3fr]">
+    <div>
+      <h2 class="heading-3 mb-6">Latest</h2>
+      <ul class="divide-y divide-ink-100">
+        {news.map((item) => <NewsItem item={item} />)}
+      </ul>
+      <a href="/news/" class="group mt-6 inline-flex items-center gap-1 text-sm font-medium text-lime-700 hover:text-lime-800">
+        All news
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-0.5">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+    <div>
+      <h2 class="heading-3 mb-6">Spotlight</h2>
+      {spotlight && <SpotlightCard paper={spotlight} />}
+    </div>
+  </section>
+
+  <!-- THEMES -->
+  <section class="container-prose mt-24">
+    <div class="mb-8 flex items-end justify-between">
+      <h2 class="heading-2">Research</h2>
+      <a href="/papers/" class="hidden text-sm font-medium text-lime-700 hover:text-lime-800 sm:inline-flex sm:items-center sm:gap-1">All papers →</a>
+    </div>
+    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      {themesSorted.map((theme) => (
+        <ThemeCard theme={theme} slug={theme.id} count={themeCounts[theme.id] ?? 0} />
+      ))}
+    </div>
+  </section>
+
+  <!-- FEATURED PAPERS -->
+  {featured.length > 0 && (
+    <section class="container-prose mt-24">
+      <div class="mb-8">
+        <h2 class="heading-2">Featured papers</h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {featured.map((paper) => <PaperCard paper={paper} />)}
+      </div>
+    </section>
+  )}
+
+  <!-- AWARDS + PRESS -->
+  <section class="container-prose mt-24 grid gap-12 lg:grid-cols-[1fr_1fr]">
+    <div>
+      <h2 class="heading-3">Awards</h2>
+      <ul class="mt-6 divide-y divide-ink-100 border-y border-ink-100">
+        {awards.map((a) => (
+          <li class="flex items-baseline gap-4 py-3">
+            <span class="shrink-0 text-base leading-none">🏆</span>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-medium text-ink-950">
+                {a.data.href ? (
+                  <a href={a.data.href} target="_blank" rel="noopener" class="hover:text-lime-700">{a.data.title}</a>
+                ) : (
+                  a.data.title
+                )}
+                {a.data.recipient && (
+                  <span class="ml-1.5 inline-flex items-center rounded-full bg-ink-50 px-2 py-0.5 text-[11px] font-medium text-ink-700">
+                    {a.data.recipient}
+                  </span>
+                )}
+              </p>
+              {a.data.paper && (
+                <p class="mt-0.5 text-xs italic text-ink-600">
+                  {a.data.href ? (
+                    <a href={a.data.href} target="_blank" rel="noopener" class="hover:text-lime-700">{a.data.paper}</a>
+                  ) : (
+                    a.data.paper
+                  )}
+                </p>
+              )}
+            </div>
+            <span class="shrink-0 font-mono text-xs tabular-nums text-ink-500">
+              {a.data.year}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <h2 class="heading-3">Featured In</h2>
+      <ul class="mt-6 space-y-3">
+        {pressItems.map((p) => (
+          <li>
+            <a href={p.data.href} target="_blank" rel="noopener" class="card flex items-center justify-between gap-4 p-4">
+              <div>
+                <p class="font-mono text-xs uppercase tracking-wider text-ink-500">{p.data.outlet}{p.data.year ? ` · ${p.data.year}` : ''}</p>
+                {p.data.headline && <p class="mt-1 text-sm font-medium text-ink-900">{p.data.headline}</p>}
+              </div>
+              <span class="text-ink-400">↗</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- SPONSORS -->
+  <section class="container-prose mt-24">
+    <div class="mb-8 text-center">
+      <h2 class="heading-3">Research Sponsors</h2>
+    </div>
+    <div class="grid grid-cols-2 items-center gap-6 sm:grid-cols-3 md:grid-cols-4">
+      {sponsors.map((s) => (
+        <div class="flex items-center justify-center rounded-xl border border-ink-100 bg-white p-6">
+          <img src={s.data.logo} alt={s.data.name} class="h-12 w-auto max-w-full object-contain" />
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

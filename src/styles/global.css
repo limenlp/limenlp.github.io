@@ -1,0 +1,83 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/recursive';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --lime-accent: #669920;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-ink-900 font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: rgb(201 223 154);
+    color: rgb(31 36 46);
+  }
+}
+
+@layer components {
+  .container-prose {
+    @apply mx-auto max-w-6xl px-6 sm:px-8;
+  }
+
+  .heading-1 {
+    @apply font-display text-4xl sm:text-5xl lg:text-6xl text-ink-950;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    font-variation-settings: 'MONO' 0, 'CASL' 0, 'slnt' 0, 'CRSV' 0;
+  }
+
+  .heading-2 {
+    @apply text-3xl sm:text-4xl text-ink-950;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  .heading-3 {
+    @apply text-xl sm:text-2xl text-ink-950;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-wider text-lime-700;
+  }
+
+  .lime-divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-lime-200 to-transparent;
+  }
+
+  .link-accent {
+    @apply text-lime-700 underline decoration-lime-200 decoration-2 underline-offset-4 transition-colors hover:text-lime-800 hover:decoration-lime-400;
+  }
+
+  .pill {
+    @apply inline-flex items-center rounded-full border border-ink-100 bg-white px-2.5 py-0.5 text-xs font-medium text-ink-700;
+  }
+
+  .pill-accent {
+    @apply inline-flex items-center rounded-full bg-lime-50 px-2.5 py-0.5 text-xs font-medium text-lime-800 ring-1 ring-inset ring-lime-200;
+  }
+
+  .card {
+    @apply rounded-2xl border border-ink-100 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:border-lime-300 hover:shadow-[0_10px_30px_-15px_rgba(102,153,32,0.35)];
+  }
+}

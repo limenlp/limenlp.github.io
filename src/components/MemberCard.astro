@@ -1,0 +1,49 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  member: CollectionEntry<'members'>;
+}
+const { member } = Astro.props;
+const d = member.data;
+---
+<article class="card flex h-full flex-col items-center p-6 text-center">
+  {d.url ? (
+    <a href={d.url} target="_blank" rel="noopener" class="group">
+      <img
+        src={d.photo}
+        alt={d.name}
+        loading="lazy"
+        class="h-32 w-32 rounded-full object-cover ring-2 ring-ink-100 transition-all duration-300 group-hover:ring-lime-300"
+      />
+    </a>
+  ) : (
+    <img
+      src={d.photo}
+      alt={d.name}
+      loading="lazy"
+      class="h-32 w-32 rounded-full object-cover ring-2 ring-ink-100"
+    />
+  )}
+  <h3 class="mt-4 text-base font-semibold text-ink-950">
+    {d.url ? (
+      <a href={d.url} target="_blank" rel="noopener" class="hover:text-lime-700">{d.name}</a>
+    ) : (
+      d.name
+    )}
+  </h3>
+  {d.period && <p class="mt-1 font-mono text-xs text-ink-500">{d.period}</p>}
+  {d.research && (
+    <p class="mt-3 text-xs leading-relaxed text-ink-700">{d.research}</p>
+  )}
+  {d.coAdvisor && (
+    <p class="mt-3 text-[11px] text-ink-500">
+      Co-advised with{' '}
+      {d.coAdvisor.url ? (
+        <a href={d.coAdvisor.url} class="link-accent" target="_blank" rel="noopener">{d.coAdvisor.name}</a>
+      ) : (
+        <span>{d.coAdvisor.name}</span>
+      )}
+    </p>
+  )}
+</article>
