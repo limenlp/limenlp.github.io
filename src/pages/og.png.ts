@@ -6,7 +6,7 @@ import path from 'node:path';
 
 const TITLE_LINE1 = 'Building trustworthy AI';
 const TITLE_LINE2 = '— by people who actually check.';
-const EYEBROW = 'LIME @ USC';
+const EYEBROW = 'LIME Lab';
 const SUBTITLE = 'Language · Intelligence · Modeling · Evaluation';
 
 export const GET: APIRoute = async () => {

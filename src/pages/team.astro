@@ -25,7 +25,7 @@ const studentAlumni = alumniSorted.filter((a) => a.data.track === 'master' || a.
 const summerAlumni = alumniSorted.filter((a) => a.data.track === 'visiting' && a.data.detail?.toLowerCase().includes('summer'));
 const visitingAlumni = phdAlumni.filter((a) => !summerAlumni.includes(a));
 ---
-<Base title="Team · LIME Lab" description="Team members of LIME Lab @ USC.">
+<Base title="Team · LIME Lab" description="Team members of LIME Lab.">
   <section class="container-prose pt-8 sm:pt-12">
     <h1 class="heading-1">The Team</h1>
   </section>
