@@ -1,3 +1,19 @@
+# ============================================================
+# ✏️ EDITABLE — Awards (rendered on the home page).
+#
+# TEMPLATE (copy, fill in, paste at top):
+#
+# - id: 2026-some-award                    # REQUIRED, unique slug
+#   title: "Best Paper Award"              # REQUIRED
+#   year: 2026                             # REQUIRED
+#   venue: "ACL 2026"                      # optional, shown after title
+#   paper: "The Paper That Won"            # optional, italic subtitle
+#   href: "https://..."                    # optional, links the title
+#   recipient: "Jieyu Zhao"                # optional, shown as a pill next to title
+#
+# Sorted by year desc on render.
+# ============================================================
+
 - id: 2017-best-long-paper-emnlp
   title: EMNLP 2017 Best Long Paper Award
   year: 2017

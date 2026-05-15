@@ -1,4 +1,7 @@
 ---
+// ⛔ DO NOT EDIT for routine content updates.
+// /news/ archive page template. For content updates, edit src/data/news.yaml.
+
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import NewsItem from '../components/NewsItem.astro';
@@ -18,8 +21,8 @@ const years = Object.keys(byYear).sort((a, b) => b.localeCompare(a));
 <Base title="News · LIME Lab" description="News and announcements from LIME Lab.">
   <section class="container-prose pt-8 sm:pt-12">
     <h1 class="heading-1">News</h1>
-    <p class="mt-6 max-w-2xl text-lg text-ink-700">
-      Paper acceptances, awards, talks, and lab milestones. The most recent items also surface on the <a href="/" class="link-accent">home page</a>.
+    <p class="mt-6 max-w-3xl text-lg text-ink-500">
+      Paper acceptances, awards, talks, and lab milestones.
     </p>
   </section>
 
@@ -27,7 +30,7 @@ const years = Object.keys(byYear).sort((a, b) => b.localeCompare(a));
     {years.map((year) => (
       <section>
         <div class="mb-6 flex items-baseline gap-4">
-          <h2 class="font-mono text-2xl font-semibold text-ink-950">{year}</h2>
+          <h2 class="text-2xl font-semibold text-ink-950 underline decoration-lemon-400 decoration-4 underline-offset-4">{year}</h2>
           <div class="h-px flex-1 bg-ink-100"></div>
           <span class="text-xs text-ink-500">{byYear[year].length} {byYear[year].length === 1 ? 'item' : 'items'}</span>
         </div>

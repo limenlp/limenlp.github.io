@@ -1,4 +1,8 @@
 ---
+// ⛔ DO NOT EDIT for routine content updates.
+// Renders a single news item. Data comes from src/data/news.yaml.
+// Inline links: use `[text](url)` Markdown syntax in the title field.
+
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -16,19 +20,26 @@ const tagStyles: Record<string, string> = {
   release: 'bg-indigo-50 text-indigo-800 ring-indigo-200',
 };
 const tagClass = tagStyles[d.tag] ?? tagStyles.paper;
+
+// Render Markdown-style inline links: [text](url) → <a href="url">text</a>
+function escapeAttr(s: string) {
+  return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+}
+function renderInline(text: string) {
+  return text.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, label, url) => {
+    return `<a href="${escapeAttr(url)}" target="_blank" rel="noopener" class="link-subtle">${label}</a>`;
+  });
+}
+const titleHtml = renderInline(d.title);
 ---
 <li class="group relative grid grid-cols-[auto_1fr] gap-4 py-4 first:pt-0 last:pb-0">
   <div class="flex flex-col items-start gap-1.5">
-    <time class="font-mono text-xs text-ink-500">{d.date}</time>
+    <time class="text-xs text-ink-500">{d.date}</time>
     <span class={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide ring-1 ring-inset ${tagClass}`}>
       {d.tag}
     </span>
   </div>
   <p class="text-[15px] leading-relaxed text-ink-800">
-    {d.href ? (
-      <a href={d.href} target="_blank" rel="noopener" class="link-subtle">{d.title}</a>
-    ) : (
-      d.title
-    )}
+    <span set:html={titleHtml} />
   </p>
 </li>

@@ -1,3 +1,36 @@
+# ============================================================
+# ✏️ EDITABLE — Papers. Anyone can edit; open a PR.
+#
+# TEMPLATE (copy, paste at top, fill in):
+#
+# - id: 2026-my-paper                          # REQUIRED, unique slug
+#   title: "My Paper: A Cool Subtitle"         # REQUIRED
+#   authors: "First Author, Jieyu Zhao"        # REQUIRED
+#   venue: "EMNLP 2026"                        # REQUIRED (e.g. "Preprint", "ICLR 2026 Workshop")
+#   year: 2026                                 # REQUIRED
+#   tldr: "One-sentence summary."              # REQUIRED, plain English
+#   status: published                          # published | preprint (default: published)
+#   paperUrl: "https://arxiv.org/abs/..."      # optional
+#   code: "https://github.com/limenlp/..."     # optional
+#   website: "https://project.example/"        # optional
+#   video: "https://youtube.com/..."           # optional
+#   slides: "files/slides.pdf"                 # optional
+#   poster: "https://..."                      # optional
+#   podcast: "https://..."                     # optional
+#   huggingface: "https://huggingface.co/..."  # optional
+#   image: /images/papers/my-paper.png         # optional teaser (see README Images)
+#   press:                                     # optional
+#     - name: VentureBeat
+#       url: https://venturebeat.com/...
+#   themes: [agents, evaluation]               # ids from themes.yaml
+#   award: "🏆 Best Paper"                     # optional, shows as a yellow pill
+#   featured: true                             # show in home Spotlight carousel
+#   spotlight: true                            # higher priority in carousel
+#
+# Home Spotlight = up to 3 papers, spotlight: true first then featured: true, year desc.
+# Full docs: README.md
+# ============================================================
+
 - id: 2017-men-also-like-shopping
   title: "Men Also Like Shopping: Reducing Gender Bias Amplification Using Corpus-level Constraints"
   authors: "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, Kai-Wei Chang"

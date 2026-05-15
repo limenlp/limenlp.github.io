@@ -1,4 +1,7 @@
 ---
+// ⛔ DO NOT EDIT for routine content updates.
+// Renders the PI card (Jieyu). Data comes from members.yaml entry with role: pi.
+
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -19,7 +22,7 @@ const social = d.social;
     </a>
   </div>
   <div class="flex flex-col gap-3">
-    <span class="eyebrow">Principal Investigator</span>
+    <span class="eyebrow underline decoration-lemon-400 decoration-2 underline-offset-4">Principal Investigator</span>
     <h2 class="heading-2">
       <a href={d.url} class="link-subtle" target="_blank" rel="noopener">{d.name}</a>
     </h2>

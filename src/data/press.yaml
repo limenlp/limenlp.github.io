@@ -1,3 +1,16 @@
+# ============================================================
+# ✏️ EDITABLE — Press / media mentions (rendered on home "Featured In").
+#
+# TEMPLATE (copy, fill in):
+#
+# - id: outlet-headline-slug               # REQUIRED, unique slug
+#   outlet: "VentureBeat"                  # REQUIRED, source name
+#   href: "https://venturebeat.com/..."    # REQUIRED, link to article
+#   headline: "Short description"          # optional
+#   year: 2026                             # optional
+#   logo: /images/press/outlet.png         # optional
+# ============================================================
+
 - id: marktechpost-sum
   outlet: MarkTechPost
   href: "https://www.marktechpost.com/2025/06/05/usc-researchers-introduced-sum-synthetic-unanswerable-math-a-synthetic-dataset-to-reduce-hallucination-in-llms-via-reinforcement-fine-tuning/"

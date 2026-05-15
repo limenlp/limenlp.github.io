@@ -1,3 +1,7 @@
+# ⛔ DO NOT EDIT for routine content updates.
+# CI/CD pipeline: builds Astro site and deploys to GitHub Pages on push to main.
+# Edit only for deploy behavior changes (e.g., Node version bump).
+
 name: Deploy site to GitHub Pages
 
 on:

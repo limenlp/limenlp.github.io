@@ -1,3 +1,41 @@
+# ============================================================
+# ✏️ EDITABLE — Active lab members (rendered on /team/).
+#
+# TEMPLATE (copy, fill in, paste anywhere in role section):
+#
+# - id: phd-new-student                      # REQUIRED, unique slug
+#   name: "New Student"                      # REQUIRED
+#   role: phd                                # REQUIRED: pi | phd | master | undergrad | visiting | affiliated
+#   period: "2026.8 – Now"                   # optional
+#   research: "LLM agents · evaluation"      # optional, current research focus
+#   work: "Built [WildFeedback](https://...); eval pipeline."   # optional, what they've contributed; markdown [text](url) supported
+#   photo: /images/members/new-student.jpg   # optional — falls back to initial letters in a green circle
+#   url: "https://newstudent.github.io"      # optional homepage
+#   note: "Co-advised with X"                # optional italic note
+#   order: 14                                # lower = earlier in role section
+#   coAdvisor:                               # optional
+#     name: "Emilio Ferrara"
+#     url: "https://..."
+#   social:                                  # optional, any subset
+#     scholar: "https://scholar.google.com/..."
+#     twitter: "https://twitter.com/..."
+#     github: "https://github.com/..."
+#     linkedin: "https://linkedin.com/in/..."
+#     email: "name@usc.edu"
+#     orcid: "https://orcid.org/..."
+#
+# Grad student leaves: MOVE entry to alumni.yaml (don't delete).
+#
+# INTERN / VISITOR convention (READ THIS BEFORE ADDING AN INTERN):
+# - Use `role: visiting` for EVERY intern / visitor (summer, semester, collaborator).
+#   The phd/master/undergrad roles are reserved for USC students Jieyu primarily advises.
+# - `period`: use "Summer 2025" / "Spring 2026" for short term; "2025.9 – 2026.5" for longer.
+# - `note`: write affiliation — "Visiting from Tsinghua", "Microsoft Research intern", etc.
+#   This is what distinguishes a visitor from a regular member.
+# - `order`: give visiting members order ≥ 20 so they sort below regular grad students.
+# - When intern leaves → move to alumni.yaml with `track: visiting`.
+# ============================================================
+
 - id: affiliated-annabel
   name: Annabel · 妹妹
   role: affiliated
@@ -100,3 +138,40 @@
   photo: /images/team/limion-2.png
   research: Research in Progress
   order: 30
+
+- id: undergrad-michael-siu
+  name: Michael Siu
+  role: undergrad
+  note: "USC undergrad"
+  order: 31
+
+# --- Visiting / interns (add affiliation in `note`, period when known) ---
+- id: visiting-xiaoyi-gu
+  name: Xiaoyi Gu
+  role: visiting
+  order: 40
+
+- id: visiting-boqin-yuan
+  name: Boqin Yuan
+  role: visiting
+  order: 41
+
+- id: visiting-xuwei-ding
+  name: Xuwei Ding
+  role: visiting
+  order: 42
+
+- id: visiting-haotian-zhai
+  name: Haotian Zhai
+  role: visiting
+  order: 43
+
+- id: visiting-yuyang-peng
+  name: Yuyang Peng
+  role: visiting
+  order: 44
+
+- id: visiting-shijian-wang
+  name: Shijian Wang
+  role: visiting
+  order: 45

@@ -1,3 +1,15 @@
+// ============================================================
+// ⛔ DO NOT EDIT for routine content updates.
+//
+// Defines DESIGN TOKENS: color palettes (lime / lemon / persimmon / lychee / ink),
+// font families, max-widths, prose typography. Edit only when changing the brand
+// palette or adding a new color shade.
+//
+// For content updates, edit YAML in src/data/.
+// For per-page styling tweaks, use Tailwind classes inline; only touch this file
+// for site-wide design system changes.
+// ============================================================
+
 import typography from '@tailwindcss/typography';
 
 /** @type {import('tailwindcss').Config} */
@@ -6,19 +18,35 @@ export default {
   theme: {
     extend: {
       colors: {
+        // 金桔柠檬茶 (Kumquat Lemon Tea) — primary brand green
         lime: {
-          50:  '#f5f9ec',
-          100: '#e6f0cd',
-          200: '#c9df9a',
-          300: '#a4cc66',
-          400: '#80b539',
-          500: '#669920',
-          600: '#527c19',
-          700: '#3f5d1b',
-          800: '#34491c',
-          900: '#2d3e1c',
-          950: '#15220a',
+          50:  '#ecf9ed',
+          100: '#d7f1d8',
+          200: '#aae2ad',
+          300: '#7ad080',
+          400: '#4abe50',
+          500: '#33AD37', // 金桔柠檬茶 (main)
+          600: '#239229',
+          700: '#1c761f',
+          800: '#155718',
+          900: '#0e3a10',
+          950: '#061f08',
         },
+        // 柠檬黄 (Lemon Yellow) — bright accent
+        lemon: {
+          50:  '#fefce6',
+          100: '#fcf6b8',
+          200: '#fbef84',
+          300: '#fae74f',
+          400: '#f9e131',
+          500: '#F8DF09', // 柠檬黄 (main)
+          600: '#c8b407',
+          700: '#a09105',
+          800: '#786e04',
+          900: '#534b03',
+        },
+        // 荔枝白 (Lychee White) — soft warm background
+        lychee: '#FEFFEF',
         ink: {
           50: '#f6f7f9',
           100: '#ebedf2',

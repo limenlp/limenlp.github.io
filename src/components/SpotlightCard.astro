@@ -1,4 +1,8 @@
 ---
+// ⛔ DO NOT EDIT for routine content updates.
+// Renders one slide of the home Spotlight carousel (big image + paper metadata).
+// Data comes from papers with `spotlight: true` or `featured: true`.
+
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -7,14 +11,14 @@ interface Props {
 const { paper } = Astro.props;
 const d = paper.data;
 ---
-<article class="flex flex-col gap-6 overflow-hidden rounded-3xl border border-ink-100 bg-gradient-to-br from-lime-50/40 via-white to-white p-6 md:p-8">
-  <div class="flex items-center justify-center">
+<article class="flex h-full flex-col gap-5 overflow-hidden rounded-3xl border border-ink-100 bg-gradient-to-br from-lime-50/40 via-white to-white p-6 md:p-8">
+  <div class="shrink-0">
     {d.image ? (
-      <a href={d.paperUrl || d.website || '#'} class="block w-full">
+      <a href={d.paperUrl || d.website || '#'} class="block aspect-[16/9] w-full overflow-hidden rounded-2xl bg-lime-50/40 shadow-sm">
         <img
           src={d.image}
           alt={d.title}
-          class="mx-auto w-full max-h-[32rem] rounded-2xl object-contain shadow-sm"
+          class="h-full w-full object-scale-down"
         />
       </a>
     ) : (
@@ -23,16 +27,16 @@ const d = paper.data;
       </div>
     )}
   </div>
-  <div class="flex flex-col gap-4">
+  <div class="flex flex-1 flex-col gap-3">
     <div class="flex flex-wrap items-center gap-2">
       <span class="pill-accent">{d.venue}</span>
     </div>
     <h2 class="text-2xl font-bold leading-tight text-ink-950 md:text-3xl">
       <a href={d.paperUrl || d.website || '#'} class="link-subtle">{d.title}</a>
     </h2>
-    <p class="text-base leading-relaxed text-ink-700">{d.tldr}</p>
-    <p class="text-sm text-ink-500">{d.authors}</p>
-    <div class="mt-2 flex flex-wrap gap-3 text-sm">
+    <p class="line-clamp-3 text-base leading-relaxed text-ink-700">{d.tldr}</p>
+    <p class="line-clamp-1 text-sm text-ink-500">{d.authors}</p>
+    <div class="mt-auto flex flex-wrap gap-3 pt-2 text-sm">
       {d.paperUrl && <a href={d.paperUrl} target="_blank" rel="noopener" class="link-accent">📄 Paper</a>}
       {d.code && <a href={d.code} target="_blank" rel="noopener" class="link-accent">💻 Code</a>}
       {d.website && <a href={d.website} target="_blank" rel="noopener" class="link-accent">🌐 Website</a>}

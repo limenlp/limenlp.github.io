@@ -1,4 +1,7 @@
 ---
+// ⛔ DO NOT EDIT for routine content updates.
+// /wiki/ landing page. To ADD A WIKI PAGE, drop a .md file in src/content/wiki/.
+
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import WikiSidebar from '../../components/WikiSidebar.astro';
@@ -6,32 +9,31 @@ import WikiSidebar from '../../components/WikiSidebar.astro';
 const all = await getCollection('wiki');
 const sorted = all.sort((a, b) => a.data.order - b.data.order);
 
-const categories: { key: 'handbook' | 'advising' | 'resources'; label: string; blurb: string }[] = [
+const categories: { key: 'handbook' | 'resources'; label: string; blurb: string }[] = [
   { key: 'handbook', label: 'Group Handbook', blurb: 'Policies, expectations, and how we work together.' },
-  { key: 'advising', label: 'Advising', blurb: 'Curated guidance for navigating a research career.' },
-  { key: 'resources', label: 'Resources', blurb: 'Tools, tutorials, and reading lists the group maintains.' },
+  { key: 'resources', label: 'Resources', blurb: 'Reading lists, tools, and curated advice for navigating research.' },
 ];
 
 const sections = categories
   .map((cat) => ({ ...cat, items: sorted.filter((w) => w.data.category === cat.key) }))
   .filter((s) => s.items.length > 0);
 ---
-<Base title="Group Wiki · LIME Lab" description="Group handbook, advising notes, and shared resources for the LIME group.">
+<Base title="Group Wiki · LIME Lab" description="Group handbook and shared resources for the LIME group.">
   <div class="container-prose pt-8 sm:pt-12">
     <div class="grid gap-12 md:grid-cols-[220px_1fr] lg:gap-16">
       <WikiSidebar />
 
       <main class="min-w-0">
         <h1 class="heading-1">Group Wiki</h1>
-        <p class="mt-6 max-w-2xl text-lg text-ink-700">
-          How we work together, how we write papers, how we navigate the PhD. The handbook is a living document — if something is missing or out of date, contact <a href="mailto:lime.imlab@gmail.com" class="link-accent">lime.imlab@gmail.com</a>.
+        <p class="mt-6 max-w-3xl text-lg text-ink-500">
+          How we work together, how we write papers, how we navigate the PhD. The handbook is a living document — if something is missing or out of date, contact <a href="mailto:lime.imlab@gmail.com" class="link-accent">lime.imlab@gmail.com</a> or <a href="https://github.com/limenlp/limenlp.github.io/tree/main/src/content/wiki" target="_blank" rel="noopener" class="link-accent">edit <span aria-hidden="true">✏️</span></a>.
         </p>
 
         <div class="mt-12 space-y-10">
           {sections.map((cat) => (
             <section>
               <div class="mb-4 flex items-baseline gap-4">
-                <h2 class="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500">{cat.label}</h2>
+                <h2 class="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 underline decoration-lemon-400 decoration-2 underline-offset-4">{cat.label}</h2>
                 <div class="h-px flex-1 bg-ink-100"></div>
               </div>
               <p class="mb-4 text-sm text-ink-600">{cat.blurb}</p>

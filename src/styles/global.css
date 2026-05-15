@@ -1,7 +1,16 @@
+/* ============================================================
+   ⛔ DO NOT EDIT for routine content updates.
+
+   Site-wide styles: typography utilities (.heading-1/2/3), link styles
+   (.link-accent/.link-subtle), card/pill utilities, page background,
+   selection color. Editing here affects every page.
+
+   For ADDING CONTENT (new paper / news / member), edit YAML files in src/data/.
+   To change DESIGN TOKENS (colors, fonts), edit tailwind.config.mjs.
+   ============================================================ */
+
 @import '@fontsource-variable/inter';
 @import '@fontsource-variable/recursive';
-@import '@fontsource/jetbrains-mono/400.css';
-@import '@fontsource/jetbrains-mono/500.css';
 
 @tailwind base;
 @tailwind components;
@@ -25,7 +34,7 @@
   }
 
   ::selection {
-    background-color: rgb(201 223 154);
+    background-color: #fbef84;  /* lemon-200 */
     color: rgb(31 36 46);
   }
 }
@@ -66,11 +75,11 @@
   }
 
   .link-accent {
-    @apply font-medium text-lime-600 underline decoration-lime-400 decoration-2 underline-offset-4 transition-colors hover:text-persimmon hover:decoration-persimmon-300;
+    @apply font-medium text-lime-700 underline decoration-lime-300 decoration-2 underline-offset-4 transition-colors hover:text-persimmon hover:decoration-persimmon-300;
   }
 
   .link-subtle {
-    @apply font-medium text-lime-600 underline-offset-4 transition-colors hover:text-persimmon hover:underline hover:decoration-persimmon-300 hover:decoration-2;
+    @apply font-medium text-lime-700 underline-offset-4 transition-colors hover:text-persimmon hover:underline hover:decoration-persimmon-300 hover:decoration-2;
   }
 
   .pill {

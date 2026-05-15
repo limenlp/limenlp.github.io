@@ -1,12 +1,15 @@
 ---
+// ⛔ DO NOT EDIT for routine content updates.
+// Renders the wiki sidebar grouped by category. Auto-pulls all wiki pages from
+// src/content/wiki/. To ADD A PAGE, drop a new .md file there — no edits here needed.
+
 import { getCollection } from 'astro:content';
 
 const all = await getCollection('wiki');
 const sorted = all.sort((a, b) => a.data.order - b.data.order);
 
-const categories: { key: 'handbook' | 'advising' | 'resources'; label: string }[] = [
+const categories: { key: 'handbook' | 'resources'; label: string }[] = [
   { key: 'handbook', label: 'Group Handbook' },
-  { key: 'advising', label: 'Advising' },
   { key: 'resources', label: 'Resources' },
 ];
 
@@ -42,10 +45,10 @@ function isActive(slug: string) {
               <a
                 href={`/wiki/${w.slug}/`}
                 class:list={[
-                  'block rounded-md px-3 py-1.5 transition-colors',
+                  'block rounded-md border-l-4 px-3 py-1.5 transition-colors',
                   isActive(w.slug)
-                    ? 'bg-lime-50 font-semibold text-lime-800'
-                    : 'text-ink-700 hover:bg-ink-50 hover:text-ink-950',
+                    ? 'border-lemon-400 bg-lime-50 font-semibold text-lime-800'
+                    : 'border-transparent text-ink-700 hover:bg-ink-50 hover:text-ink-950',
                 ]}
               >
                 {w.data.title}

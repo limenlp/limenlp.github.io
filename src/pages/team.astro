@@ -1,4 +1,7 @@
 ---
+// ⛔ DO NOT EDIT for routine content updates.
+// /team/ page template. For content updates, edit src/data/members.yaml + alumni.yaml.
+
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import PICard from '../components/PICard.astro';
@@ -12,6 +15,7 @@ const pi = sorted.find((m) => m.data.role === 'pi');
 const phds = sorted.filter((m) => m.data.role === 'phd');
 const masters = sorted.filter((m) => m.data.role === 'master');
 const undergrads = sorted.filter((m) => m.data.role === 'undergrad');
+const visiting = sorted.filter((m) => m.data.role === 'visiting');
 const affiliated = sorted.filter((m) => m.data.role === 'affiliated');
 
 const alumniSorted = [...allAlumni].sort((a, b) => a.data.order - b.data.order);
@@ -27,7 +31,7 @@ const visitingAlumni = phdAlumni.filter((a) => !summerAlumni.includes(a));
 ---
 <Base title="Team · LIME Lab" description="Team members of LIME Lab.">
   <section class="container-prose pt-8 sm:pt-12">
-    <h1 class="heading-1">The Team</h1>
+    <h1 class="heading-1">People</h1>
   </section>
 
   {pi && (
@@ -76,6 +80,19 @@ const visitingAlumni = phdAlumni.filter((a) => !summerAlumni.includes(a));
     </section>
   )}
 
+  {visiting.length > 0 && (
+    <section class="container-prose mt-20">
+      <div class="mb-6 flex items-center gap-3">
+        <h2 class="heading-3">Visiting Students & Interns</h2>
+        <div class="lime-divider flex-1"></div>
+        <span class="text-xs text-ink-500">{visiting.length}</span>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {visiting.map((m) => <MemberCard member={m} />)}
+      </div>
+    </section>
+  )}
+
   <section class="container-prose mt-20">
     <div class="mb-6 flex items-center gap-3">
       <h2 class="heading-3">Alumni</h2>
@@ -94,6 +111,7 @@ const visitingAlumni = phdAlumni.filter((a) => !summerAlumni.includes(a));
               )}
               {a.data.detail && <span class="text-ink-500">({a.data.detail})</span>}
               {a.data.destination && <span class="text-ink-700">→ {a.data.destination}</span>}
+              {a.data.work && <span class="basis-full text-xs text-ink-500" set:html={a.data.work.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener" class="link-subtle">$1</a>')} />}
             </li>
           ))}
         </ul>
@@ -110,6 +128,7 @@ const visitingAlumni = phdAlumni.filter((a) => !summerAlumni.includes(a));
               )}
               {a.data.detail && <span class="text-ink-500">({a.data.detail})</span>}
               {a.data.destination && <span class="text-ink-700">→ {a.data.destination}</span>}
+              {a.data.work && <span class="basis-full text-xs text-ink-500" set:html={a.data.work.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener" class="link-subtle">$1</a>')} />}
             </li>
           ))}
         </ul>

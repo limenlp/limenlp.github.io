@@ -1,4 +1,7 @@
 ---
+// ⛔ DO NOT EDIT for routine content updates.
+// /papers/ page template. For content updates, edit src/data/papers.yaml + themes.yaml.
+
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import PaperCard from '../components/PaperCard.astro';
@@ -26,9 +29,17 @@ const preprints = sortedPapers.filter((p) => p.data.status === 'preprint');
   <section class="container-prose pt-8 sm:pt-12">
     <div class="flex flex-col gap-4">
       <h1 class="heading-1">Papers</h1>
-      <p class="max-w-2xl text-lg text-ink-700">
-        Trustworthy AI models and agents — evaluation, alignment, modeling, and fairness.
-      </p>
+      <div class="flex flex-wrap items-center gap-2 pt-1">
+        <span class="text-xs font-medium text-ink-500">Filter:</span>
+        <button data-theme="all" class="theme-chip rounded-full border border-lime-300 bg-lime-50 px-3 py-1 text-xs font-medium text-lime-800 transition-colors data-[active=true]:bg-lemon-300" data-active="true">
+          All
+        </button>
+        {themesSorted.map((t) => (
+          <button data-theme={t.id} class="theme-chip rounded-full border border-ink-200 bg-white px-3 py-1 text-xs font-medium text-ink-700 transition-colors hover:border-lime-300 hover:text-lime-800 data-[active=true]:bg-lemon-300 data-[active=true]:border-lime-300 data-[active=true]:text-lime-900">
+            {t.data.name}
+          </button>
+        ))}
+      </div>
       <div class="flex flex-wrap items-center gap-2 pt-2">
         <a href="https://scholar.google.com/citations?user=9VaGBCQAAAAJ&hl=en" target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded-full border border-ink-200 bg-white px-4 py-2 text-sm font-medium text-ink-800 transition-colors hover:border-lime-300 hover:text-lime-800">
           View all on Google Scholar ↗
@@ -40,20 +51,6 @@ const preprints = sortedPapers.filter((p) => p.data.status === 'preprint');
       </div>
     </div>
   </section>
-
-  <!-- Theme filter chips -->
-  <section class="container-prose mt-12">
-    <div class="flex flex-wrap items-center gap-2">
-      <span class="text-xs font-medium text-ink-500">Filter:</span>
-      <button data-theme="all" class="theme-chip rounded-full border border-lime-300 bg-lime-50 px-3 py-1 text-xs font-medium text-lime-800 transition-colors data-[active=true]:bg-lime-200" data-active="true">
-        All
-      </button>
-      {themesSorted.map((t) => (
-        <button data-theme={t.id} class="theme-chip rounded-full border border-ink-200 bg-white px-3 py-1 text-xs font-medium text-ink-700 transition-colors hover:border-lime-300 hover:text-lime-800 data-[active=true]:bg-lime-200 data-[active=true]:border-lime-300 data-[active=true]:text-lime-900">
-          {t.data.name}
-        </button>
-      ))}
-    </div>
   </section>
 
   {preprints.length > 0 && (
@@ -62,7 +59,7 @@ const preprints = sortedPapers.filter((p) => p.data.status === 'preprint');
         <h2 class="heading-3">✨ Preprints</h2>
         <div class="lime-divider flex-1"></div>
       </div>
-      <div class="paper-grid grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div class="paper-grid grid gap-6 md:grid-cols-1 lg:grid-cols-2">
         {preprints.map((p) => (
           <div class="paper-item" data-themes={p.data.themes.join(',')}>
             <PaperCard paper={p} />
@@ -75,10 +72,10 @@ const preprints = sortedPapers.filter((p) => p.data.status === 'preprint');
   {years.map((year) => (
     <section class="container-prose mt-16">
       <div class="mb-6 flex items-center gap-3">
-        <h2 class="heading-3 font-mono">{year}</h2>
+        <h2 class="heading-3">{year}</h2>
         <div class="lime-divider flex-1"></div>
       </div>
-      <div class="paper-grid grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div class="paper-grid grid gap-6 md:grid-cols-1 lg:grid-cols-2">
         {byYear[year].map((p) => (
           <div class="paper-item" data-themes={p.data.themes.join(',')}>
             <PaperCard paper={p} />

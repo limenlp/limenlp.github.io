@@ -1,5 +1,10 @@
 ---
+// ⛔ DO NOT EDIT for routine content updates.
+// Global layout: <head>, Nav, Footer wrapper used by every page.
+// For content updates, edit src/data/*.yaml or src/content/wiki/*.md.
+
 import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
@@ -13,6 +18,7 @@ const { title, description = 'LIME Lab — Language, Intelligence, Modeling & Ev
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <ClientRouter />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />

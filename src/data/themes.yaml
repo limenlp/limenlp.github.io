@@ -1,3 +1,18 @@
+# ============================================================
+# ✏️ EDITABLE — Research themes (rendered as cards on home + filters on /papers/).
+#
+# TEMPLATE (copy, fill in):
+#
+# - id: theme-slug                         # REQUIRED, unique slug — also used in papers.yaml `themes:` list
+#   name: "Theme Name"                     # REQUIRED
+#   icon: cursor                           # optional — shield | cursor | compass | scale
+#                                          #   (to add a new icon, edit src/components/ThemeCard.astro)
+#   order: 2                               # lower = earlier
+#   blurb: "1–2 sentence description."     # REQUIRED
+#
+# Don't rename `id` without also updating papers.yaml `themes:` arrays.
+# ============================================================
+
 - id: agents
   name: "Agents & Computer Use"
   icon: cursor

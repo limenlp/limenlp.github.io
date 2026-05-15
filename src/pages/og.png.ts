@@ -1,3 +1,7 @@
+// ⛔ DO NOT EDIT for routine content updates.
+// Auto-generates the social-share OG image at build time (via satori).
+// Edit only if changing the home H1 tagline or the lab name/branding shown in the preview.
+
 import type { APIRoute } from 'astro';
 import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';

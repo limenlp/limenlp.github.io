@@ -1,4 +1,7 @@
 ---
+// ⛔ DO NOT EDIT for routine content updates.
+// Dynamic /wiki/<slug>/ page. Renders any .md file from src/content/wiki/.
+
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import WikiSidebar from '../../components/WikiSidebar.astro';
@@ -23,7 +26,6 @@ const next = idx >= 0 && idx < siblings.length - 1 ? siblings[idx + 1] : null;
 
 const categoryLabel: Record<string, string> = {
   handbook: 'Group Handbook',
-  advising: 'Advising',
   resources: 'Resources',
 };
 ---
@@ -40,7 +42,7 @@ const categoryLabel: Record<string, string> = {
         </nav>
         <h1 class="heading-1">{entry.data.title}</h1>
         {entry.data.description && (
-          <p class="mt-4 max-w-2xl text-lg text-ink-700">{entry.data.description}</p>
+          <p class="mt-4 max-w-3xl text-lg text-ink-500">{entry.data.description}</p>
         )}
 
         <div class="prose prose-ink mt-10">

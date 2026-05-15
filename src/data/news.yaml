@@ -1,14 +1,39 @@
+# ============================================================
+# ✏️ EDITABLE — News (Latest section + /news/ archive).
+#
+# 👉 ANYTHING lab-related is news. Don't filter yourself:
+#    - Gave a talk / guest lecture / panel
+#    - Paper accepted (preprint, conference, journal, workshop, findings — ALL count)
+#    - Award / fellowship / honor
+#    - Media coverage
+#    - Code / dataset / demo release
+#    - New member joined / member graduated
+#    - Co-organized a workshop or shared task
+#    - Anything you'd put on your CV → it belongs here
+#
+# TEMPLATE (copy, paste at top, fill in):
+#
+# - id: 2026-06-acl-best-paper                                     # REQUIRED, unique slug
+#   date: 2026-06                                                  # REQUIRED, YYYY-MM
+#   title: "[Our Paper](https://arxiv.org/abs/...) won Best Paper" # REQUIRED
+#   tag: award                                                     # paper | award | talk | media | team | release
+#   person: Jieyu                                                  # optional (reserved, not rendered)
+#
+# RULES:
+# - Inline links: write `[text](https://url)` in the title — only that text becomes a link
+# - DON'T wrap the whole title; the renderer no longer renders the `href:` field
+# - Most recent on top. Home page shows the top 10. Full archive at /news/.
+# ============================================================
+
 - id: 2026-05-acl-promediate
   date: 2026-05
-  title: ProMediate accepted to ACL 2026 Findings.
+  title: "[ProMediate](https://arxiv.org/abs/2510.25224) accepted to ACL 2026 Findings."
   tag: paper
-  href: "https://arxiv.org/abs/2510.25224"
 
 - id: 2026-04-icml-data-attribution
   date: 2026-04
-  title: Data attribution paper for filtering unsafe training data accepted to ICML 2026.
+  title: "Data attribution paper for filtering [unsafe training data](https://arxiv.org/abs/2502.11411) accepted to ICML 2026."
   tag: paper
-  href: "https://arxiv.org/abs/2502.11411"
 
 - id: 2026-03-office-hours
   date: 2026-03
@@ -18,10 +43,9 @@
 
 - id: 2026-03-eacl-causal-gravity
   date: 2026-03
-  title: "Two papers at EACL: \"What's Missing in Vision-Language Models?\" (Causal Order Reasoning) and GRAVITY."
+  title: "Two papers at EACL: [\"What's Missing in Vision-Language Models?\" (Causal Order Reasoning)](https://arxiv.org/abs/2506.00869) and GRAVITY."
   tag: paper
   person: Jieyu
-  href: "https://arxiv.org/abs/2506.00869"
 
 - id: 2026-03-welcome-jiaqi
   date: 2026-03
@@ -31,29 +55,25 @@
 
 - id: 2026-03-video-reward-modeling
   date: 2026-03
-  title: "New paper out: Video-Based Reward Modeling for Computer-Use Agents."
+  title: "New paper out: [Video-Based Reward Modeling for Computer-Use Agents](https://arxiv.org/abs/2603.10178)."
   tag: paper
   person: Jieyu
-  href: "https://arxiv.org/abs/2603.10178"
 
 - id: 2026-03-erl-code
   date: 2026-03
-  title: ERL code is now available — play with it.
+  title: "[ERL code](https://github.com/microsoft/experiential_rl) is now available — play with it."
   tag: release
   person: Jieyu
-  href: "https://github.com/microsoft/experiential_rl"
 
 - id: 2026-03-iclr-coact
   date: 2026-03
-  title: "ICLR 2026 accepted: CoAct-1, Doxing via the Lens, and TrustGen."
+  title: "ICLR 2026 accepted: [CoAct-1](https://arxiv.org/abs/2508.03923), Doxing via the Lens, and TrustGen."
   tag: paper
-  href: "https://arxiv.org/abs/2508.03923"
 
 - id: 2026-02-acl-wildfeedback
   date: 2026-02
-  title: WildFeedback accepted to ACL 2026 main.
+  title: "[WildFeedback](https://arxiv.org/abs/2408.15549) accepted to ACL 2026 main."
   tag: paper
-  href: "https://arxiv.org/abs/2408.15549"
 
 - id: 2026-02-oori-award
   date: 2026-02
@@ -69,7 +89,6 @@
 
 - id: 2026-02-erl-paper
   date: 2026-02
-  title: "New paper out: Experiential Reinforcement Learning."
+  title: "New paper out: [Experiential Reinforcement Learning](https://arxiv.org/abs/2602.13949)."
   tag: paper
   person: Jieyu
-  href: "https://arxiv.org/abs/2602.13949"

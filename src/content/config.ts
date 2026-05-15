@@ -1,3 +1,19 @@
+// ============================================================
+// ⛔ DO NOT EDIT for routine content updates.
+//
+// This file defines the SHAPES (schemas) of all YAML data files in src/data/.
+// Edit only when ADDING A NEW FIELD to papers / news / members / etc.
+// Editing the schema without updating the corresponding .astro renderer
+// will break the build or silently drop data.
+//
+// To add a new field:
+//   1. Add it here under the relevant collection's z.object({ ... })
+//   2. Use it in the matching .astro template (e.g., src/components/PaperCard.astro)
+//   3. Test with `npm run dev`
+//
+// For ADDING CONTENT (new paper / news / member), edit YAML files in src/data/.
+// ============================================================
+
 import { defineCollection, z } from 'astro:content';
 import { file } from 'astro/loaders';
 
@@ -37,7 +53,8 @@ const members = defineCollection({
     role: z.enum(['pi', 'phd', 'master', 'undergrad', 'visiting', 'affiliated']),
     period: z.string().optional(),
     research: z.string().optional(),
-    photo: z.string(),
+    work: z.string().optional(),
+    photo: z.string().optional(),
     url: z.string().optional(),
     coAdvisor: z
       .object({ name: z.string(), url: z.string().optional() })
@@ -65,6 +82,7 @@ const alumni = defineCollection({
     url: z.string().optional(),
     detail: z.string().optional(),
     destination: z.string().optional(),
+    work: z.string().optional(),
     order: z.number().default(100),
   }),
 });
@@ -128,7 +146,7 @@ const wiki = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
-    category: z.enum(['handbook', 'advising', 'resources']).default('handbook'),
+    category: z.enum(['handbook', 'resources']).default('handbook'),
     order: z.number().default(100),
   }),
 });

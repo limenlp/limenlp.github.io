@@ -1,3 +1,20 @@
+# ============================================================
+# ✏️ EDITABLE — Alumni (rendered at the bottom of /team/).
+#
+# TEMPLATE (copy, fill in):
+#
+# - id: phd-graduated-student              # REQUIRED, unique slug
+#   name: "Graduated Student"              # REQUIRED
+#   track: phd                             # REQUIRED: phd | master | undergrad | visiting
+#   url: "https://their-new-page.example/" # optional
+#   detail: "USC PhD"                      # optional, e.g. "USC master", "Visiting student"
+#   destination: "Research Scientist @ X"  # optional, "→ X" subtitle
+#   work: "Co-led [paper](url); did X."    # optional, what they did here; markdown [text](url) supported
+#   order: 3                               # lower = earlier in track section
+#
+# When someone graduates: MOVE their entry from members.yaml to here.
+# ============================================================
+
 - id: master-abhishek-anand
   name: Abhishek Anand
   track: master
@@ -57,6 +74,18 @@
   track: master
   detail: USC master
   order: 18
+
+- id: master-namratha-patil
+  name: Namratha Patil
+  track: master
+  detail: USC master
+  order: 19
+
+- id: master-yubo-zhang
+  name: Yubo Zhang
+  track: master
+  detail: USC master
+  order: 20
 
 - id: phd-jen-tse-huang
   name: Jen-Tse Huang

@@ -1,3 +1,15 @@
+# ============================================================
+# ✏️ EDITABLE — Sponsors (rendered as logo strip on home).
+#
+# TEMPLATE (copy, fill in):
+#
+# - id: new-sponsor                        # REQUIRED, unique slug
+#   name: "New Sponsor"                    # REQUIRED
+#   logo: /images/sponsors/new-sponsor.png # REQUIRED (drop file in public/images/sponsors/)
+#   href: "https://sponsor.example/"       # optional
+#   order: 4                               # lower = earlier in the strip
+# ============================================================
+
 - id: amazon
   name: Amazon
   logo: /images/sponsors/amazon.png
