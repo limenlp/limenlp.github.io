@@ -42,7 +42,7 @@ const isCompact = variant === 'compact';
       {d.award && <span class="pill bg-yellow-50 text-yellow-800 ring-1 ring-inset ring-yellow-200">🏆 {d.award.replace('🏆', '').trim()}</span>}
     </div>
     <h3 class="text-lg font-semibold leading-snug text-ink-950">
-      <a href={d.paperUrl || d.website || '#'} class="hover:text-lime-700">{d.title}</a>
+      <a href={d.paperUrl || d.website || '#'} class="link-subtle">{d.title}</a>
     </h3>
     <p class="text-sm leading-relaxed text-ink-700">{d.tldr}</p>
     <p class="text-xs text-ink-500">{d.authors}</p>

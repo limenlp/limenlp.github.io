@@ -32,6 +32,20 @@ export default {
           900: '#303744',
           950: '#1f242e',
         },
+        // Persimmon (柿红) — warm accent for hover, shared with jyzhao.net
+        persimmon: {
+          DEFAULT: '#E44821',
+          50:  '#fdeee9',
+          100: '#fbd5c8',
+          200: '#f6a78d',
+          300: '#f17a52',
+          400: '#ec5e33',
+          500: '#E44821',
+          600: '#bf3818',
+          700: '#962a12',
+          800: '#6d1e0d',
+          900: '#491408',
+        },
       },
       fontFamily: {
         sans: ['"Inter Variable"', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
@@ -63,11 +77,11 @@ export default {
             maxWidth: '70ch',
             a: {
               fontWeight: '500',
-              textDecorationColor: theme('colors.lime.200'),
+              textDecorationColor: theme('colors.lime.400'),
               textUnderlineOffset: '4px',
               '&:hover': {
-                color: theme('colors.lime.800'),
-                textDecorationColor: theme('colors.lime.400'),
+                color: theme('colors.persimmon.500'),
+                textDecorationColor: theme('colors.persimmon.300'),
               },
             },
             code: {

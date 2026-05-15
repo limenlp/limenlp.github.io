@@ -46,6 +46,18 @@
   destination: "PhD @ UCSB"
   order: 16
 
+- id: master-haonan-pan
+  name: Haonan Pan
+  track: master
+  detail: USC master
+  order: 17
+
+- id: master-shuheng-chen
+  name: Shuheng Chen
+  track: master
+  detail: USC master
+  order: 18
+
 - id: phd-jen-tse-huang
   name: Jen-Tse Huang
   track: visiting

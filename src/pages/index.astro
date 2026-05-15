@@ -176,7 +176,7 @@ const pressItems = allPress;
             <div class="flex-1 min-w-0">
               <p class="text-sm font-medium text-ink-950">
                 {a.data.href ? (
-                  <a href={a.data.href} target="_blank" rel="noopener" class="hover:text-lime-700">{a.data.title}</a>
+                  <a href={a.data.href} target="_blank" rel="noopener" class="link-subtle">{a.data.title}</a>
                 ) : (
                   a.data.title
                 )}
@@ -189,7 +189,7 @@ const pressItems = allPress;
               {a.data.paper && (
                 <p class="mt-0.5 text-xs italic text-ink-600">
                   {a.data.href ? (
-                    <a href={a.data.href} target="_blank" rel="noopener" class="hover:text-lime-700">{a.data.paper}</a>
+                    <a href={a.data.href} target="_blank" rel="noopener" class="link-subtle">{a.data.paper}</a>
                   ) : (
                     a.data.paper
                   )}

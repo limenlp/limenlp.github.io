@@ -26,7 +26,7 @@ const tagClass = tagStyles[d.tag] ?? tagStyles.paper;
   </div>
   <p class="text-[15px] leading-relaxed text-ink-800">
     {d.href ? (
-      <a href={d.href} target="_blank" rel="noopener" class="hover:text-lime-700">{d.title}</a>
+      <a href={d.href} target="_blank" rel="noopener" class="link-subtle">{d.title}</a>
     ) : (
       d.title
     )}
