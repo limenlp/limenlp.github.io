@@ -1,13 +1,16 @@
 ---
 // ⛔ DO NOT EDIT for routine content updates.
-// Renders a single paper card (horizontal: image left, content right).
+// Renders a single paper. variants:
+//   default  → card (image left ~176px, content right, tldr always visible)
+//   compact  → card stacked (no image), used in tight grids like Spotlight
+//   list     → row (image left ~96px, content right, tldr collapsed in <details>)
 // Data comes from src/data/papers.yaml.
 
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
   paper: CollectionEntry<'papers'>;
-  variant?: 'default' | 'compact';
+  variant?: 'default' | 'compact' | 'list';
 }
 
 const { paper, variant = 'default' } = Astro.props;
@@ -24,39 +27,83 @@ if (d.poster) links.push({ label: 'Poster', href: d.poster, icon: '🖼️' });
 if (d.podcast) links.push({ label: 'Podcast', href: d.podcast, icon: '🎧' });
 
 const isCompact = variant === 'compact';
+const isList = variant === 'list';
 ---
-<article class:list={['card group relative flex h-full overflow-hidden', isCompact ? 'flex-col p-5' : 'flex-col sm:flex-row']}>
-  {d.image && !isCompact && (
-    <div class="block shrink-0 overflow-hidden bg-lime-50/40 sm:w-44 sm:self-stretch">
-      <div class="aspect-[16/9] sm:aspect-auto sm:h-full">
+{isList ? (
+  <article class="group flex gap-3 py-3 sm:gap-4 sm:py-4">
+    {d.image && (
+      <div class="shrink-0 overflow-hidden rounded-md bg-lime-50/40">
         <img
           src={d.image}
-          alt={d.title}
+          alt=""
           loading="lazy"
-          class="h-full w-full object-scale-down transition-transform duration-500 group-hover:scale-[1.03]"
+          class="h-16 w-24 object-scale-down sm:h-20 sm:w-28"
         />
       </div>
+    )}
+    <div class="flex min-w-0 flex-1 flex-col gap-1">
+      <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+        <h3 class="text-base font-semibold leading-snug text-ink-950">
+          <a href={d.paperUrl || d.website || '#'} class="link-subtle">{d.title}</a>
+        </h3>
+        {d.status !== 'preprint' && <span class="pill-accent shrink-0 text-xs">{d.venue}</span>}
+      </div>
+      <p class="line-clamp-1 text-xs text-ink-500">{d.authors}</p>
+      {d.tldr && (
+        <p class="line-clamp-2 text-sm leading-relaxed text-ink-700">{d.tldr}</p>
+      )}
+      <div class="flex flex-wrap items-center gap-1.5 text-xs">
+        {d.award && <span class="pill bg-lemon-100 text-lime-900 ring-1 ring-inset ring-lemon-300">🏆 {d.award.replace('🏆', '').trim()}</span>}
+        {links.map((l) => (
+          <a href={l.href} target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded-md border border-ink-200 bg-white px-2 py-0.5 font-medium text-ink-700 transition-colors hover:border-lime-400 hover:bg-lime-50 hover:text-lime-800">
+            <span aria-hidden="true">{l.icon}</span><span>{l.label}</span>
+          </a>
+        ))}
+        {d.press.map((p) => (
+          <a href={p.url} target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded-md border border-purple-200 bg-purple-50/60 px-2 py-0.5 font-medium text-purple-800 transition-colors hover:bg-purple-100">
+            <span aria-hidden="true">📰</span><span>{p.name}</span>
+          </a>
+        ))}
+        {d.themes.map((t) => (
+          <span class="rounded-full bg-ink-50 px-2 py-0.5 text-[11px] font-medium text-ink-600">{t}</span>
+        ))}
+      </div>
     </div>
-  )}
-  <div class:list={['flex flex-1 flex-col gap-2 min-w-0', isCompact ? '' : 'p-5']}>
-    <h3 class="text-base font-semibold leading-snug text-ink-950">
-      <a href={d.paperUrl || d.website || '#'} class="link-subtle after:absolute after:inset-0 after:content-['']">{d.title}</a>
-    </h3>
-    <p class="line-clamp-3 text-sm leading-relaxed text-ink-700">{d.tldr}</p>
-    <p class="line-clamp-1 text-xs text-ink-500">{d.authors}</p>
-    <div class="relative z-10 mt-auto flex flex-wrap items-center gap-1.5 pt-2 text-xs">
-      {d.status !== 'preprint' && <span class="pill-accent">{d.venue}</span>}
-      {d.award && <span class="pill bg-lemon-100 text-lime-900 ring-1 ring-inset ring-lemon-300">🏆 {d.award.replace('🏆', '').trim()}</span>}
-      {links.map((l) => (
-        <a href={l.href} target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded-md border border-ink-200 bg-white px-2 py-1 font-medium text-ink-700 transition-colors hover:border-lime-400 hover:bg-lime-50 hover:text-lime-800">
-          <span aria-hidden="true">{l.icon}</span><span>{l.label}</span>
-        </a>
-      ))}
-      {d.press.map((p) => (
-        <a href={p.url} target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded-md border border-purple-200 bg-purple-50/60 px-2 py-1 font-medium text-purple-800 transition-colors hover:bg-purple-100">
-          <span aria-hidden="true">📰</span><span>{p.name}</span>
-        </a>
-      ))}
+  </article>
+) : (
+  <article class:list={['card group relative flex h-full overflow-hidden', isCompact ? 'flex-col p-5' : 'flex-col sm:flex-row']}>
+    {d.image && !isCompact && (
+      <div class="block shrink-0 overflow-hidden bg-lime-50/40 sm:w-44 sm:self-stretch">
+        <div class="aspect-[16/9] sm:aspect-auto sm:h-full">
+          <img
+            src={d.image}
+            alt={d.title}
+            loading="lazy"
+            class="h-full w-full object-scale-down transition-transform duration-500 group-hover:scale-[1.03]"
+          />
+        </div>
+      </div>
+    )}
+    <div class:list={['flex flex-1 flex-col gap-2 min-w-0', isCompact ? '' : 'p-5']}>
+      <h3 class="text-base font-semibold leading-snug text-ink-950">
+        <a href={d.paperUrl || d.website || '#'} class="link-subtle after:absolute after:inset-0 after:content-['']">{d.title}</a>
+      </h3>
+      <p class="line-clamp-3 text-sm leading-relaxed text-ink-700">{d.tldr}</p>
+      <p class="line-clamp-1 text-xs text-ink-500">{d.authors}</p>
+      <div class="relative z-10 mt-auto flex flex-wrap items-center gap-1.5 pt-2 text-xs">
+        {d.status !== 'preprint' && <span class="pill-accent">{d.venue}</span>}
+        {d.award && <span class="pill bg-lemon-100 text-lime-900 ring-1 ring-inset ring-lemon-300">🏆 {d.award.replace('🏆', '').trim()}</span>}
+        {links.map((l) => (
+          <a href={l.href} target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded-md border border-ink-200 bg-white px-2 py-1 font-medium text-ink-700 transition-colors hover:border-lime-400 hover:bg-lime-50 hover:text-lime-800">
+            <span aria-hidden="true">{l.icon}</span><span>{l.label}</span>
+          </a>
+        ))}
+        {d.press.map((p) => (
+          <a href={p.url} target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded-md border border-purple-200 bg-purple-50/60 px-2 py-1 font-medium text-purple-800 transition-colors hover:bg-purple-100">
+            <span aria-hidden="true">📰</span><span>{p.name}</span>
+          </a>
+        ))}
+      </div>
     </div>
-  </div>
-</article>
+  </article>
+)}

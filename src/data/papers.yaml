@@ -57,6 +57,7 @@
   paperUrl: "https://arxiv.org/abs/1804.06876"
   code: "https://uclanlp.github.io/corefBias/overview"
   podcast: "https://soundcloud.com/nlp-highlights/66-gender-bias-in-coreference-resolution-evaluation-and-debiasing-methods-with-jieyu-zhao"
+  award: "🏆 Best Poster @ SoCalNLP · Top-10 Cited @ NAACL 2018"
   themes: [trustworthiness, evaluation]
 
 - id: 2018-gn-glove
@@ -241,11 +242,11 @@
 - id: 2023-multilingual-stereotype-leak
   title: Multilingual Large Language Models Leak Human Stereotypes Across Language Boundaries
   authors: "Yang Trista Cao, Anna Sotnikova, Jieyu Zhao, Linda X. Zou, Rachel Rudinger, Hal Daumé III"
-  venue: Preprint
-  year: 2023
-  status: preprint
+  venue: "NLP4PI 2025"
+  year: 2025
+  status: published
   tldr: "Stereotypes encoded in one language's training data don't stay there — multilingual LLMs leak them across language boundaries, sometimes amplifying biases in languages they barely saw."
-  paperUrl: "https://arxiv.org/abs/2312.07141"
+  paperUrl: "https://aclanthology.org/2025.nlp4pi-1.15/"
   themes: [trustworthiness]
 
 - id: 2023-name-mistranslation-bias
@@ -313,9 +314,9 @@
 - id: 2024-climb
   title: "CLIMB: A Benchmark of Clinical Bias in Large Language Models"
   authors: "Yubo Zhang, Shudi Hou, Mingyu Derek Ma, Wei Wang, Muhao Chen, Jieyu Zhao"
-  venue: Preprint
+  venue: "NLP4PI @ EMNLP 2024"
   year: 2024
-  status: preprint
+  status: published
   tldr: Benchmark probing whether LLM medical advice changes with patient demographics — the bias most likely to cause real-world harm if deployed in clinical workflows.
   paperUrl: "https://arxiv.org/abs/2407.05250"
   themes: [trustworthiness, evaluation]
@@ -338,6 +339,16 @@
   status: published
   tldr: Differential privacy and bias mitigation sometimes conflict. We measure exactly when DP training makes downstream bias worse — and which protected groups bear the cost.
   themes: [trustworthiness]
+
+- id: 2024-drugagent
+  title: "DrugAgent: Automating AI-Aided Drug Discovery Programming Through LLM Multi-Agent Collaboration"
+  authors: "Sizhe Liu, Yizhou Lu, Siyu Chen, Xiyang Hu, Jieyu Zhao, Yingzhou Lu, Yue Zhao"
+  venue: "AI4Research @ AAAI 2025"
+  year: 2025
+  status: published
+  tldr: "A multi-agent framework that automates ML programming for drug discovery: an LLM Planner pairs with an LLM Instructor to turn high-level ideas into runnable pharmaceutical pipelines."
+  paperUrl: "https://arxiv.org/abs/2411.15692"
+  themes: [agents]
 
 - id: 2024-fair-summarization
   title: Fair Abstractive Summarization of Diverse Perspectives
@@ -438,6 +449,16 @@
   paperUrl: "https://arxiv.org/abs/2504.04855"
   themes: [trustworthiness, agents]
 
+- id: 2025-controllable-pareto
+  title: "Controllable Pareto Trade-off between Fairness and Accuracy"
+  authors: "Yongkang Du, Jieyu Zhao, Yijun Yang, Tianyi Zhou"
+  venue: Preprint
+  year: 2025
+  status: preprint
+  tldr: "Fairness-accuracy trade-offs usually hand you one operating point. CPT lets users specify a preferred balance via reference vectors, navigating the Pareto front with stabilized fairness updates and gradient pruning."
+  paperUrl: "https://arxiv.org/abs/2509.13651"
+  themes: [trustworthiness]
+
 - id: 2025-cq-bench
   title: "Can LLMs Grasp Implicit Cultural Values? Benchmarking LLMs' Metacognitive Cultural Intelligence with CQ-Bench"
   authors: "Ziyi Liu, Priyanka Dey, Zhenyu Zhao, Jen-tse Huang, Rahul Gupta, Yang Liu, Jieyu Zhao"
@@ -526,6 +547,7 @@
   year: 2025
   status: published
   tldr: "LLM judges return point scores that look authoritative. We wrap them in conformal-prediction intervals so you can tell when the judge is actually confident — and when it's bluffing."
+  award: "🏆 SAC Highlight"
   themes: [evaluation]
 
 - id: 2025-muse-unlearning
@@ -617,6 +639,26 @@
   paperUrl: "https://arxiv.org/abs/2502.11411"
   themes: [trustworthiness, alignment]
   featured: true
+
+- id: 2026-gravity
+  title: "GRAVITY: A Framework for Personalized Text Generation via Profile-Grounded Synthetic Preferences"
+  authors: "Priyanka Dey, Daniele Rosa, Wenqing Zheng, Daniel Barcklow, Jieyu Zhao, Emilio Ferrara"
+  venue: EACL 2026
+  year: 2026
+  status: published
+  tldr: "Personalized generation usually needs costly human preference data. GRAVITY synthesizes preference pairs grounded in user profiles (cultural dimensions, values, personality), and its outputs beat baselines 86% of the time on Amazon book descriptions."
+  paperUrl: "https://arxiv.org/abs/2510.11952"
+  themes: [evaluation, alignment]
+
+- id: 2026-os-blind
+  title: "The Blind Spot of Agent Safety: How Benign User Instructions Expose Critical Vulnerabilities in Computer-Use Agents"
+  authors: "Xuwei Ding, Skylar Zhai, Linxin Song, Jiate Li, Taiwei Shi, Nicholas Meade, Siva Reddy, Jian Kang, Jieyu Zhao"
+  venue: Preprint
+  year: 2026
+  status: preprint
+  tldr: "Computer-use agent safety usually screens prompts. OS-BLIND shows even benign instructions can produce harm via task context or execution; safety alignment only activates in the first few steps, so even Claude 4.5 Sonnet hits 92.7% attack success."
+  paperUrl: "https://arxiv.org/abs/2604.10577"
+  themes: [agents, trustworthiness]
 
 - id: 2026-promediate
   title: "ProMediate: A Socio-cognitive Framework for Evaluating Proactive Agents in Multi-party Negotiation"
