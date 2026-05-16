@@ -1,5 +1,5 @@
 # ============================================================
-# ✏️ EDITABLE — Active lab members (rendered on /team/).
+# ✏️ EDITABLE — Active lab members (rendered on /people/).
 #
 # TEMPLATE (copy, fill in, paste anywhere in role section):
 #
@@ -81,7 +81,7 @@
   name: Linxin Song
   role: phd
   period: 2024.8 – Now
-  photo: /images/members/linxin.jpg
+  photo: "https://linxins.net/images/linxin.jpg"
   url: "https://linxins.net/"
   research: Computer-Use Agents · Multimodal Language Models · Synthetic Data
   order: 12
@@ -111,7 +111,7 @@
   name: Ziyi Liu
   role: phd
   period: 2023.8 – Now
-  photo: "https://liuziyi219.github.io/selfie1.JPG"
+  photo: "https://liuziyi219.github.io/portrait.jpg"
   url: "https://liuziyi219.github.io"
   research: LLM Reasoning · Social Intelligence
   order: 10

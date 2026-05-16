@@ -85,7 +85,7 @@ npm run dev
 │   ├── pages/                 ← Astro page routes (rarely touched)
 │   │   ├── index.astro        ← home page
 │   │   ├── papers.astro
-│   │   ├── team.astro
+│   │   ├── people.astro
 │   │   ├── news.astro
 │   │   ├── og.png.ts          ← auto-generates the social-share image
 │   │   └── wiki/
@@ -241,14 +241,14 @@ Open [`src/data/awards.yaml`](src/data/awards.yaml):
 
 ### Update the Team page
 
-The [`/team/`](https://limelab.science/team/) page auto-renders from two YAML files:
+The [`/people/`](https://limelab.science/people/) page auto-renders from two YAML files:
 
 | File | Who | Rendered section |
 |---|---|---|
 | [`src/data/members.yaml`](src/data/members.yaml) | Active members | PI → PhDs → Masters → Undergrads → Visiting & Interns → Affiliated |
 | [`src/data/alumni.yaml`](src/data/alumni.yaml) | Past members | Alumni section (split into "PhD & Visiting" / "Master, Undergrad & Summer Program") |
 
-**You don't touch [`src/pages/team.astro`](src/pages/team.astro)** — that's just the template. All content lives in the YAML files above.
+**You don't touch [`src/pages/people.astro`](src/pages/people.astro)** — that's just the template. All content lives in the YAML files above.
 
 **Card click behavior**: each member card is a clickable tile that goes to their `url` (personal homepage). The `work:` field links and Co-advisor link stay individually clickable. If `url` is omitted, the card is non-clickable (which signals "no homepage yet").
 
