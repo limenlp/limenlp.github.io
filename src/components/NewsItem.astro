@@ -7,8 +7,9 @@ import type { CollectionEntry } from 'astro:content';
 
 interface Props {
   item: CollectionEntry<'news'>;
+  compact?: boolean;
 }
-const { item } = Astro.props;
+const { item, compact = false } = Astro.props;
 const d = item.data;
 
 const tagStyles: Record<string, string> = {
@@ -31,15 +32,22 @@ function renderInline(text: string) {
   });
 }
 const titleHtml = renderInline(d.title);
+
+const itemClass = compact
+  ? 'group relative grid grid-cols-[auto_1fr] gap-3 py-2.5 first:pt-0 last:pb-0'
+  : 'group relative grid grid-cols-[auto_1fr] gap-4 py-4 first:pt-0 last:pb-0';
+const textClass = compact
+  ? 'text-sm leading-6 text-ink-800'
+  : 'text-[15px] leading-relaxed text-ink-800';
 ---
-<li class="group relative grid grid-cols-[auto_1fr] gap-4 py-4 first:pt-0 last:pb-0">
-  <div class="flex flex-col items-start gap-1.5">
+<li class={itemClass}>
+  <div class="flex flex-col items-start gap-1">
     <time class="text-xs text-ink-500">{d.date}</time>
     <span class={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide ring-1 ring-inset ${tagClass}`}>
       {d.tag}
     </span>
   </div>
-  <p class="text-[15px] leading-relaxed text-ink-800">
+  <p class={textClass}>
     <span set:html={titleHtml} />
   </p>
 </li>
