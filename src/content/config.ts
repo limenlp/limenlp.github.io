@@ -113,10 +113,11 @@ const awards = defineCollection({
 const themes = defineCollection({
   loader: file('src/data/themes.yaml'),
   schema: z.object({
-    name: z.string(),
+    name: z.string().optional(),
     icon: z.string().optional(),
-    blurb: z.string(),
+    blurb: z.string().optional(),
     order: z.number().default(100),
+    intro: z.string().optional(),
   }),
 });
 

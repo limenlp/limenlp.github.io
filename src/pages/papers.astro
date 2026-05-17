@@ -15,7 +15,9 @@ const sortedPapers = [...allPapers].sort((a, b) => {
   return b.data.year - a.data.year;
 });
 
-const themesSorted = allThemes.sort((a, b) => a.data.order - b.data.order);
+const themesSorted = allThemes
+  .filter((t) => !t.data.intro)
+  .sort((a, b) => a.data.order - b.data.order);
 
 const byYear: Record<number, typeof sortedPapers> = {};
 for (const p of sortedPapers.filter((p) => p.data.status === 'published')) {

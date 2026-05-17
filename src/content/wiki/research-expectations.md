@@ -14,7 +14,7 @@ order: 1
   <div class="space-y-3 px-6 py-5">
     <h2 class="text-xl font-semibold text-ink-950">Respect each other</h2>
     <p class="leading-relaxed text-ink-800">That means each other's time, our collaborators' efforts, and the responsibility we carry for the work we put out.</p>
-    <p class="leading-relaxed text-ink-800"><strong class="text-ink-950">Time</strong>: don't waste it on unproductive work. The group reserves specific time slots for meetings — use them effectively. Start the next round of experiments <strong class="text-ink-950">no later than the day after each meeting</strong> (analysis, debugging, and reflection take time). If you can only begin one day before the next meeting, reschedule the meeting instead.</p>
+    <p class="leading-relaxed text-ink-800"><strong class="text-ink-950">Time</strong>: don't waste it on unproductive work. The group reserves specific time slots for meetings — use them effectively. Start the next round of experiments <em>no later than the day after each meeting</em> (analysis, debugging, and reflection take time). If you can only begin one day before the next meeting, reschedule the meeting instead.</p>
     <p class="leading-relaxed text-ink-800"><strong class="text-ink-950">Collaborators' efforts</strong>: when others share work, code, or ideas, engage seriously and deliver on what you commit to.</p>
     <p class="leading-relaxed text-ink-800"><strong class="text-ink-950">Responsibility</strong>: own your part. Verify every claim and every number. Follow through.</p>
   </div>

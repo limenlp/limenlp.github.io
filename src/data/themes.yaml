@@ -1,7 +1,10 @@
 # ============================================================
 # ✏️ EDITABLE — Research themes (rendered as cards on home + filters on /papers/).
 #
-# TEMPLATE (copy, fill in):
+# Special entry: id `_intro` with an `intro:` field renders as the paragraph
+# above the theme card grid on the home page (not rendered as a card itself).
+#
+# TEMPLATE for a regular theme entry:
 #
 # - id: theme-slug                         # REQUIRED, unique slug — also used in papers.yaml `themes:` list
 #   name: "Theme Name"                     # REQUIRED
@@ -13,26 +16,31 @@
 # Don't rename `id` without also updating papers.yaml `themes:` arrays.
 # ============================================================
 
+- id: _intro
+  order: 0
+  intro: "We study AI systems beyond static benchmarks: how they adapt, act, fail, and become trustworthy in real-world settings."
+
+
+- id: alignment
+  name: "Learning & Alignment"
+  icon: compass
+  order: 1
+  blurb: "We study how models adapt through post-training, reinforcement finetuning, user feedback, personalization, and curriculum design."
+
 - id: agents
   name: "Agents & Computer Use"
   icon: cursor
   order: 2
-  blurb: "Agents that act on real computers — clicking, coding, and negotiating. We study how to ground language in environments, how to reward the right behaviors, and how to make these systems verifiable and steerable."
-
-- id: alignment
-  name: "Alignment & RL"
-  icon: compass
-  order: 3
-  blurb: "Post-training that holds up under pressure. We work on reinforcement finetuning, in-situ user feedback, curriculum design, and the hidden costs of optimization — like the hallucination tax that comes with sharper reward signals."
+  blurb: "We build and evaluate agents that use computers, tools, and domain knowledge to plan, act, recover, and collaborate."
 
 - id: evaluation
-  name: "Evaluation & Personalization"
+  name: "Evaluation & Measurement"
   icon: scale
-  order: 4
-  blurb: "How do we measure what models actually know — and for whom? We probe knowledge deficiencies on massive KBs, study LLM-as-a-judge uncertainty, and design evaluations that account for cultural and personal variation."
+  order: 3
+  blurb: "We design evaluations that reveal what models actually know, understand, and fail to do across reasoning, multimodal, cultural, and agentic tasks."
 
 - id: trustworthiness
   name: "Trustworthiness & Safety"
   icon: shield
-  order: 1
-  blurb: "Auditing what large models say, store, and reveal — from social bias and stereotyping to hallucination, location leakage, and unsafe training data. We build evaluations that surface failures real users will hit, not just average-case scores."
+  order: 4
+  blurb: "We audit failures that matter in real use: bias, hallucination, privacy leakage, unsafe data influence, and brittle model judgments."
