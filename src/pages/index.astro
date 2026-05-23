@@ -24,7 +24,7 @@ const spotlightPapers = allPapers.filter((p) => p.data.spotlight).sort((a, b) =>
 const featuredPapers = allPapers.filter((p) => p.data.featured).sort((a, b) => b.data.year - a.data.year);
 const spotlight = [...spotlightPapers, ...featuredPapers]
   .filter((p, i, arr) => arr.findIndex((x) => x.id === p.id) === i)
-  .slice(0, 3);
+  .slice(0, 5);
 
 const news = allNews
   .sort((a, b) => (a.data.date < b.data.date ? 1 : -1))

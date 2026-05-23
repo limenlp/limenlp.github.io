@@ -150,7 +150,7 @@ Open [`src/data/papers.yaml`](src/data/papers.yaml). Add a new entry at the top 
 
 **Card click behavior**: the **whole paper card** is clickable and links to `paperUrl` (falls back to `website`, then to `#`). The action pills in the bottom row (Paper / Code / HF / Video / Press / …) stay individually clickable. If neither `paperUrl` nor `website` is set, clicking the card does nothing — so always set at least one.
 
-**Home Spotlight** is a carousel that shows **up to 3 papers**: papers with `spotlight: true` come first (sorted by year, newest first), then papers with `featured: true` fill the remaining slots. Visitors can click ← → arrows or dot indicators to switch between cards (it loops). To rotate the spotlight: flip `spotlight: true` / `featured: true` flags on different papers.
+**Home Spotlight** is a carousel that shows **up to 5 papers**: papers with `spotlight: true` come first (sorted by year, newest first), then papers with `featured: true` fill the remaining slots. Visitors can click ← → arrows or dot indicators to switch between cards (it loops). To rotate the spotlight: flip `spotlight: true` / `featured: true` flags on different papers.
 
 ### Add a news item
 
