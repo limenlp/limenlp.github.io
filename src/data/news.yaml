@@ -25,6 +25,11 @@
 # - Most recent on top. Home page shows the top 10. Full archive at /news/.
 # ============================================================
 
+- id: 2026-06-tmlr-ada
+  date: 2026-06
+  title: "[AdaRFT](https://arxiv.org/html/2504.05520v3) accepted to TMLR."
+  tag: paper
+
 - id: 2026-05-acl-promediate
   date: 2026-05
   title: "[ProMediate](https://arxiv.org/abs/2510.25224) accepted to ACL 2026 Findings."
