@@ -168,7 +168,7 @@
 - id: 2025-adaptive-curriculum-rl
   title: Efficient Reinforcement Finetuning via Adaptive Curriculum Learning
   authors: "Taiwei Shi, Yiyang Wu, Linxin Song, Tianyi Zhou, Jieyu Zhao"
-  venue: "TMLR 2026"
+  venue: TMLR
   year: 2026
   status: published
   tldr: RL finetuning wastes compute on prompts the model already aces. We schedule training data adaptively — pushing the model toward problems just past its current capability.
