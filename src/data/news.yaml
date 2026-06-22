@@ -25,9 +25,14 @@
 # - Most recent on top. Home page shows the top 10. Full archive at /news/.
 # ============================================================
 
-- id: 2026-06-tmlr-ada
+- id: 2026-06-ExeVRM'
   date: 2026-06
-  title: "[AdaRFT](https://arxiv.org/html/2504.05520v3) accepted to TMLR."
+  title: "📑 [Video-Based Reward Modeling for Computer-Use Agents](https://arxiv.org/pdf/2603.10178) is accepted to ECCV 2026."
+  tag: paper
+
+- id: 2026-06-AdaRFT
+  date: 2026-06
+  title: "📑 [Efficient Reinforcement Finetuning via Adaptive Curriculum Learning](https://taiweis.com/papers/adarft) is accepted to TMLR 2026."
   tag: paper
 
 - id: 2026-05-acl-promediate
