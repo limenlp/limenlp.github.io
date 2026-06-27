@@ -387,6 +387,11 @@ Conventions:
 - Logos / illustrations → PNG with alpha
 - Big teaser images → WebP (smaller than JPG at same quality)
 
+**Member photos:** save your portrait to `public/images/members/` and set `photo: /images/members/yourname.jpg` in `members.yaml`. Requirements:
+- **Local files only** — do not link to external URLs (your personal site, GitHub Pages, etc.). External images add DNS lookups, slow down page load, and break when the source goes down.
+- **≤ 200 KB** — resize to ~400×400 px and compress before committing. On macOS: `sips --resampleHeightWidthMax 400 -s formatOptions 80 yourphoto.jpg`.
+- **Square crop preferred** — the photo renders as a circle; non-square images will be clipped.
+
 ### `src/assets/` — only for build-optimized hero images
 
 Used for images we want Astro to auto-convert to WebP, generate responsive sizes for, and lazy-load via the `<Image>` component. Currently only:

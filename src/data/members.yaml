@@ -63,7 +63,7 @@
   name: Chandresh Mallick
   role: master
   period: 2025.6 – Now
-  photo: /images/members/chandresh.png
+  photo: /images/members/chandresh.jpg
   url: "https://www.linkedin.com/in/chandresh-mallick/"
   research: Model Merging
   order: 20
@@ -81,7 +81,7 @@
   name: Linxin Song
   role: phd
   period: 2024.8 – Now
-  photo: "https://linxins.net/images/linxin.jpg"
+  photo: /images/members/linxin.jpg
   url: "https://linxins.net/"
   research: Computer-Use Agents · Multimodal Language Models · Synthetic Data
   order: 12
@@ -102,7 +102,7 @@
   name: Taiwei Shi
   role: phd
   period: 2023.8 – Now
-  photo: "https://maksimstw.github.io/images/portrait.jpg"
+  photo: /images/members/maksim.jpg
   url: "https://maksimstw.github.io"
   research: Reinforcement Learning with Verifiable Rewards
   order: 11
@@ -111,7 +111,7 @@
   name: Ziyi Liu
   role: phd
   period: 2023.8 – Now
-  photo: "https://liuziyi219.github.io/portrait.jpg"
+  photo: /images/members/ziyi.jpg
   url: "https://liuziyi219.github.io"
   research: LLM Reasoning · Social Intelligence
   order: 10
