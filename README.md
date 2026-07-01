@@ -358,6 +358,16 @@ Open [`src/data/themes.yaml`](src/data/themes.yaml). To change which icon a them
 
 ## Images
 
+> **Compress before you commit.** Every image you add — member photo, paper teaser, logo — must be resized and compressed **before** pushing. Large images slow the site for everyone and bloat the repo permanently (git stores every version forever). Quick rule of thumb:
+>
+> | Type | Target size | How |
+> |---|---|---|
+> | Member photo | ≤ 50 KB, ~400×400 px | `sips -Z 400 -s formatOptions 80 yourphoto.jpg` |
+> | Paper teaser | ≤ 200 KB | `sips -Z 800 teaser.png` (or save as WebP) |
+> | Logo / icon | ≤ 50 KB | Already small if exported correctly |
+>
+> **Check file size before committing:** `ls -lh public/images/members/yourphoto.jpg`. If it's over the target, compress it.
+
 Two places images can live:
 
 ### `public/images/` — most photos, logos, paper teasers
