@@ -77,6 +77,15 @@
   research: Research in Progress
   order: 21
 
+- id: master-ziyan-yang
+  name: Ziyan Yang
+  role: master
+  period: 2026.5 – Now
+  photo: /images/members/ziyan-yang.jpg
+  url: "https://www.linkedin.com/in/ziyan-yang-925226320"
+  research: LLM Agents · Evaluation · AI Systems
+  order: 22
+
 - id: phd-linxin-song
   name: Linxin Song
   role: phd
