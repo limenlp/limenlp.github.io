@@ -60,7 +60,7 @@ export default {
           900: '#303744',
           950: '#1f242e',
         },
-        // Persimmon (柿红) — warm accent for hover, shared with jieyuzhao.github.io
+        // Persimmon (柿红) — warm accent for hover
         persimmon: {
           DEFAULT: '#E44821',
           50:  '#fdeee9',

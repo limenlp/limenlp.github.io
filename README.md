@@ -508,7 +508,7 @@ The palette is **金桔柠檬茶 (lime) + 柠檬黄 (lemon) + 柿红 (persimmon)
 |---|---|---|
 | **`lime-*`** | `#33AD37` (lime-500) | Primary brand. `lime-700` for link text. `lime-50` for soft fills. Markers, eyebrow text, divider gradients. |
 | **`lemon-*`** | `#F8DF09` (lemon-500) | Bright accent, used sparingly: "actually check." highlight underline, active theme-chip on `/papers/`, "We're hiring" hero button, hero eyebrow underline, text selection (`::selection`). |
-| **`persimmon-*`** | `#E44821` (default) | Warm hover accent — **all link hover states**. Shared with `jieyuzhao.github.io` for cross-site cohesion. |
+| **`persimmon-*`** | `#E44821` (default) | Warm hover accent — **all link hover states**. |
 | **`lychee`** | `#FEFFEF` (single) | Soft warm white. Reserved (not currently used as page bg). |
 | **`ink-*`** | grayscale | Body text + borders. `ink-950` for headings, `ink-700`/`ink-800` for body, `ink-500` for muted. |
 
