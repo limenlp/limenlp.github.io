@@ -26,9 +26,9 @@ const social = d.social;
     <h2 class="heading-2">
       <a href={d.url} class="link-subtle" target="_blank" rel="noopener">{d.name}</a>
     </h2>
-    {d.research && <p class="text-base leading-relaxed text-ink-700">{d.research}</p>}
+    {d.research && <p class="copy-body text-ink-700">{d.research}</p>}
     {social && (
-      <div class="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+      <div class="copy-support mt-2 flex flex-wrap items-center gap-x-4 gap-y-2">
         {social.scholar && <a href={social.scholar} target="_blank" rel="noopener" class="link-accent">Scholar</a>}
         {social.twitter && <a href={social.twitter} target="_blank" rel="noopener" class="link-accent">Twitter</a>}
         {social.github && <a href={social.github} target="_blank" rel="noopener" class="link-accent">GitHub</a>}

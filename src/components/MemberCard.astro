@@ -50,15 +50,15 @@ const workHtml = d.work ? renderInline(d.work) : '';
       d.name
     )}
   </h3>
-  {d.period && <p class="mt-1 text-xs text-ink-500">{d.period}</p>}
+  {d.period && <p class="copy-support mt-1 text-ink-500">{d.period}</p>}
   {d.research && (
-    <p class="mt-3 text-xs leading-relaxed text-ink-700">{d.research}</p>
+    <p class="copy-support mt-3 text-ink-700">{d.research}</p>
   )}
   {d.work && (
-    <p class="relative z-10 mt-2 text-xs leading-relaxed text-ink-600" set:html={workHtml} />
+    <p class="copy-support relative z-10 mt-2 text-ink-600" set:html={workHtml} />
   )}
   {d.coAdvisor && (
-    <p class="relative z-10 mt-3 text-[11px] text-ink-500">
+    <p class="copy-support relative z-10 mt-3 text-ink-500">
       Co-advised with{' '}
       {d.coAdvisor.url ? (
         <a href={d.coAdvisor.url} class="link-accent" target="_blank" rel="noopener">{d.coAdvisor.name}</a>

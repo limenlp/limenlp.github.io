@@ -103,7 +103,7 @@ const visitingAlumni = phdAlumni.filter((a) => !summerAlumni.includes(a));
         <h3 class="mb-3 text-sm font-semibold text-ink-700">PhD & Visiting</h3>
         <ul class="space-y-2.5">
           {visitingAlumni.map((a) => (
-            <li class="flex flex-wrap items-baseline gap-x-2 text-sm">
+            <li class="copy-dense flex flex-wrap items-baseline gap-x-2">
               {a.data.url ? (
                 <a href={a.data.url} target="_blank" rel="noopener" class="font-medium link-accent">{a.data.name}</a>
               ) : (
@@ -111,7 +111,7 @@ const visitingAlumni = phdAlumni.filter((a) => !summerAlumni.includes(a));
               )}
               {a.data.detail && <span class="text-ink-500">({a.data.detail})</span>}
               {a.data.destination && <span class="text-ink-700">→ {a.data.destination}</span>}
-              {a.data.work && <span class="basis-full text-xs text-ink-500" set:html={a.data.work.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener" class="link-subtle">$1</a>')} />}
+              {a.data.work && <span class="copy-support basis-full text-ink-500" set:html={a.data.work.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener" class="link-subtle">$1</a>')} />}
             </li>
           ))}
         </ul>
@@ -120,7 +120,7 @@ const visitingAlumni = phdAlumni.filter((a) => !summerAlumni.includes(a));
         <h3 class="mb-3 text-sm font-semibold text-ink-700">Master, Undergrad & Summer Program</h3>
         <ul class="space-y-2.5">
           {[...studentAlumni, ...summerAlumni].map((a) => (
-            <li class="flex flex-wrap items-baseline gap-x-2 text-sm">
+            <li class="copy-dense flex flex-wrap items-baseline gap-x-2">
               {a.data.url ? (
                 <a href={a.data.url} target="_blank" rel="noopener" class="font-medium link-accent">{a.data.name}</a>
               ) : (
@@ -128,7 +128,7 @@ const visitingAlumni = phdAlumni.filter((a) => !summerAlumni.includes(a));
               )}
               {a.data.detail && <span class="text-ink-500">({a.data.detail})</span>}
               {a.data.destination && <span class="text-ink-700">→ {a.data.destination}</span>}
-              {a.data.work && <span class="basis-full text-xs text-ink-500" set:html={a.data.work.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener" class="link-subtle">$1</a>')} />}
+              {a.data.work && <span class="copy-support basis-full text-ink-500" set:html={a.data.work.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener" class="link-subtle">$1</a>')} />}
             </li>
           ))}
         </ul>

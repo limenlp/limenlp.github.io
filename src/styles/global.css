@@ -66,6 +66,18 @@
     line-height: 1.2;
   }
 
+  .copy-body {
+    @apply text-base leading-relaxed;
+  }
+
+  .copy-dense {
+    @apply text-[15px] leading-relaxed;
+  }
+
+  .copy-support {
+    @apply text-sm leading-relaxed;
+  }
+
   .eyebrow {
     @apply text-xs font-semibold uppercase tracking-wider text-lime-700;
   }

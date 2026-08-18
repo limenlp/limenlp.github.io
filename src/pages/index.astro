@@ -67,7 +67,7 @@ const pressItems = allPress;
             <span class="absolute inset-x-0 bottom-1 -z-0 h-3 bg-lemon-300/90"></span>
           </span></span>
         </h1>
-        <p class="max-w-3xl text-lg leading-relaxed text-ink-700">
+        <p class="copy-body max-w-3xl text-ink-700">
           LIME Lab is part of the <a href="https://nlp.usc.edu/" target="_blank" rel="noopener" class="link-accent">USC NLP Group</a>, led by <a href="https://jieyuzhao.github.io" target="_blank" rel="noopener" class="link-accent">Prof. Jieyu Zhao</a>. We work on two sides of AI models and agents — <strong class="font-semibold text-ink-900">modeling</strong> them to be more capable, aligned, and reliable in the real world, and designing <strong class="font-semibold text-ink-900">evaluations</strong> that surface where they fall short, with a strong <strong class="font-semibold text-ink-900">human-centered</strong> thread throughout.
         </p>
         <div class="flex flex-wrap items-center gap-3">
@@ -196,7 +196,7 @@ const pressItems = allPress;
       <a href="/papers/" class="hidden text-sm font-medium text-lime-700 hover:text-lime-800 sm:inline-flex sm:items-center sm:gap-1">All papers →</a>
     </div>
     {themesIntro && (
-      <p class="mb-8 text-base leading-relaxed text-ink-700">{themesIntro}</p>
+      <p class="copy-body mb-8 text-ink-700">{themesIntro}</p>
     )}
     <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
       {themesSorted.map((theme) => (
@@ -213,7 +213,7 @@ const pressItems = allPress;
         {awards.map((a) => (
           <li class="flex items-baseline gap-4 py-3">
             <div class="flex-1 min-w-0">
-              <p class="text-sm font-medium text-ink-950">
+              <p class="copy-dense font-medium text-ink-950">
                 {a.data.href ? (
                   <a href={a.data.href} target="_blank" rel="noopener" class="link-subtle">{a.data.title}</a>
                 ) : (
@@ -226,7 +226,7 @@ const pressItems = allPress;
                 )}
               </p>
               {a.data.paper && (
-                <p class="mt-0.5 text-xs italic text-ink-600">
+                <p class="copy-support mt-0.5 italic text-ink-600">
                   {a.data.href ? (
                     <a href={a.data.href} target="_blank" rel="noopener" class="link-subtle">{a.data.paper}</a>
                   ) : (
@@ -250,7 +250,7 @@ const pressItems = allPress;
             <a href={p.data.href} target="_blank" rel="noopener" class="card flex items-center justify-between gap-4 p-4">
               <div>
                 <p class="text-xs font-medium uppercase tracking-wider text-ink-500">{p.data.outlet}{p.data.year ? ` · ${p.data.year}` : ''}</p>
-                {p.data.headline && <p class="mt-1 text-sm font-medium text-ink-900">{p.data.headline}</p>}
+                {p.data.headline && <p class="copy-support mt-1 font-medium text-ink-900">{p.data.headline}</p>}
               </div>
               <span class="text-ink-400">↗</span>
             </a>

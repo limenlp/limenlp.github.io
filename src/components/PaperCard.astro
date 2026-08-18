@@ -48,9 +48,9 @@ const isList = variant === 'list';
         </h3>
         {d.status !== 'preprint' && <span class="pill-accent shrink-0 text-xs">{d.venue}</span>}
       </div>
-      <p class="line-clamp-1 text-xs text-ink-500">{d.authors}</p>
+      <p class="copy-support line-clamp-1 text-ink-500">{d.authors}</p>
       {d.tldr && (
-        <p class="line-clamp-2 text-sm leading-relaxed text-ink-700">{d.tldr}</p>
+        <p class="copy-support line-clamp-2 text-ink-700">{d.tldr}</p>
       )}
       <div class="flex flex-wrap items-center gap-1.5 text-xs">
         {d.award && <span class="pill bg-lemon-100 text-lime-900 ring-1 ring-inset ring-lemon-300">🏆 {d.award.replace('🏆', '').trim()}</span>}
@@ -88,8 +88,8 @@ const isList = variant === 'list';
       <h3 class="text-base font-semibold leading-snug text-ink-950">
         <a href={d.paperUrl || d.website || '#'} class="link-subtle after:absolute after:inset-0 after:content-['']">{d.title}</a>
       </h3>
-      <p class="line-clamp-3 text-sm leading-relaxed text-ink-700">{d.tldr}</p>
-      <p class="line-clamp-1 text-xs text-ink-500">{d.authors}</p>
+      <p class="copy-support line-clamp-3 text-ink-700">{d.tldr}</p>
+      <p class="copy-support line-clamp-1 text-ink-500">{d.authors}</p>
       <div class="relative z-10 mt-auto flex flex-wrap items-center gap-1.5 pt-2 text-xs">
         {d.status !== 'preprint' && <span class="pill-accent">{d.venue}</span>}
         {d.award && <span class="pill bg-lemon-100 text-lime-900 ring-1 ring-inset ring-lemon-300">🏆 {d.award.replace('🏆', '').trim()}</span>}
