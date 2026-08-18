@@ -102,6 +102,20 @@
   destination: Amazon
   order: 2
 
+- id: phd-taiwei-shi
+  name: Taiwei Shi
+  track: phd
+  url: "https://taiweis.com/"
+  detail: USC PhD
+  destination: Microsoft
+  order: 3
+
+- id: undergrad-sunny-yu
+  name: Sunny Yu
+  track: undergrad
+  detail: USC CURVE Fellowship
+  order: 22
+
 - id: undergrad-wendy-wu
   name: Wendy Wu
   track: undergrad

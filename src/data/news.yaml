@@ -25,7 +25,17 @@
 # - Most recent on top. Home page shows the top 10. Full archive at /news/.
 # ============================================================
 
-- id: 2026-06-ExeVRM'
+- id: 2026-07-taiwei-phd
+  date: 2026-07
+  title: "🎓 Congrats to [Taiwei Shi](https://taiweis.com/) for passing his PhD defense. Wish you all the best, Dr. Shi!"
+  tag: team
+
+- id: 2026-07-msr-future-of-work
+  date: 2026-07
+  title: "🎉 We received a [Microsoft AI and the New Future of Work](https://www.microsoft.com/en-us/research/academic-program/ai-and-the-new-future-of-work-cfp-spring-2026/recipients/) grant. Thank you, Microsoft!"
+  tag: award
+
+- id: 2026-06-ExeVRM
   date: 2026-06
   title: "📑 [Video-Based Reward Modeling for Computer-Use Agents](https://arxiv.org/pdf/2603.10178) is accepted to ECCV 2026."
   tag: paper

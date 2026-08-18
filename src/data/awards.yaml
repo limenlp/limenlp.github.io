@@ -67,3 +67,12 @@
   title: Capital One Student Fellowship
   year: 2025
   recipient: Priyanka Dey
+
+- id: 2026-oori-research-catalyst
+  title: OORI Research Catalyst Program Award
+  year: 2026
+
+- id: 2026-msr-future-of-work
+  title: Microsoft AI and the New Future of Work Grant
+  year: 2026
+  href: "https://www.microsoft.com/en-us/research/academic-program/ai-and-the-new-future-of-work-cfp-spring-2026/recipients/"

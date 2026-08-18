@@ -86,6 +86,17 @@
   research: LLM Agents · Evaluation · AI Systems
   order: 22
 
+- id: phd-jiaqi-deng
+  name: Jiaqi Deng
+  role: phd
+  period: 2026.8 – Now
+  url: "https://millank0817.github.io/"
+  research: Computer-Use Agents · Agentic Foundation Models · Agent Evaluation
+  coAdvisor:
+    name: Xiang Ren
+    url: "https://viterbi.usc.edu/directory/faculty/Ren/Xiang"
+  order: 14
+
 - id: phd-linxin-song
   name: Linxin Song
   role: phd
@@ -106,15 +117,6 @@
     name: Emilio Ferrara
     url: "https://viterbi.usc.edu/directory/faculty/Ferrara/Emilio"
   order: 13
-
-- id: phd-taiwei-shi
-  name: Taiwei Shi
-  role: phd
-  period: 2023.8 – Now
-  photo: /images/members/maksim.jpg
-  url: "https://maksimstw.github.io"
-  research: Reinforcement Learning with Verifiable Rewards
-  order: 11
 
 - id: phd-ziyi-liu
   name: Ziyi Liu
@@ -139,14 +141,6 @@
     linkedin: "https://www.linkedin.com/in/jieyuzhao/"
     orcid: "https://orcid.org/0009-0003-9956-5481"
     email: "jieyuz@usc.edu"
-
-- id: undergrad-sunny-yu
-  name: Sunny Yu
-  role: undergrad
-  period: CURVE Fellow
-  photo: /images/team/limion-2.png
-  research: Research in Progress
-  order: 30
 
 - id: undergrad-michael-siu
   name: Michael Siu

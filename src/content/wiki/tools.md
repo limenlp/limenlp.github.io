@@ -18,7 +18,7 @@ order: 2
 
 ## Tutorials & guides
 
-- [How to Train An LLM in 2025?](https://docs.google.com/presentation/d/10OpwBkeB5IXd28MXrNococz7lJe9Cz7rwQZIsMgojUU/edit?usp=sharing) — curated by [Taiwei Shi](https://maksimstw.github.io) & [Linxin Song](https://linxins.net/). Ask Jieyu if you need access.
+- [How to Train An LLM in 2025?](https://docs.google.com/presentation/d/10OpwBkeB5IXd28MXrNococz7lJe9Cz7rwQZIsMgojUU/edit?usp=sharing) — curated by [Taiwei Shi](https://taiweis.com/) & [Linxin Song](https://linxins.net/). Ask Jieyu if you need access.
 
 ## Core stack
 
