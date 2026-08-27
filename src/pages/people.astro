@@ -30,19 +30,19 @@ const summerAlumni = alumniSorted.filter((a) => a.data.track === 'visiting' && a
 const visitingAlumni = phdAlumni.filter((a) => !summerAlumni.includes(a));
 ---
 <Base title="Team · LIME Lab" description="Team members of LIME Lab.">
-  <section class="container-prose pt-8 sm:pt-12">
+  <section class="container-prose page-top">
     <h1 class="heading-1">People</h1>
   </section>
 
   {pi && (
-    <section class="container-prose mt-12">
+    <section class="container-prose section-gap">
       <PICard pi={pi} />
     </section>
   )}
 
 
   {phds.length > 0 && (
-    <section class="container-prose mt-20">
+    <section class="container-prose section-gap">
       <div class="mb-6 flex items-center gap-3">
         <h2 class="heading-3">PhD Students</h2>
         <div class="lime-divider flex-1"></div>
@@ -55,7 +55,7 @@ const visitingAlumni = phdAlumni.filter((a) => !summerAlumni.includes(a));
   )}
 
   {masters.length > 0 && (
-    <section class="container-prose mt-20">
+    <section class="container-prose section-gap">
       <div class="mb-6 flex items-center gap-3">
         <h2 class="heading-3">Master Students</h2>
         <div class="lime-divider flex-1"></div>
@@ -68,7 +68,7 @@ const visitingAlumni = phdAlumni.filter((a) => !summerAlumni.includes(a));
   )}
 
   {undergrads.length > 0 && (
-    <section class="container-prose mt-20">
+    <section class="container-prose section-gap">
       <div class="mb-6 flex items-center gap-3">
         <h2 class="heading-3">Undergraduate Students</h2>
         <div class="lime-divider flex-1"></div>
@@ -81,7 +81,7 @@ const visitingAlumni = phdAlumni.filter((a) => !summerAlumni.includes(a));
   )}
 
   {visiting.length > 0 && (
-    <section class="container-prose mt-20">
+    <section class="container-prose section-gap">
       <div class="mb-6 flex items-center gap-3">
         <h2 class="heading-3">Visiting Students & Interns</h2>
         <div class="lime-divider flex-1"></div>
@@ -93,7 +93,7 @@ const visitingAlumni = phdAlumni.filter((a) => !summerAlumni.includes(a));
     </section>
   )}
 
-  <section class="container-prose mt-20">
+  <section class="container-prose section-gap">
     <div class="mb-6 flex items-center gap-3">
       <h2 class="heading-3">Alumni</h2>
       <div class="lime-divider flex-1"></div>
@@ -137,7 +137,7 @@ const visitingAlumni = phdAlumni.filter((a) => !summerAlumni.includes(a));
   </section>
 
   {affiliated.length > 0 && (
-    <section class="container-prose mt-20">
+    <section class="container-prose section-gap">
       <div class="mb-6 flex items-center gap-3">
         <h2 class="heading-3">Affiliated Members</h2>
         <div class="lime-divider flex-1"></div>

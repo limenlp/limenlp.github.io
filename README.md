@@ -532,7 +532,7 @@ All link hovers swap text to `persimmon` (warm orange-red) + show/recolor the un
 
 ### Section structure
 
-Each page section uses `<section class="container-prose …">` for max-width + horizontal padding. New sections typically start with `mt-24` (or `mt-12` for tighter stacks). On the home page, `News + Spotlight` is a 40/60 split (`lg:grid-cols-[2fr_3fr]`).
+Each page section uses `<section class="container-prose …">` for max-width + horizontal padding. Vertical spacing comes from two **rhythm tokens** defined in `global.css`: the first section of a page gets `page-top`, every following section gets `section-gap` (`<section class="container-prose section-gap">`). Don't write raw `mt-*` / `pt-*` on sections — **to retune spacing site-wide, edit the two token lines in `global.css`**. On the home page, `News + Spotlight` is a 40/60 split (`lg:grid-cols-[2fr_3fr]`).
 
 ---
 

@@ -30,7 +30,7 @@ const categoryLabel: Record<string, string> = {
 };
 ---
 <Base title={`${entry.data.title} · LIME Wiki`} description={entry.data.description}>
-  <div class="container-prose pt-8 sm:pt-12">
+  <div class="container-prose page-top">
     <div class="grid gap-12 md:grid-cols-[220px_1fr] lg:gap-16">
       <WikiSidebar />
 
@@ -50,7 +50,7 @@ const categoryLabel: Record<string, string> = {
         </div>
 
         {(prev || next) && (
-          <nav class="mt-16 grid gap-3 border-t border-ink-100 pt-8 sm:grid-cols-2">
+          <nav class="section-gap grid gap-3 border-t border-ink-100 pt-8 sm:grid-cols-2">
             {prev ? (
               <a href={`/wiki/${prev.slug}/`} class="card group flex flex-col p-4">
                 <span class="text-xs uppercase tracking-wider text-ink-500">← Previous</span>

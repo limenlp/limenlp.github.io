@@ -44,6 +44,12 @@
     @apply mx-auto max-w-6xl px-6 sm:px-8;
   }
 
+  /* ── Vertical rhythm tokens ───────────────────────────────────────────────
+     The ONE place to retune spacing for the whole site. Pages use these names
+     instead of raw pt-* / mt-* utilities, so a change here hits every page. */
+  .page-top    { @apply pt-8 sm:pt-12; }   /* first section under the nav */
+  .section-gap { @apply mt-16; }           /* gap between sections */
+
   .heading-1 {
     @apply font-display text-3xl sm:text-4xl lg:text-5xl text-ink-950;
     font-weight: 800;

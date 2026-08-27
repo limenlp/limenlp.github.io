@@ -28,7 +28,7 @@ const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
 const preprints = sortedPapers.filter((p) => p.data.status === 'preprint');
 ---
 <Base title="Publications · LIME Lab" description="Publications from LIME Lab at USC.">
-  <section class="container-prose pt-8 sm:pt-12">
+  <section class="container-prose page-top">
     <div class="flex flex-col gap-4">
       <h1 class="heading-1">Papers</h1>
       <div class="flex flex-wrap items-center gap-2">
@@ -55,7 +55,7 @@ const preprints = sortedPapers.filter((p) => p.data.status === 'preprint');
   </section>
 
   {preprints.length > 0 && (
-    <section class="container-prose mt-12">
+    <section class="container-prose section-gap">
       <div class="mb-6 flex items-center gap-3">
         <h2 class="heading-3">✨ Preprints</h2>
         <div class="lime-divider flex-1"></div>
@@ -71,7 +71,7 @@ const preprints = sortedPapers.filter((p) => p.data.status === 'preprint');
   )}
 
   {years.map((year) => (
-    <section class="container-prose mt-16">
+    <section class="container-prose section-gap">
       <div class="mb-6 flex items-center gap-3">
         <h2 class="heading-3">{year}</h2>
         <div class="lime-divider flex-1"></div>
