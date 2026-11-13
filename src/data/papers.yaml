@@ -31,6 +31,30 @@
 # Full docs: README.md
 # ============================================================
 
+- id: 2026-frontierrefactor
+  title: "FrontierRefactor: Benchmarking Multi-Scale Performance-Oriented Codebase Refactoring"
+  authors: "Shijian Wang, Fanqing Meng, Jiajun Chen, Qiguang Chen, Linxin Song, Runhao Fu, Shuhang Zheng, Shuai Shao, Qizhe Xie, Jieyu Zhao, Mengkang Hu"
+  venue: Preprint
+  year: 2026
+  status: preprint
+  tldr: "Can coding agents make code faster without changing what it does? On 60 tasks, from single kernels to full repositories, agents often keep code correct but fail to speed it up; feedback from real timing runs lifts strict success from 16% to 40%."
+  paperUrl: "https://arxiv.org/abs/2610.25834"
+  themes: [agents, evaluation]
+
+- id: 2026-reflex
+  title: "Reflex: Visually Grounded Reactive Humanoid Control"
+  authors: "Taoyang Jia*, Weikai Huang*, Linxin Song*, Jared Darlington, Jieyu Zhao, Yue Wang, Jiafei Duan, Zhongzheng Ren, Ranjay Krishna"
+  venue: "Oral @ SimBench2Real, CoRL 2026"
+  year: 2026
+  status: published
+  tldr: "A humanoid that catches thrown boxes using only its own RGB-D camera: learn whole-body catching with RL first, then train vision to infer the box's motion while the controller stays fixed."
+  paperUrl: "https://arxiv.org/abs/2610.12772"
+  image: /images/papers/reflex.jpg
+  themes: [agents]
+  award: "🏆 Best Paper @ RoboLetics, CoRL 2026"
+  featured: true
+  spotlight: true
+
 - id: 2026-detecting-unsafe-training-data
   title: Detecting and Filtering Unsafe Training Data via Data Attribution with Denoised Representation
   authors: "Yijun Pan, Taiwei Shi, Jieyu Zhao, Jiaqi W. Ma"
@@ -197,11 +221,11 @@
   themes: [trustworthiness]
 
 - id: 2025-cq-bench
-  title: "Can LLMs Grasp Implicit Cultural Values? Benchmarking LLMs' Metacognitive Cultural Intelligence with CQ-Bench"
-  authors: "Ziyi Liu, Priyanka Dey, Zhenyu Zhao, Jen-tse Huang, Rahul Gupta, Yang Liu, Jieyu Zhao"
-  venue: Preprint
-  year: 2025
-  status: preprint
+  title: "Can LLMs Grasp Implicit Cultural Values? Benchmarking LLMs' Cultural Intelligence with CQ-Bench"
+  authors: "Ziyi Liu, Priyanka Dey, Jen-tse Huang, Zhenyu Zhao, Bowen Jiang, Rahul Gupta, Yang Liu, Yao Du, Jieyu Zhao"
+  venue: TMLR
+  year: 2026
+  status: published
   tldr: "Cultural-intelligence benchmark that tests whether LLMs can infer the *implicit* values baked into natural conversation — not just the cultural norms stated outright."
   paperUrl: "https://arxiv.org/abs/2504.01127"
   themes: [evaluation, trustworthiness]
@@ -229,9 +253,9 @@
 - id: 2025-video-reward-modeling
   title: Video-Based Reward Modeling for Computer-Use Agents
   authors: "Linxin Song, Jieyu Zhang, Huanxin Sheng, Taiwei Shi, Gupta Rahul, Yang Liu, Ranjay Krishna, Kang Jian, Jieyu Zhao"
-  venue: Preprint
-  year: 2025
-  status: preprint
+  venue: ECCV 2026
+  year: 2026
+  status: published
   tldr: Computer-use agents leave a video trail of their work. We turn that trail into reward signal — rating trajectories at the pixel level instead of grading only the final outcome.
   paperUrl: "https://arxiv.org/abs/2603.10178"
   code: "https://github.com/limenlp/ExeVRM"

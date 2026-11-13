@@ -25,6 +25,31 @@
 # - Most recent on top. Home page shows the top 10. Full archive at /news/.
 # ============================================================
 
+- id: 2026-11-reflex-best-paper
+  date: 2026-11
+  title: "🏆 [Reflex: Visually Grounded Reactive Humanoid Control](https://arxiv.org/abs/2610.12772) won the Best Paper Award at the RoboLetics 3.0 Workshop @ CoRL 2026, and was an Oral at SimBench2Real @ CoRL 2026. Congrats to [Linxin](https://linxins.net/) and all collaborators!"
+  tag: award
+
+- id: 2026-10-frontierrefactor
+  date: 2026-10
+  title: "📑 New paper led by Shijian Wang: [FrontierRefactor: Benchmarking Multi-Scale Performance-Oriented Codebase Refactoring](https://arxiv.org/abs/2610.25834). Can coding agents make real codebases faster without breaking them?"
+  tag: paper
+
+- id: 2026-08-emnlp-three
+  date: 2026-08
+  title: "🎉 Three papers accepted at EMNLP 2026: [PALMs: Using Multi-Construct Grounded Rationales for Modeling Population Preferences in LLMs](https://openreview.net/forum?id=F2sHmKDgCb) and [Skill Reuse as Compression in Agentic RL](https://openreview.net/forum?id=ixpbJMfCbE) at the Main Conference, plus [Modeling, Evaluating, and Enhancing Reasoning of Large Language Models in Complex Social Environments](https://openreview.net/forum?id=wp0lBaBR15) in Findings. Congrats to all collaborators!"
+  tag: paper
+
+- id: 2026-08-cqbench-tmlr
+  date: 2026-08
+  title: "📑 [Can LLMs Grasp Implicit Cultural Values? Benchmarking LLMs' Cultural Intelligence with CQBench](https://openreview.net/forum?id=eIdvFTtuym) is accepted to TMLR."
+  tag: paper
+
+- id: 2026-07-faircoder-setllm
+  date: 2026-07
+  title: "📑 [FairCoder: Probing LLM Bias in High-Stakes Decision Making via Coding Tasks](https://openreview.net/forum?id=n7Mk11IVX8) is accepted as a poster at SeT-LLM @ KDD 2026."
+  tag: paper
+
 - id: 2026-07-taiwei-phd
   date: 2026-07
   title: "🎓 Congrats to [Taiwei Shi](https://taiweis.com/) for passing his PhD defense. Wish you all the best, Dr. Shi!"
