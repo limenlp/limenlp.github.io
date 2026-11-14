@@ -8,6 +8,7 @@ import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import NewsItem from '../components/NewsItem.astro';
 import SpotlightCard from '../components/SpotlightCard.astro';
+import { splitAward } from '../lib/award';
 import PaperCard from '../components/PaperCard.astro';
 import ThemeCard from '../components/ThemeCard.astro';
 import g1Logo from '../assets/g1.png';
@@ -28,7 +29,7 @@ const spotlight = [...spotlightPapers, ...featuredPapers]
 
 const news = allNews
   .sort((a, b) => (a.data.date < b.data.date ? 1 : -1))
-  .slice(0, 10);
+  .slice(0, 6);   // keeps the Latest column about as tall as the Spotlight card
 
 const themesIntro = allThemes.find((t) => t.data.intro)?.data.intro ?? '';
 const themesSorted = allThemes
@@ -111,7 +112,7 @@ const pressItems = allPress;
     <div>
       <h2 class="heading-3 mb-6">Latest</h2>
       <ul class="divide-y divide-ink-100">
-        {news.map((item) => <NewsItem item={item} />)}
+        {news.map((item) => <NewsItem item={item} compact />)}
       </ul>
       <a href="/news/" class="group mt-6 inline-flex items-center gap-1 text-sm font-medium text-lime-700 hover:text-persimmon">
         All news
@@ -215,12 +216,12 @@ const pressItems = allPress;
             <div class="flex-1 min-w-0">
               <p class="copy-dense font-medium text-ink-950">
                 {a.data.href ? (
-                  <a href={a.data.href} target="_blank" rel="noopener" class="link-subtle">{a.data.title}</a>
+                  <a href={a.data.href} target="_blank" rel="noopener" class="link-subtle">{splitAward(a.data.title).map((p) => p.award ? <span class="award-red">{p.text}</span> : p.text)}</a>
                 ) : (
-                  a.data.title
+                  splitAward(a.data.title).map((p) => p.award ? <span class="award-red">{p.text}</span> : p.text)
                 )}
                 {a.data.recipient && (
-                  <span class="ml-1.5 inline-flex items-center rounded-full bg-ink-50 px-2 py-0.5 text-[11px] font-medium text-ink-700">
+                  <span class="ml-1.5 inline-flex items-center rounded bg-ink-50 px-2 py-0.5 text-[11px] font-medium text-ink-700">
                     {a.data.recipient}
                   </span>
                 )}

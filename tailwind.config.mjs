@@ -60,6 +60,8 @@ export default {
           900: '#303744',
           950: '#1f242e',
         },
+        // Pure red, reserved for "Best Paper Award"-type phrases (.award-red).
+        award: '#DC2626',
         // Persimmon (柿红) — warm accent for hover
         persimmon: {
           DEFAULT: '#E44821',

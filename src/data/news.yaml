@@ -22,7 +22,7 @@
 # RULES:
 # - Inline links: write `[text](https://url)` in the title — only that text becomes a link
 # - DON'T wrap the whole title; the renderer no longer renders the `href:` field
-# - Most recent on top. Home page shows the top 10. Full archive at /news/.
+# - Most recent on top. Home page shows the top 6. Full archive at /news/.
 # ============================================================
 
 - id: 2026-11-reflex-best-paper

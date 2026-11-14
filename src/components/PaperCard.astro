@@ -55,17 +55,17 @@ const isList = variant === 'list';
       <div class="flex flex-wrap items-center gap-1.5 text-xs">
         {d.award && <span class="pill bg-lemon-100 text-lime-900 ring-1 ring-inset ring-lemon-300">🏆 {d.award.replace('🏆', '').trim()}</span>}
         {links.map((l) => (
-          <a href={l.href} target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded-md border border-ink-200 bg-white px-2 py-0.5 font-medium text-ink-700 transition-colors hover:border-lime-400 hover:bg-lime-50 hover:text-lime-800">
+          <a href={l.href} target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded border border-ink-200 bg-white px-2 py-0.5 font-medium text-ink-700 transition-colors hover:border-lime-400 hover:bg-lime-50 hover:text-lime-800">
             <span aria-hidden="true">{l.icon}</span><span>{l.label}</span>
           </a>
         ))}
         {d.press.map((p) => (
-          <a href={p.url} target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded-md border border-purple-200 bg-purple-50/60 px-2 py-0.5 font-medium text-purple-800 transition-colors hover:bg-purple-100">
+          <a href={p.url} target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded border border-purple-200 bg-purple-50/60 px-2 py-0.5 font-medium text-purple-800 transition-colors hover:bg-purple-100">
             <span aria-hidden="true">📰</span><span>{p.name}</span>
           </a>
         ))}
         {d.themes.map((t) => (
-          <span class="rounded-full bg-ink-50 px-2 py-0.5 text-[11px] font-medium text-ink-600">{t}</span>
+          <span class="rounded bg-ink-50 px-2 py-0.5 text-[11px] font-medium text-ink-600">{t}</span>
         ))}
       </div>
     </div>
@@ -94,12 +94,12 @@ const isList = variant === 'list';
         {d.status !== 'preprint' && <span class="pill-accent">{d.venue}</span>}
         {d.award && <span class="pill bg-lemon-100 text-lime-900 ring-1 ring-inset ring-lemon-300">🏆 {d.award.replace('🏆', '').trim()}</span>}
         {links.map((l) => (
-          <a href={l.href} target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded-md border border-ink-200 bg-white px-2 py-1 font-medium text-ink-700 transition-colors hover:border-lime-400 hover:bg-lime-50 hover:text-lime-800">
+          <a href={l.href} target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded border border-ink-200 bg-white px-2 py-1 font-medium text-ink-700 transition-colors hover:border-lime-400 hover:bg-lime-50 hover:text-lime-800">
             <span aria-hidden="true">{l.icon}</span><span>{l.label}</span>
           </a>
         ))}
         {d.press.map((p) => (
-          <a href={p.url} target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded-md border border-purple-200 bg-purple-50/60 px-2 py-1 font-medium text-purple-800 transition-colors hover:bg-purple-100">
+          <a href={p.url} target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded border border-purple-200 bg-purple-50/60 px-2 py-1 font-medium text-purple-800 transition-colors hover:bg-purple-100">
             <span aria-hidden="true">📰</span><span>{p.name}</span>
           </a>
         ))}

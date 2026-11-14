@@ -101,11 +101,16 @@
   }
 
   .pill {
-    @apply inline-flex items-center rounded-full border border-ink-100 bg-white px-2.5 py-0.5 text-xs font-medium text-ink-700;
+    @apply inline-flex items-center rounded border border-ink-100 bg-white px-2.5 py-0.5 text-xs font-medium text-ink-700;
   }
 
   .pill-accent {
-    @apply inline-flex items-center rounded-full bg-lime-50 px-2.5 py-0.5 text-xs font-medium text-lime-800 ring-1 ring-inset ring-lime-200;
+    @apply inline-flex items-center rounded bg-lime-50 px-2.5 py-0.5 text-xs font-medium text-lime-800 ring-1 ring-inset ring-lime-200;
+  }
+
+  /* "Best Paper Award"-type phrases, painted by src/lib/award.ts. */
+  .award-red {
+    @apply font-semibold text-award;
   }
 
   .card {

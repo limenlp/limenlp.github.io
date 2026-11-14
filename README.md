@@ -168,7 +168,9 @@ Open [`src/data/news.yaml`](src/data/news.yaml). Add at the top:
 
 **Link convention**: write `[text](https://url)` directly inside the `title` field — **only that text becomes clickable**. Don't try to make the whole title a link: the renderer ignores the legacy `href:` field. This keeps news lines readable and lets you link multiple things per line (e.g., paper + code).
 
-The home page **Latest** section shows the 10 most recent items. The full archive at `/news/` groups by year.
+The home page **Latest** section shows the 6 most recent items (compact rows, so the column stays about as tall as the Spotlight card). The full archive at `/news/` groups by year.
+
+Tags render as small filled labels (4px corners, no outline). Phrases like "Best Paper Award" / "Best Poster Award" are painted red automatically by [`src/lib/award.ts`](src/lib/award.ts), both in news items and in the home-page Awards list.
 
 ### Add a wiki page
 
