@@ -241,11 +241,11 @@
   themes: [trustworthiness, evaluation]
 
 - id: 2025-socialmaze
-  title: "SocialMaze: A Benchmark for Evaluating Social Reasoning in Large Language Models"
+  title: "SocialMaze: A Benchmark for Evaluating and Enhancing Social Reasoning in Large Language Models in Complex Social Environments"
   authors: "Zixiang Xu, Yanbo Wang, Yue Huang, Jiayi Ye, Haomin Zhuang, Zirui Song, Lang Gao, Chenxi Wang, Zhaorun Chen, Yujun Zhou, et al."
-  venue: Preprint
-  year: 2025
-  status: preprint
+  venue: EMNLP Findings 2026
+  year: 2026
+  status: published
   tldr: "Benchmark for LLM social reasoning built from structured multi-party scenarios — instead of static QA, agents have to navigate inferences about other agents."
   paperUrl: "https://arxiv.org/abs/2505.23713"
   themes: [evaluation, agents]
