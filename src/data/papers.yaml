@@ -231,12 +231,12 @@
   themes: [evaluation, trustworthiness]
 
 - id: 2025-faircode
-  title: "FairCode: Evaluating Social Bias of LLMs in Code Generation"
+  title: "FairCoder: Probing LLM Bias in High-Stakes Decision Making via Coding Tasks"
   authors: "Yongkang Du, Jen-tse Huang, Jieyu Zhao, Lu Lin"
-  venue: Preprint
-  year: 2025
-  status: preprint
-  tldr: "Code-generation LLMs leak social bias into the code they write. FairCode measures how, where, and which prompts make it worse."
+  venue: "SeT-LLM @ KDD 2026"
+  year: 2026
+  status: published
+  tldr: "Code-generation LLMs leak social bias into the code they write. FairCoder measures how, where, and which prompts make it worse."
   paperUrl: "https://arxiv.org/abs/2501.05396"
   themes: [trustworthiness, evaluation]
 
