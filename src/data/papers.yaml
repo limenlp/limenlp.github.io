@@ -55,6 +55,26 @@
   featured: true
   spotlight: true
 
+- id: 2026-palms
+  title: "PALMs: Using Multi-Construct Grounded Rationales for Modeling Population Preferences in LLMs"
+  authors: "Priyanka Dey, Brihi Joshi, Preyashi Poddar, Jieyu Zhao, Emilio Ferrara"
+  venue: EMNLP 2026
+  year: 2026
+  status: published
+  tldr: "Population Aligned Language Models for five countries: rationales grounded in psychological and cultural constructs steer preference tuning, beating culture-specialized baselines by 8.6% on personality, values, norms, and morality."
+  paperUrl: "https://arxiv.org/abs/2608.01458"
+  themes: [alignment, evaluation]
+
+- id: 2026-skill-reuse
+  title: "Skill Reuse as Compression in Agentic RL"
+  authors: "Zhikun Xu, Yu Feng, Jacob Dineen, Taiwei Shi, Jieyu Zhao, Ben Zhou"
+  venue: EMNLP 2026
+  year: 2026
+  status: published
+  tldr: "ReuseRL grounds agentic RL in minimum description length: extract a shared skill dictionary from successful trajectories and penalize idiosyncratic behavior, which lifts in- and out-of-distribution success on ALFWorld, TextWorld-Cooking, and Countdown."
+  paperUrl: "https://arxiv.org/abs/2605.31509"
+  themes: [agents, alignment]
+
 - id: 2026-detecting-unsafe-training-data
   title: Detecting and Filtering Unsafe Training Data via Data Attribution with Denoised Representation
   authors: "Yijun Pan, Taiwei Shi, Jieyu Zhao, Jiaqi W. Ma"
@@ -102,6 +122,16 @@
   themes: [alignment]
   featured: true
   spotlight: true
+
+- id: 2026-doxing-via-the-lens
+  title: "Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models"
+  authors: "Weidi Luo, Tianyu Lu, Qiming Zhang, Xiaogeng Liu, Bin Hu, Yue Zhao, Jieyu Zhao, Song Gao, Patrick McDaniel, Zhen Xiang, Chaowei Xiao"
+  venue: ICLR 2026
+  year: 2026
+  status: published
+  tldr: "Multi-modal reasoning models can infer where you live from a selfie. A three-level visual privacy framework and DoxBench (500 real-world images) show 11 MLRMs and MLLMs consistently leak location."
+  paperUrl: "https://arxiv.org/abs/2504.19373"
+  themes: [trustworthiness, evaluation]
 
 - id: 2026-coact-1
   title: "CoAct-1: Computer-using Agents with Coding as Actions"
